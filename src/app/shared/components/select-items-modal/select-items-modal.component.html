@@ -1,0 +1,51 @@
+<div class="modal-header">
+  <h4 class="modal-title" i18n="@@select_items">Select Items</h4>
+  <button type="button" class="close" aria-label="Close" (click)="onClose()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body font-medium-2 p-3">
+  <ngx-loading [show]="loading > 0"></ngx-loading>
+  <div class="row" *ngFor="let item of _items">
+    <div class="col-12">
+
+      <div class="row d-flex">
+        <div class="pr-2">
+          <div class="custom-control custom-checkbox">
+            <input
+                type="checkbox"
+                class="custom-control-input"
+                (change)="onSelectedChange(item)"
+                [checked]="isSelected(item)"
+                id="selected_{{item.id}}"
+                [disabled]="isDisabled(item)"
+            >
+            <label class="custom-control-label float-left text-secondary" for="selected_{{item.id}}"></label>
+          </div>
+        </div>
+        <div class="cursor-pointer" (click)="onSelectedChange(item)">
+          {{item.name}} <small *ngIf="item.subName" class="font-small-3 text-secondary">{{item.subName}}</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!_items.length" class="row">
+    <div class="col-12">
+      <span class="text-secondary" i18n="@@no_items">No items</span>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button *ngIf="onItemCreate" class="btn btn-outline-primary" type="button" (click)="onItemCreateClicked()">
+    <ng-container i18n="@@actions.create">Create</ng-container>
+  </button>
+
+  <button class="btn btn-outline-danger" type="button" (click)="onClose()">
+    <ng-container i18n="@@actions.cancel">Cancel</ng-container>
+  </button>
+
+  <button class="btn btn-raised btn-primary" type="button" (click)="onSelect()">
+    <ng-container i18n="@@actions.select">Select</ng-container>
+  </button>
+</div>
+

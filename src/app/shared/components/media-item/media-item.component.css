@@ -1,0 +1,10 @@
+:host .icon-circle {
+    display: inline-block;
+    border-radius: 200px;
+    padding: 0.45em 0.4em;
+    background-color: #e8e8e8;
+    height: 50px;
+    width: 50px;
+    font-size: 28px;
+    margin-right: 10px;
+}

@@ -1,0 +1,9 @@
+<ng-container *ngIf="!attachments.length">
+  <i class="fa-paperclip fa"></i>&nbsp;
+  <ng-container i18n="@@no_files_attached">No files attached</ng-container>
+</ng-container>
+
+<ng-container *ngIf="attachments.length">
+  <i class="fa-paperclip fa"></i>&nbsp;
+  <ng-container i18n="@@attachments_count">{{attachments.length}} files attached</ng-container>
+</ng-container>

@@ -1,0 +1,19 @@
+<ngx-loading [show]="isLoading()"></ngx-loading>
+<div class="row mt-2">
+  <div class="col-6">
+    <div class="content-header text-left mt-0" i18n="@@my_library">My Library</div>
+    <p class="content-sub-header"></p></div>
+  <div class="col-6 text-right">
+    <button class="btn btn-raised btn-primary" routerLink="/books/add"><span i18n="@@actions.add_book">Add book</span></button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-2" *ngFor="let book of books">
+    <app-user-book-item [userBook]="book" (startReading)="startReading($event, ref)" (continueReading)="continueReading($event)" #ref></app-user-book-item>
+  </div>
+  <div class="col-12 text-center" *ngIf="books.length === 0">
+    <h3 i18n="@@books.no_books_added">There are no books in your library</h3>
+  </div>
+</div>
+

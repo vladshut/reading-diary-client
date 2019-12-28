@@ -1,0 +1,9 @@
+<select     [id]="id"
+            [name]="name"
+            [formControl]="control"
+            class="form-control {{class}}">
+  <option value="" disabled>{{placeholder}}</option>
+  <option *ngFor="let c of countries" [value]="getValue(c)">
+    <img style="display: inline" *ngIf="flag" [src]="baseUrl + c.cca3.toLowerCase() + '.svg'">&nbsp;{{ getName(c) }}
+  </option>
+</select>

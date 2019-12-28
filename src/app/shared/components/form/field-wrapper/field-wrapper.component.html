@@ -1,0 +1,12 @@
+<div class="form-group row" [formGroup]="form">
+  <div class="col-md-2 d-block-inline">
+    <label class="form-control-label" [for]="id" *ngIf="label">
+      {{label}}&nbsp;<span *ngIf="isRequired()" class="asterisk">*</span>
+    </label>
+  </div>
+
+  <div class="col-md-10">
+    <ng-content></ng-content>
+    <app-control-messages *ngIf="control" [control]="control"></app-control-messages>
+  </div>
+</div>

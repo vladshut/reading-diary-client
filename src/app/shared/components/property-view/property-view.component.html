@@ -1,0 +1,7 @@
+<p>
+  <b>{{label}}</b>:&nbsp;
+  <ng-container *ngIf="value !== undefined && value !== null && value !== ''; else defaultValueTpl">{{value}}</ng-container>
+  <ng-template #defaultValueTpl >
+    <span class="text-secondary">{{defaultValue}}</span>
+  </ng-template>
+</p>

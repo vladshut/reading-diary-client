@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-header">
+    <h5>{{name}}</h5>
+  </div>
+
+  <div class="card-block">
+    <app-report-item *ngFor="let item of items" [item]="item"></app-report-item>
+  </div>
+
+</div>

@@ -1,0 +1,46 @@
+<ngx-loading [show]="isLoading()"></ngx-loading>
+<li>
+  <ng-container *ngIf="!editMode">
+    <span (click)="onSelect()" class="cursor-pointer" [ngClass]="{'text-primary': isActive(section)}">{{section.name}}</span>
+    <ng-container *ngIf="!addMode">
+      &nbsp;&nbsp;<i class="text-primary cursor-pointer fa fa-plus-circle" (click)="onAdd()"></i>
+    </ng-container>
+    &nbsp;&nbsp;<i class="text-success cursor-pointer far fa-edit" (click)="onEdit()"></i>
+    &nbsp;&nbsp;<i class="text-danger cursor-pointer far fa-trash-alt" (click)="onDelete()"></i>
+  </ng-container>
+  <ng-container *ngIf="editMode">
+    <form ngForm="editForm" (ngSubmit)="onSubmitEdit()">
+      <div class="input-group">
+        <input [formControl]="editForm.controls.name" type="text" class="form-control form-control-sm mr-1">
+        <span class="input-group-btn">
+            <button (click)="onCancelEdit()" type="button" class="btn btn-sm btn-raised btn-warning mr-1" i18n="@@actions.cancel">Cancel</button>
+            <button type="submit" class="btn btn-sm btn-raised btn-primary mr-1">
+              <ng-container i18n="@@actions.save">Save</ng-container>
+            </button>
+        </span>
+      </div>
+    </form>
+  </ng-container>
+  <ul>
+    <li *ngIf="addMode">
+      <form ngForm="addForm" (ngSubmit)="onSubmitAdd()">
+        <div class="input-group">
+          <input [formControl]="addForm.controls.name" type="text" class="form-control form-control-sm mr-1">
+          <span class="input-group-btn">
+          <button (click)="onCancelAdd()" type="button" class="btn btn-sm btn-raised btn-warning mr-1" i18n="@@actions.cancel">Cancel</button>
+          <button type="submit" class="btn btn-sm btn-raised btn-primary mr-1">
+            <ng-container i18n="@@actions.save">Save</ng-container>
+          </button>
+      </span>
+        </div>
+      </form>
+    </li>
+    <app-section-item *ngFor="let subSection of section.children" [section]="subSection"
+                      [isActive]="isActive"
+                      (sectionAdded)="onSubSectionAdded($event)"
+                      (sectionUpdated)="onSubSectionUpdated($event)"
+                      (sectionRemoved)="onSubSectionRemoved($event)"
+                      (sectionSelected)="onSubSectionSelected($event)"
+    ></app-section-item>
+  </ul>
+</li>

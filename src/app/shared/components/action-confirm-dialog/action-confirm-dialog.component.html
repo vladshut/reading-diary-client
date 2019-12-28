@@ -1,0 +1,13 @@
+<div class="modal-header">
+  <h4 class="modal-title" i18n="@@ConfirmAction">Confirm action</h4>
+  <button type="button" class="close" aria-label="Close" (click)="close()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p [innerHTML]="text"></p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary btn-raised" (click)="cancel()" i18n="@@Cancel">Cancel</button>
+  <button type="button" class="btn btn-primary btn-raised" (click)="confirm()" i18n="@@Confirm">Confirm</button>
+</div>

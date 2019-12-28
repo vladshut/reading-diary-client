@@ -1,0 +1,112 @@
+<div class="form-group row" [formGroup]="form">
+  <div class="col-md-2 d-block-inline">
+    <label class="form-control-label" [for]="id" *ngIf="label">
+      {{label}}&nbsp;<span *ngIf="isRequired()" class="asterisk">*</span>
+    </label>
+  </div>
+
+  <div class="col-md-10" [ngSwitch]="type">
+    <app-control-text *ngSwitchCase="'text'"
+                      [control]="control"
+                      [form]="form"
+                      [inputType]="inputType"
+                      [id]="id"
+                      [class]="class"
+                      [name]="name"
+                      [placeholder]="placeholder">
+    </app-control-text>
+
+    <app-control-textarea *ngSwitchCase="'textarea'"
+                          [control]="control"
+                          [form]="form"
+                          [id]="id"
+                          [class]="class"
+                          [name]="name"
+                          [placeholder]="placeholder">
+    </app-control-textarea>
+
+    <app-control-select *ngSwitchCase="'select'"
+                        [control]="control"
+                        [form]="form"
+                        [id]="id"
+                        [class]="class"
+                        [name]="name"
+                        [options]="options"
+                        [placeholder]="placeholder"
+                        (change)="changed.emit()">
+    </app-control-select>
+
+    <app-control-modal-select *ngSwitchCase="'select-items'"
+                              [formControl]="control"
+                              [class]="class"
+                              [actionName]="actionName"
+                              [items]="items"
+                              [disabledItems]="disabledItems"
+                              [showSelected]="showSelected"
+                              [onItemCreate]="onItemCreate"
+                              [btnSize]="btnSize"
+                              (changed)="changed.emit($event)">
+    </app-control-modal-select>
+
+    <app-control-country *ngSwitchCase="'country'"
+                         [control]="control"
+                         [form]="form"
+                         [id]="id"
+                         [class]="class"
+                         [name]="name"
+                         [placeholder]="placeholder">
+    </app-control-country>
+
+    <app-control-lang *ngSwitchCase="'lang'"
+                         [control]="control"
+                         [form]="form"
+                         [id]="id"
+                         [class]="class"
+                         [name]="name"
+                         [placeholder]="placeholder">
+    </app-control-lang>
+
+    <app-control-phone *ngSwitchCase="'phone'"
+                       [control]="control"
+                       [form]="form"
+                       [id]="id"
+                       [class]="class"
+                       [name]="name"
+                       [placeholder]="placeholder">
+    </app-control-phone>
+
+    <app-control-checkbox *ngSwitchCase="'checkbox'"
+                          [control]="control"
+                          [form]="form"
+                          [id]="id"
+                          [class]="class"
+                          [label]="label"
+                          [name]="name">
+    </app-control-checkbox>
+
+    <app-control-file *ngSwitchCase="'file'"
+                      [formControl]="control"
+                      [control]="control"
+                      [form]="form"
+                      [id]="id"
+                      [class]="class"
+                      [name]="name"
+                      [attachments]="value"
+                      [multiple]="multiple"
+                      [allowedTypes]="fileTypes"
+    >
+    </app-control-file>
+
+    <app-control-button *ngSwitchCase="'btn'"
+                        [id]="id"
+                        [class]="class"
+                        [icon]="btnIcon"
+                        [text]="btnText"
+                        [type]="btnType"
+                        (btnClicked)="btnClicked.emit()"
+    >
+    </app-control-button>
+
+    <app-control-messages *ngIf="control" [control]="control"></app-control-messages>
+  </div>
+</div>

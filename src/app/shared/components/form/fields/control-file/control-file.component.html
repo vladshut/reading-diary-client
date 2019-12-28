@@ -1,0 +1,19 @@
+<ngx-loading [show]="loading > 0"></ngx-loading>
+<div class="form-group upload-btn-wrapper mb-0">
+  <button class="btn btn-raised btn-primary btn-sm">
+    <i class="fa fa-plus-circle"></i>&nbsp;
+    <ng-container i18n="@@UploadFiles">Upload files</ng-container>
+  </button>
+  <input (change)="onChange()" [ngClass]="class" [id]="id" [name]="name" [multiple]="multiple" type="file" #uploadFile/>
+</div>
+
+<ul class="list-group">
+  <li *ngFor="let a of attachments" class="list-group-item no-border p-0">
+    <i class="fa fa-times text-danger cursor-pointer" (click)="onRemove(a)"></i>
+    {{a.fileName}}&nbsp;<span class="text-secondary">({{a.size | bytes}})</span>
+  </li>
+  <li *ngFor="let f of files" class="list-group-item no-border p-0">
+    <i class="fa fa-times text-danger cursor-pointer" (click)="onRemove(f)"></i>
+    {{f.name}}&nbsp;<span class="text-secondary">({{f.size | bytes}})</span>
+  </li>
+</ul>

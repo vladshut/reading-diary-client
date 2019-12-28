@@ -1,0 +1,6 @@
+:host .my-drop-zone {
+    border: dotted 3px lightgray;
+    background-color: #f5f7fa !important;
+}
+:host .nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+:host .another-file-over-class { border: dotted 3px green; }

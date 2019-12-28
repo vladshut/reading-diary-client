@@ -1,0 +1,125 @@
+<ngx-loading [show]="loading > 0"></ngx-loading>
+<div class="card">
+  <div class="card-header">
+    <h3 i18n="@@actions.add_existing_book">Add existing book</h3>
+  </div>
+
+  <div class="card-body">
+    <div class="card-block">
+      <form *ngIf="formExisting" role="form" class="form form-horizontal" (ngSubmit)="onExistingSubmit()">
+        <div class="form-body">
+          <app-field-wrapper [control]="fe.search" label="Search" i18n="@@labels.search" [id]="'existingBooks'">
+              <ng-select [items]="books$ | async"
+                         bindLabel="title"
+                         bindValue="id"
+                         placeholder="Title, ISBN10, ISBN13"
+                         i18n-placeholder="@@actions.select"
+                         typeToSearchText="Please enter 3 or more characters"
+                         i18n-typeToSearchText="@@enter_characters_to_search"
+                         id="existingBooks"
+                         [formControl]="fe.search"
+                         (search)="searchBook($event)"
+              >
+              </ng-select>
+          </app-field-wrapper>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-raised btn-primary">
+            <i class="fa fa-plus-circle"></i>&nbsp;
+            <ng-container i18n="@@actions.add">Add</ng-container>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    <h3 i18n="@@actions.add_new_book">Add new book</h3>
+  </div>
+  <div class="card-body">
+    <div class="card-block">
+      <form *ngIf="form" role="form" class="form form-horizontal" (ngSubmit)="onSubmit()">
+        <div class="form-body">
+          <app-control [control]="f.title" type="text" label="Title" i18n-label="@@title"></app-control>
+          <app-control [control]="f.year" type="text" inputType="number" label="Year" i18n-label="@@year"></app-control>
+          <app-control [control]="f.lang" type="lang" label="Lang" i18n-label="@@lang"></app-control>
+
+          <app-field-wrapper [control]="f.cover" label="Cover" i18n-label="@@cover" [id]="'cover'">
+              <input (change)="uploadFile($event)" [id]="'cover'" [multiple]="false" type="file"/>
+          </app-field-wrapper>
+
+
+          <div class="form-group row" [formGroup]="form">
+            <div class="col-md-2 d-block-inline">
+              <label class="form-control-label" for="author">
+                <ng-container i18n="@@author">Author</ng-container>&nbsp;<span class="asterisk">*</span>
+              </label>
+            </div>
+
+            <div class="col-md-10">
+                <ng-select [items]="authors$ | async"
+                           bindLabel="name"
+                           bindValue="id"
+                           placeholder="Select"
+                           i18n-placeholder="@@actions.select"
+                           typeToSearchText="Please enter 3 or more characters"
+                           i18n-typeToSearchText="@@enter_characters_to_search"
+                           id="author"
+                           [formControl]="f.author_id"
+                           (search)="searchAuthor($event)"
+                >
+                </ng-select>
+                <app-control-messages [control]="f.author_id"></app-control-messages>
+
+              <br>
+
+              <div class="d-flex justify-content-start">
+                <span class="text-muted"><ng-container i18n="@@or">or</ng-container>&nbsp;&nbsp;&nbsp;</span>
+
+                <button (click)="onAddAuthor()" class="btn btn-outline-primary btn-sm" i18n="@@actions.create_new">Create new</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group row" [formGroup]="form">
+            <div class="col-md-2 d-block-inline">
+              <label class="form-control-label" for="author">
+                <ng-container i18n="@@genres">Genres</ng-container>&nbsp;<span class="asterisk">*</span>
+              </label>
+            </div>
+
+            <div class="col-md-10">
+              <ng-select [items]="genres"
+                         bindLabel="name"
+                         bindValue="id"
+                         placeholder="Select"
+                         i18n-placeholder="@@actions.select"
+                         id="genres"
+                         [multiple]="true"
+                         [hideSelected]="true"
+                         [formControl]="f.genres"
+              >
+              </ng-select>
+              <app-control-messages [control]="f.genres"></app-control-messages>
+            </div>
+          </div>
+
+          <app-control [control]="f.pages" type="text" inputType="number" label="Pages" i18n-label="@@pages"></app-control>
+          <app-control [control]="f.isbn10" type="text" label="ISBN10" i18n-label="@@isbn10"></app-control>
+          <app-control [control]="f.isbn13" type="text" label="ISBN13" i18n-label="@@isbn13"></app-control>
+          <app-control [control]="f.description" type="textarea" label="Description"
+                       i18n-label="@@description"></app-control>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-raised btn-primary">
+            <i class="fa fa-plus-circle"></i>&nbsp;
+            <ng-container i18n="@@actions.add">Add</ng-container>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

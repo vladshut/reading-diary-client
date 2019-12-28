@@ -1,0 +1,16 @@
+<ngx-loading [show]="isLoading()"></ngx-loading>
+<div class="card">
+  <div class="card-body">
+    <div class="card-img">
+      <img *ngIf="userBook.book.cover" class="card-img-top img-fluid" src="{{userBook.book.cover}}" alt="Card image cap">
+      <img *ngIf="!userBook.book.cover" class="card-img-top img-fluid" src="/assets/img/book_preload.jpg" alt="Card image cap">
+    </div>
+    <div class="card-block p-0 pt-3 text-center">
+      <p class="card-text mb-0">{{userBook.book.title}}</p>
+      <p class="text-muted font-small-2 mt-0"><ng-container i18n="@@by">by</ng-container>&nbsp;<span>{{userBook.book.author.name}}</span></p>
+      <a *ngIf="userBook.isNotRead()" (click)="onStartReading()" class="btn btn-raised btn-primary" i18n="@@book.actions.start_reading">Start Reading</a>
+      <a *ngIf="userBook.isReading()" (click)="onContinueReading()" class="btn btn-raised btn-success" i18n="@@book.actions.continue_reading">Continue Reading</a>
+      <span *ngIf="userBook.isRead()" class="text-success text-uppercase" i18n="@@book.status.read">Completed</span>
+    </div>
+  </div>
+</div>

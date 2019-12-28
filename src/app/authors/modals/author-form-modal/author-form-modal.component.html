@@ -1,0 +1,44 @@
+<app-modal title="Author" i18n-title="@@author">
+  <form *ngIf="form" role="form" class="form form-horizontal" (ngSubmit)="onSubmit()">
+    <div class="form-body">
+      <app-control [control]="f.name" type="text" label="Name" i18n-label="@@name"></app-control>
+      <app-control [control]="f.location" type="country" label="Country" i18n-label="@@country"></app-control>
+
+      <app-field-wrapper label="Birth date" i18n="@@birth_date" [id]="'birthDate'" [control]="f.birth_date">
+        <div class="input-group">
+          <input [formControl]="f.birth_date" class="form-control"
+                 placeholder="yyyy-mm-dd"
+                 ngbDatepicker #d1="ngbDatepicker" id="birthDate">
+          <div class="input-group-append">
+            <div class="input-group-text" (click)="d1.toggle()">
+              <i class="fa fa-calendar" style="cursor: pointer;"></i>
+            </div>
+          </div>
+        </div>
+      </app-field-wrapper>
+
+      <app-field-wrapper label="Death date" i18n="@@death_date" [id]="'deathDate'" [control]="f.death_date">
+        <div class="input-group">
+          <input [formControl]="f.death_date" class="form-control"
+                 placeholder="yyyy-mm-dd"
+                 ngbDatepicker #d2="ngbDatepicker" id="deathDate">
+          <div class="input-group-append">
+            <div class="input-group-text" (click)="d2.toggle()">
+              <i class="fa fa-calendar" style="cursor: pointer;"></i>
+            </div>
+          </div>
+        </div>
+      </app-field-wrapper>
+
+      <app-control [control]="f.bio" type="textarea" label="Bio" i18n-label="@@bio"></app-control>
+      <app-control [control]="f.wikipedia_url" type="text" label="Wiki URL" i18n-label="@@wiki_url"></app-control>
+
+    </div>
+    <div class="form-actions">
+      <button type="submit" class="btn btn-raised btn-primary">
+        <i class="fa fa-plus-circle"></i>&nbsp;
+        <ng-container i18n="@@actions.add">Add</ng-container>
+      </button>
+    </div>
+  </form>
+</app-modal>

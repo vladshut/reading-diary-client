@@ -1,0 +1,31 @@
+<div class="d-flex">
+
+  <ng-container *ngIf="withImage">
+    <img *ngIf="item.image"
+         alt="media-image"
+         class="media-object d-flex mr-2 height-{{imageSize}} rounded-circle"
+         src="{{item.image}}">
+
+
+    <i *ngIf="!item.image && item.icon" class="mdi {{item.icon}} icon-circle"
+       [ngStyle]="item.avatarBgColor ? {'background-color': item.avatarBgColor} : {}"></i>
+
+    <ngx-avatar *ngIf="!item.image && !item.icon"
+                [name]="item.title || item.subTitle"
+                [textSizeRatio]="2"
+                [size]="imageSize"
+                class="mr-2 font-medium-3">
+
+    </ngx-avatar>
+  </ng-container>
+
+  <div class="media-body">
+    <h4 class="font-medium-1 mt-1 mb-0" [ngClass]="{'pt-1': !item.subTitle && size !== 'sm'}">
+      <span [innerHTML]="item.title"></span><ng-container *ngIf="item.title && item.titleSmall">&nbsp;</ng-container>
+      <small *ngIf="item.titleSmall" class="text-muted" [innerHTML]="item.titleSmall"></small>
+    </h4>
+
+    <p *ngIf="item.subTitle" class="text-muted font-small-3 mb-0" [innerHTML]="item.subTitle"></p>
+  </div>
+
+</div>

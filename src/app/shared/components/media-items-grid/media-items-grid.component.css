@@ -1,0 +1,6 @@
+:host .media-items-wrapper {
+    display: grid;
+    grid-template-rows: auto;
+    grid-row-gap: 1em;
+    grid-column-gap: 1em;
+}

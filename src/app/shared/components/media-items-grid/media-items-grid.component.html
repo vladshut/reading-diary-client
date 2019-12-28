@@ -1,0 +1,5 @@
+<div class="media-items-wrapper" [ngStyle]="{'grid-template-columns': 'repeat(auto-fit, minmax(250px, 1fr))'}">
+  <div *ngFor="let item of getItems()">
+    <app-media-item [item]="item"></app-media-item>
+  </div>
+</div>

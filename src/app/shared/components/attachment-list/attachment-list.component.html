@@ -1,0 +1,9 @@
+<ul *ngIf="attachments.length" class="list-group mb-2">
+  <li *ngFor="let a of attachments" class="list-group-item no-border p-0">
+    <i class="fa-paperclip fa"></i>&nbsp;
+    <button class="btn btn-link m-0 d-inline" (click)="onDownload(a)">{{a.fileName}}</button>&nbsp;<span
+      class="text-secondary">({{a.size | bytes}})</span>
+  </li>
+</ul>
+
+<ng-container *ngIf="!attachments.length" i18n="@@no_files_attached">No files attached</ng-container>

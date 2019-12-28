@@ -1,0 +1,26 @@
+<form [formGroup]="form" *ngIf="editMode">
+  <div class="form-body">
+    <div class="row">
+      <div class="col-md-4 form-group">
+        <input type="text" placeholder="Term" i18n="@@term" formControlName="term" class="form-control form-control-sm">
+        <app-control-messages [control]="form.controls.term"></app-control-messages>
+      </div>
+      <div class="col-md-8 form-group">
+        <textarea rows="5" placeholder="Definition" i18n="@@definition" class="form-control form-control-sm" formControlName="term_definition"></textarea>
+        <app-control-messages [control]="form.controls.term_definition"></app-control-messages>
+      </div>
+    </div>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-xs btn-raised btn-primary" i18n="@@actions.update" (click)="onUpdate()" [disabled]="!form.valid || !form.dirty">Update</button>
+    <button class="btn btn-xs btn-outline-danger" i18n="@@actions.cancel" (click)="onCancelEdit()">Cancel</button>
+  </div>
+</form>
+<div class="row d-flex" *ngIf="!editMode" (mouseover)="hover = true" (mouseleave)="hover = false">
+  <div class="pl-2" style="min-width: 30px">
+    <i *ngIf="hover" class="far fa-trash-alt text-danger cursor-pointer" (click)="onDelete()"></i>
+  </div>
+  <div (click)="editMode = true">
+    <span class="font-weight-bold font-italic">{{item.term}}</span>&nbsp;&nbsp;-&nbsp;&nbsp;{{item.term_definition}}
+  </div>
+</div>

@@ -1,0 +1,75 @@
+﻿<div class="card text-center">
+  <ngx-loading [show]="loading"></ngx-loading>
+  <div class="card-body">
+    <div class="card-block">
+      <h2 class="p-4 text-bold-500" i18n="@@auth.registration">Sign up</h2>
+      <form novalidate="" [formGroup]="registerForm" (ngSubmit)="onSubmit()" #f>
+        <div class="form-group mb-4">
+          <div class="col-md-12">
+            <div class="position-relative has-icon-left">
+              <input type="text" class="has-icon-left form-control form-control-lg" formControlName="name" name="name"
+                     id="inputName" placeholder="Name" i18n-placeholder="@@Name" ngModel required>
+              <app-control-messages [control]="registerForm.controls.name"></app-control-messages>
+              <div class="form-control-position pt-1">
+                <i class="fa fa-user-circle" style="font-size: 24px"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <div class="col-md-12">
+            <div class="position-relative has-icon-left">
+              <input type="email" formControlName="email" class="form-control form-control-lg" name="inputEmail"
+                     id="inputEmail" placeholder="Email" i18n-placeholder="@@Email" required email>
+              <app-control-messages [control]="registerForm.controls.email"></app-control-messages>
+              <div class="form-control-position pt-1">
+                <i class="fa fa-envelope" style="font-size: 24px"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <div class="col-md-12">
+            <div class="position-relative has-icon-left">
+              <input type="password" formControlName="password" class="form-control form-control-lg" name="inputPass"
+                     id="inputPass" placeholder="Password" i18n-placeholder="@@Password" required>
+              <app-control-messages [control]="registerForm.controls.password"></app-control-messages>
+              <div class="form-control-position pt-1">
+                <i class="fa fa-lock" style="font-size: 24px"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group mb-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="custom-control custom-checkbox mb-2 mr-sm-2 mb-sm-0 ml-2">
+                <input formControlName="agreementConfirmed" type="checkbox" class="custom-control-input" id="agreementConfirmed" required>
+                <label class="custom-control-label float-left text-secondary" for="agreementConfirmed">
+                </label>
+              </div>
+              <div class="ml-2 mt-3">
+                <app-control-messages [debug]="true" [control]="registerForm.controls.agreementConfirmed"></app-control-messages>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-md-12">
+            <button type="submit" class="btn btn-primary btn-block btn-raised btn-lg" i18n="@@auth.registration">Sign up</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="card-footer">
+    <p class="text-secondary" i18n="@@auth.have_account">Already have an account?</p>
+    <button [routerLink]="['/login']" [preserveQueryParams]="true" type="button"
+            class="btn btn-outline-primary btn-block btn-raised btn-lg" i18n="@@Login">Sign in
+    </button>
+  </div>
+</div>

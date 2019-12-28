@@ -1,0 +1,19 @@
+<ngx-loading [show]="loading > 0"></ngx-loading>
+
+<div class="form-group mb-0">
+  <button type="button" class="btn btn-outline-primary btn-{{btnSize}}" (click)="selectItems()">
+    <ng-container *ngIf="!actionName" i18n="@@select">Select</ng-container>
+    <ng-container *ngIf="actionName">{{actionName}}</ng-container>
+  </button>
+</div>
+
+<ul class="list-group" *ngIf="showSelected">
+  <li *ngFor="let item of selectedItems" class="list-group-item no-border p-0 font-small-2">
+    <h5 class="m-0 p-0">
+      <i class="fa fa-times text-danger cursor-pointer" (click)="onRemove(item)"></i>&nbsp;&nbsp;
+      {{item.name}}
+      <small class="text-nowrap font-small-2 text-secondary" *ngIf="item.subName">&nbsp;&nbsp;{{item.subName}}</small>
+    </h5>
+
+  </li>
+</ul>
