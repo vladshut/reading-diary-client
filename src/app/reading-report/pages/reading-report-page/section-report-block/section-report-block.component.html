@@ -1,10 +1,10 @@
 <div class="card">
-  <div class="card-header">
-    <h5>{{name}}</h5>
+  <div class="card-header mb-0 pb-0">
+    <h5 class="d-inline-block"><i class="text-muted {{icon}}"></i>&nbsp;&nbsp;&nbsp;{{name}}<span *ngIf="!isSingle" class="text-muted">&nbsp;({{items.length}})</span></h5>
+    &nbsp;&nbsp;<i *ngIf="!isSingle" class="text-primary cursor-pointer fa fa-plus-circle" (click)="onCreate()"></i>
   </div>
 
-  <div class="card-block">
+  <div class="card-block pl-3 ">
     <app-report-item *ngFor="let item of items" [item]="item"></app-report-item>
   </div>
-
 </div>

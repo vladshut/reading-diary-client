@@ -1,25 +1,34 @@
-<div class="card">
-  <div class="card-header" *ngIf="_section">
-    <h4 i18n="@@reading_diary" class="card-title">{{this._section.name}}</h4>
-    <h6 class="card-subtitle text-muted">
-      <ng-container *ngIf="isSaving"><ng-container i18n="@@saving">Saving</ng-container>&nbsp;...</ng-container>
-      <ng-container *ngIf="!isSaving && savedTime"><ng-container i18n="@@saved">Saved</ng-container>&nbsp;{{savedTime.fromNow()}}</ng-container>
-    </h6>
-  </div>
-  <div class="card-body" *ngIf="report">
-    <div *ngIf="report.items.length === 0" class="card-block text-secondary">
-      <p i18n="@@report.no_entries_in_section_report">
-        There are no entries in this section report
-      </p>
+<ngx-loading [show]="isLoading()"></ngx-loading>
+<div class="pb-2 mb-2">
+  <div class="card mb-0">
+    <div class="card-header" *ngIf="_section">
+      <h4 i18n="@@reading_diary" class="card-title">{{this._section.name}}</h4>
+      <h6 class="card-subtitle text-muted">
+        <ng-container *ngIf="isSaving"><ng-container i18n="@@saving">Saving</ng-container>&nbsp;...</ng-container>
+        <ng-container *ngIf="!isSaving && savedTime"><ng-container i18n="@@saved">Saved</ng-container>&nbsp;{{savedTime.fromNow()}}</ng-container>
+      </h6>
     </div>
-    <ng-container *ngFor="let type of typesWithNames">
-      <app-section-report-block *ngIf="report.getItemsByType(type.type).length" [name]="type.name" [items]="report.getItemsByType(type.type)"></app-section-report-block>
-    </ng-container>
+    <div class="card-body" *ngIf="report">
+      <div class="line-divider m-0"></div>
+      <div *ngIf="report.items.length === 0" class="card-block text-secondary">
+        <p i18n="@@report.no_entries_in_section_report">
+          There are no entries in this section report
+        </p>
+      </div>
+      <ng-container *ngFor="let type of typesWithNames">
+        <app-section-report-block *ngIf="report.getItemsByType(type.type).length" [isSingle]="report.isSingleType(type.type)" (createItem)="onCreate(type.type)" [icon]="type.icon" [name]="report.isSingleType(type.type) ? type.name : type.pluralName" [items]="report.getItemsByType(type.type)"></app-section-report-block>
+      </ng-container>
+    </div>
   </div>
-</div>
-<div *ngIf="_section" class="btn-group-fab" (click)="isFabActive=!isFabActive" [ngClass]="{active: isFabActive}" role="group" aria-label="FAB Menu">
-  <div>
-    <button type="button" class="btn btn-main btn-primary btn-raised"> <i class="fas fa-pencil-alt"></i> </button>
-    <button *ngFor="let type of typesWithNames" type="button" class="btn-xs btn btn-sub btn-outline-primary" (click)="createReportItem(type.type)">{{type.name}}</button>
+  <div *ngIf="report" class="btn-group-fab" (click)="isFabActive=!isFabActive" [ngClass]="{active: isFabActive}" role="group" aria-label="FAB Menu">
+    <div>
+      <button type="button" class="btn btn-main btn-primary btn-raised"> <i class="fas fa-pencil-alt"></i> </button>
+      <ng-container *ngFor="let type of typesWithNames">
+        <button *ngIf="report.canAddItemOfType(type.type)" type="button" class="btn-xs btn btn-sub btn-outline-primary" (click)="createReportItem(type.type)">
+          {{type.name}}&nbsp;&nbsp;&nbsp;<i class="{{type.icon}}"></i>
+        </button>
+      </ng-container>
+    </div>
   </div>
+
 </div>

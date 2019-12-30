@@ -7,16 +7,17 @@ import {interval, Subscription} from "rxjs";
 import {finalize} from "rxjs/operators";
 import { Moment } from 'moment';
 import * as moment from 'moment';
+import {WithLoading} from "@app/mixins/WithLoading";
 
 @Component({
   selector: 'app-section-report',
   templateUrl: './section-report.component.html',
   styleUrls: ['./section-report.component.css']
 })
-export class SectionReportComponent implements OnInit, OnDestroy {
+export class SectionReportComponent extends WithLoading() implements OnInit, OnDestroy {
   _section: BookSection;
   report: SectionReport;
-  isFabActive: boolean = true;
+  isFabActive: boolean = false;
   typesWithNames = [];
   private timeToSaveSubscription: Subscription;
   private saveInterval = interval(10000);
@@ -25,10 +26,12 @@ export class SectionReportComponent implements OnInit, OnDestroy {
 
   constructor(
     private reportService: ReportService,
-  ) {}
+  ) {
+    super();
+  }
 
   ngOnInit() {
-    this.typesWithNames = ReportItem.getTypesWithNames();
+    this.typesWithNames = ReportItem.getTypesWithInfo();
 
     this.timeToSaveSubscription = this.saveInterval.subscribe(val => this.saveReport());
   }
@@ -40,9 +43,8 @@ export class SectionReportComponent implements OnInit, OnDestroy {
     }
 
     this._section = section;
-    this.reportService.getReportForSection(section.id).subscribe(
-      report => this.report = report
-    );
+    const report$ = this.reportService.getReportForSection(this._section.id);
+    this.withLoading(report$).subscribe(report => this.report = report);
   }
 
   createReportItem(type: ReportItemType) {
@@ -71,5 +73,9 @@ export class SectionReportComponent implements OnInit, OnDestroy {
         this.savedTime = moment();
       }
     );
+  }
+
+  onCreate(type: ReportItemType) {
+    this.report.createItem(type);
   }
 }

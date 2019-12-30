@@ -1,8 +1,8 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 <div class="card">
   <div class="card-body">
-    <div class="card-img">
-      <img *ngIf="userBook.book.cover" class="card-img-top img-fluid" src="{{userBook.book.cover}}" alt="Card image cap">
+    <div class="card-img" style="width: 100%; height: calc(13vw * (4/3));">
+      <img *ngIf="userBook.book.cover" style="object-fit: cover; width: 100%; height: 100%" class="card-img-top img-fluid" src="{{userBook.book.cover}}" alt="Card image cap">
       <img *ngIf="!userBook.book.cover" class="card-img-top img-fluid" src="/assets/img/book_preload.jpg" alt="Card image cap">
     </div>
     <div class="card-block p-0 pt-3 text-center">

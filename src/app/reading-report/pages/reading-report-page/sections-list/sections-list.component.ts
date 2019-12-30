@@ -42,16 +42,21 @@ export class SectionsListComponent extends WithLoading() implements OnInit {
   onSectionUpdated(event: SectionEvent, ref: SectionItemComponent) {
     const addedSection$ = this.bookSectionService.update(event.section);
     ref.withLoading(addedSection$).subscribe(updatedSection => {
-      const index = event.parent.children.findIndex(child => child.id === updatedSection.id);
       updatedSection.children = event.section.children;
-      event.parent.children[index] = updatedSection;
+
+      if (event.parent) {
+        const index = event.parent.children.findIndex(child => child.id === updatedSection.id);
+        event.parent.children[index] = updatedSection;
+      }
     });
   }
 
   onSectionRemoved(event: SectionEvent, ref: SectionItemComponent) {
     const deleteSection$ = this.bookSectionService.delete(event.section);
     ref.withLoading(deleteSection$).subscribe(() => {
-      event.parent.children = event.parent.children.filter(child => child.id !== event.section.id);
+      if (event.parent) {
+        event.parent.children = event.parent.children.filter(child => child.id !== event.section.id);
+      }
     });
   }
 

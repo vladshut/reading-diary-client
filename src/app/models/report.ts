@@ -1,18 +1,6 @@
 import {Type} from "class-transformer";
-import {
-  ReportItem,
-  ReportItemForwardResearch,
-  ReportItemGoal,
-  ReportItemInformationEvaluation,
-  ReportItemQuestion,
-  ReportItemQuote,
-  ReportItemRating,
-  ReportItemReference,
-  ReportItemResume,
-  ReportItemReview,
-  ReportItemTerm,
-  ReportItemType
-} from "@app/models/report-item";
+import {ReportItem, ReportItemType} from "@app/models/report-item";
+
 const ObjectID = require('bson').ObjectID;
 
 export class Report {
@@ -55,7 +43,22 @@ export class Report {
 export class SectionReport extends Report {
   bookSectionId: string;
 
+  singleItemsType: ReportItemType[] = [
+    ReportItemType.INFORMATION_EVALUATION,
+    ReportItemType.RATING,
+    ReportItemType.RESUME,
+    ReportItemType.REVIEW,
+  ];
+
+  isSingleType(type: ReportItemType) {
+    return this.singleItemsType.indexOf(type) !== -1;
+  }
+
   createItem(type: ReportItemType): ReportItem {
+    if (!this.canAddItemOfType(type)) {
+      return;
+    }
+
     const className: any = ReportItem.getClassNameByType(type);
     const item: ReportItem = new className();
     item.id = new ObjectID().toString();
@@ -67,6 +70,10 @@ export class SectionReport extends Report {
     this.items.push(item);
 
     return item;
+  }
+
+  canAddItemOfType(type: ReportItemType): boolean {
+    return !this.isSingleType(type) || this.items.find(i => i.type === type) === undefined;
   }
 }
 

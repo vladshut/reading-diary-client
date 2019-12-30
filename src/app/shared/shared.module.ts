@@ -50,6 +50,7 @@ import {NotificationSidebarComponent} from "@app/shared/components/notification-
 import {ToggleFullscreenDirective} from "@app/shared/directives/toggle-fullscreen.directive";
 import { ControlLangComponent } from './components/form/fields/control-lang/control-lang.component';
 import {FieldWrapperComponent} from "@app/shared/components/form/field-wrapper/field-wrapper.component";
+import { AutofocusDirective } from './directives/autofocus.directive';
 
 @NgModule({
   imports: [
@@ -115,6 +116,7 @@ import {FieldWrapperComponent} from "@app/shared/components/form/field-wrapper/f
     HideItForRolesDirective,
     ToggleFullscreenDirective,
     FieldWrapperComponent,
+    AutofocusDirective,
   ],
   declarations: [
     FooterComponent,
@@ -160,6 +162,8 @@ import {FieldWrapperComponent} from "@app/shared/components/form/field-wrapper/f
     PropertyViewComponent,
 
     ModalComponent,
+
+    AutofocusDirective,
   ],
   entryComponents: [
     SelectItemsModalComponent,

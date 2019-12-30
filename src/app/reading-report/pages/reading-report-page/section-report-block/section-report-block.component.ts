@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ReportItem} from "@app/models/report-item";
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ReportItem, ReportItemType} from "@app/models/report-item";
 
 @Component({
   selector: 'app-section-report-block',
@@ -8,11 +8,18 @@ import {ReportItem} from "@app/models/report-item";
 })
 export class SectionReportBlockComponent implements OnInit {
   @Input() name: string;
+  @Input() icon: string;
   @Input() items: ReportItem[] = [];
+  @Input() isSingle: boolean = false;
+
+  @Output() createItem = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onCreate() {
+    this.createItem.emit();
+  }
 }

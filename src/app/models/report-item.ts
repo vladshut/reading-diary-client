@@ -3,16 +3,16 @@ import {toTitleCase} from "codelyzer/util/utils";
 import {Constructor} from "@app/mixins/Constructor";
 
 export enum ReportItemType {
-  TERM = 'term',
   GOAL = 'goal',
+  TERM = 'term',
   QUOTE = 'quote',
-  QUESTION = 'question',
-  RESUME = 'resume',
   REFERENCE = 'reference',
+  RESUME = 'resume',
   INFORMATION_EVALUATION = 'information_evaluation',
+  QUESTION = 'question',
+  FORWARD_RESEARCH = 'forward_research',
   REVIEW = 'review',
   RATING = 'rating',
-  FORWARD_RESEARCH = 'forward_research',
 }
 
 export class ReportItem {
@@ -53,8 +53,13 @@ export class ReportItem {
     return Object.values(ReportItemType);
   }
 
-  static getTypesWithNames(): {name: string, type: ReportItemType}[] {
-    return ReportItem.getTypes().map(t => ({type: t, name: ReportItem.getNameFromType(t)}));
+  static getTypesWithInfo(): {name: string, icon: string, type: ReportItemType}[] {
+    return ReportItem.getTypes().map(t => ({
+      type: t,
+      name: ReportItem.getNameFromType(t),
+      pluralName: ReportItem.getPluralNameFromType(t),
+      icon: ReportItem.getIconForType(t),
+    }));
   }
 
   private static getNameFromType(type: ReportItemType) {
@@ -62,6 +67,17 @@ export class ReportItem {
     name = name.replace(/_/g, ' ');
 
     return toTitleCase(name);
+  }
+
+  private static getPluralNameFromType(type: ReportItemType) {
+    const singular = this.getNameFromType(type);
+    const map = [
+      {singular: 'Forward Research', plural: 'Forward Researches'}
+    ];
+
+    const mapItem = map.find(i => i.singular === singular);
+
+    return mapItem ? mapItem.plural : singular + 's';
   }
 
   public static getClassNameByType(type: ReportItemType) {
@@ -89,6 +105,21 @@ export class ReportItem {
 
   isNew() {
     return this._isNew;
+  }
+
+  private static getIconForType(t: ReportItemType) {
+    return [
+      {icon: 'fas fa-list-ul', type: ReportItemType.TERM},
+      {icon: 'fas fa-bullseye', type: ReportItemType.GOAL},
+      {icon: 'fas fa-quote-right', type: ReportItemType.QUOTE},
+      {icon: 'far fa-question-circle', type: ReportItemType.QUESTION},
+      {icon: 'far fa-file', type: ReportItemType.RESUME},
+      {icon: 'fas fa-link', type: ReportItemType.REFERENCE},
+      {icon: 'fas fa-info-circle', type: ReportItemType.INFORMATION_EVALUATION},
+      {icon: 'far fa-comment', type: ReportItemType.REVIEW},
+      {icon: 'far fa-star', type: ReportItemType.RATING},
+      {icon: 'fas fa-flask', type: ReportItemType.FORWARD_RESEARCH},
+    ].find(i => i.type === t).icon;
   }
 }
 

@@ -5,6 +5,7 @@ import {ReportItem} from "@app/models/report-item";
 import {plainToClassFromExist} from "class-transformer";
 import {ActionConfirmDialogComponent} from "@app/shared/components/action-confirm-dialog/action-confirm-dialog.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {validateAllFormFields} from "@app/shared/helpers/form.helper";
 
 export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> = Constructor<{}>>(Base: T = (class {} as any)) {
   abstract class Temporary extends Base {
@@ -35,8 +36,14 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
     }
 
     onCancelEdit() {
-      this.editMode = false;
       this.initForm();
+
+      validateAllFormFields(this.form);
+      this.form.updateValueAndValidity();
+
+      if (this.form.valid) {
+        this.editMode = false;
+      }
     }
 
     onDelete() {
