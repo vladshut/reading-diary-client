@@ -60,6 +60,7 @@
     "ngx-toastr": "^11.1.2",
     "ngx-ui-switch": "^8.2.0",
     "nouislider": "^14.0.3",
+    "path": "^0.12.7",
     "rxjs": "^6.5.3",
     "rxjs-compat": "^6.5.3",
     "screenfull": "^5.0.0",
