@@ -81,7 +81,7 @@ export class AddBookPageComponent implements OnInit {
     this.bookService.addNew(formData).subscribe(author => {
       this.alertService.created();
       this.requestFinished();
-      this.router.navigate(['/books']);
+      this.router.navigate(['/books/list']);
     });
   }
 

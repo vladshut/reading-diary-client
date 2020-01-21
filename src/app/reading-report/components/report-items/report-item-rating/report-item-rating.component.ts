@@ -29,4 +29,8 @@ export class ReportItemRatingComponent extends WithReportItem(ReportItemRating) 
     this.form.setValue({rating});
     this.onUpdate();
   }
+
+  ngOnInit() {
+    super.ngOnInit();
+  }
 }

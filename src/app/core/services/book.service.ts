@@ -45,4 +45,10 @@ export class BookService extends BaseService {
       map(data => plainToClass(UserBook, data))
     );
   }
+
+  get(userBookId: string):Observable<UserBook> {
+    return this.http.get<UserBook>(this.getUrl(`my/${userBookId}`)).pipe(
+      map(res => plainToClass(UserBook, res))
+    );
+  }
 }

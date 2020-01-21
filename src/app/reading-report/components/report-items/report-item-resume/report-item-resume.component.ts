@@ -27,4 +27,8 @@ export class ReportItemResumeComponent extends WithReportItem(ReportItemResume) 
 
     this.hover = false;
   }
+
+  ngOnInit() {
+    super.ngOnInit();
+  }
 }

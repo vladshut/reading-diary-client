@@ -8,6 +8,7 @@ import {finalize} from "rxjs/operators";
 import { Moment } from 'moment';
 import * as moment from 'moment';
 import {WithLoading} from "@app/mixins/WithLoading";
+import {UserBook} from "@app/models/user-book";
 
 @Component({
   selector: 'app-section-report',
@@ -15,6 +16,7 @@ import {WithLoading} from "@app/mixins/WithLoading";
   styleUrls: ['./section-report.component.css']
 })
 export class SectionReportComponent extends WithLoading() implements OnInit, OnDestroy {
+  @Input() userBook: UserBook;
   _section: BookSection;
   report: SectionReport;
   isFabActive: boolean = false;
@@ -31,6 +33,7 @@ export class SectionReportComponent extends WithLoading() implements OnInit, OnD
   }
 
   ngOnInit() {
+    console.log(this.userBook);
     this.typesWithNames = ReportItem.getTypesWithInfo();
 
     this.timeToSaveSubscription = this.saveInterval.subscribe(val => this.saveReport());

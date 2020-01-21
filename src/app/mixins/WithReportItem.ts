@@ -1,5 +1,5 @@
 import {Constructor} from "@app/mixins/Constructor";
-import {EventEmitter, Input, Output} from "@angular/core";
+import {Input, OnInit} from "@angular/core";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ReportItem} from "@app/models/report-item";
 import {plainToClassFromExist} from "class-transformer";
@@ -7,8 +7,8 @@ import {ActionConfirmDialogComponent} from "@app/shared/components/action-confir
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {validateAllFormFields} from "@app/shared/helpers/form.helper";
 
-export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> = Constructor<{}>>(Base: T = (class {} as any)) {
-  abstract class Temporary extends Base {
+export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> = Constructor<{}>>(Base: T = (class {} as any))  {
+  abstract class Temporary extends Base implements OnInit {
     @Input() item: T2;
 
     form: FormGroup;
@@ -47,8 +47,8 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
     }
 
     onDelete() {
-
       const modalRef = this.ngbModal.open(ActionConfirmDialogComponent, {size: 'lg'});
+
       modalRef.componentInstance.text = 'Are you sure you want to delete this item?';
       modalRef.componentInstance.confirmed.subscribe(() => {
         this.item.delete();

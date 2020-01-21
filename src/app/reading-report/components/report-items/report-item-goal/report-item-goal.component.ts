@@ -22,10 +22,14 @@ export class ReportItemGoalComponent extends WithReportItem(ReportItemGoal) impl
 
   protected initForm(): void {
     this.form = this.formBuilder.group({
-      goal: [this.item.goal, Validators.required],
-      goal_result: [this.item.goal_result],
+      goal: [this.item ? this.item.goal : null, Validators.required],
+      goal_result: [this.item ? this.item.goal_result : null],
     });
 
     this.hover = false;
+  }
+
+  ngOnInit() {
+    super.ngOnInit();
   }
 }

@@ -26,7 +26,7 @@ export class BaseService {
 
     url = this.baseUrl + url;
 
-    return url;
+    return url.trimChars('/');
   }
 
   protected toFormData(data: any, files: File[] | FileList = []) {

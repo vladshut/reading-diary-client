@@ -7,7 +7,7 @@ export class BookSection {
   children: BookSection[] = [];
 
   isRoot() {
-    return this.parent === undefined;
+    return !this.parent_id;
   }
 
   isLeaf() {

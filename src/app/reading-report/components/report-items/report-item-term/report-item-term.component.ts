@@ -29,4 +29,8 @@ export class ReportItemTermComponent extends WithReportItem<ReportItemTerm>() im
 
     this.hover = false;
   }
+
+  ngOnInit() {
+    super.ngOnInit();
+  }
 }

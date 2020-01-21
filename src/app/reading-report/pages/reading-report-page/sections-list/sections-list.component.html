@@ -6,7 +6,7 @@
 
     <ul *ngIf="content">
       <app-section-item [section]="content"
-                        [isActive]="isBookSectionSelected"
+                        [selectedSectionId]="activeSectionId"
                         (sectionAdded)="onSectionAdded($event, contentComponent)"
                         (sectionUpdated)="onSectionUpdated($event, contentComponent)"
                         (sectionRemoved)="onSectionRemoved($event, contentComponent)"

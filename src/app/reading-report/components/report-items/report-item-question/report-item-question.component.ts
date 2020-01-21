@@ -27,4 +27,8 @@ export class ReportItemQuestionComponent extends WithReportItem(ReportItemQuesti
 
     this.hover = false;
   }
+
+  ngOnInit() {
+    super.ngOnInit();
+  }
 }

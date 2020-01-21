@@ -28,4 +28,8 @@ export class ReportItemQuoteComponent extends WithReportItem(ReportItemQuote) im
 
     this.hover = false;
   }
+
+  ngOnInit() {
+    super.ngOnInit();
+  }
 }

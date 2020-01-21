@@ -56,7 +56,10 @@ export class AuthorFormModalComponent implements OnInit {
     const bd = formData.birth_date;
     const dd = formData.death_date;
     formData.birth_date = moment(`${bd['year']}-${bd['month']}-${bd['day']}`, 'YYYY-M-D').format('YYYY-M-D');
-    formData.death_date = moment(`${dd['year']}-${dd['month']}-${dd['day']}`, 'YYYY-M-D').format('YYYY-M-D');
+
+    if (dd) {
+      formData.death_date = moment(`${dd['year']}-${dd['month']}-${dd['day']}`, 'YYYY-M-D').format('YYYY-M-D');
+    }
 
     this.loading ++;
 

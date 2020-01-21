@@ -15,7 +15,7 @@ export interface SectionEvent {section: BookSection, parent?: BookSection}
 })
 export class SectionItemComponent extends WithLoading() implements OnInit {
   @Input() section: BookSection;
-  @Input() isActive: (section: BookSection) => boolean;
+  @Input() selectedSectionId: string;
   @Output() sectionAdded = new EventEmitter<SectionEvent>();
   @Output() sectionUpdated = new EventEmitter<SectionEvent>();
   @Output() sectionRemoved = new EventEmitter<SectionEvent>();
@@ -138,5 +138,9 @@ export class SectionItemComponent extends WithLoading() implements OnInit {
 
   onSelect() {
     this.sectionSelected.emit({section: this.section});
+  }
+
+  isSelected(): boolean {
+    return this.section.id === this.selectedSectionId;
   }
 }

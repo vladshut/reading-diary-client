@@ -68,8 +68,4 @@ export class SectionsListComponent extends WithLoading() implements OnInit {
     this.activeSectionId = section.id;
     this.sectionSelected.emit(section);
   }
-
-  isBookSectionSelected(section: BookSection) {
-    return this.activeSectionId === section.id;
-  }
 }

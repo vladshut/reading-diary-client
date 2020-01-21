@@ -27,4 +27,8 @@ export class ReportItemReferenceComponent extends WithReportItem(ReportItemRefer
 
     this.hover = false;
   }
+
+  ngOnInit() {
+    super.ngOnInit();
+  }
 }

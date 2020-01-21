@@ -1,7 +1,7 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 <li>
   <ng-container *ngIf="!editMode">
-    <span (click)="onSelect()" class="cursor-pointer" [ngClass]="{'text-primary': isActive(section)}">{{section.name}}</span>
+    <span (click)="onSelect()" class="cursor-pointer" [ngClass]="{'text-primary': isSelected()}">{{section.name}}</span>
     <ng-container *ngIf="!addMode">
       &nbsp;&nbsp;<i class="text-primary cursor-pointer fa fa-plus-circle" (click)="onAdd()"></i>
     </ng-container>
@@ -36,7 +36,7 @@
       </form>
     </li>
     <app-section-item *ngFor="let subSection of section.children" [section]="subSection"
-                      [isActive]="isActive"
+                      [selectedSectionId]="selectedSectionId"
                       (sectionAdded)="onSubSectionAdded($event)"
                       (sectionUpdated)="onSubSectionUpdated($event)"
                       (sectionRemoved)="onSubSectionRemoved($event)"
