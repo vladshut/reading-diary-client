@@ -13,6 +13,8 @@ import {registerLocaleData} from "@angular/common";
 import {CountryPickerModule} from "ngx-country-picker";
 import {JwtModule} from "@auth0/angular-jwt";
 import localeEnNl from '@angular/common/locales/en-NL';
+import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
+
 
 @NgModule({
   imports: [
@@ -33,6 +35,7 @@ import localeEnNl from '@angular/common/locales/en-NL';
 
     CoreModule,
     SharedModule,
+    PDFExportModule,
   ],
   declarations: [
     AppComponent,

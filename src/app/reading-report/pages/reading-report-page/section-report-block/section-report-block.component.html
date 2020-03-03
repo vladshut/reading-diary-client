@@ -1,10 +1,15 @@
 <div class="card">
-  <div class="card-header mb-0 pb-0">
+  <div class="card-header mb-0 pb-0 pl-0">
     <h5 class="d-inline-block"><i class="text-muted {{icon}}"></i>&nbsp;&nbsp;&nbsp;{{name}}<span *ngIf="!isSingle" class="text-muted">&nbsp;({{items.length}})</span></h5>
-    &nbsp;&nbsp;<i *ngIf="!isSingle" class="text-primary cursor-pointer fa fa-plus-circle" (click)="onCreate()"></i>
+    <ng-container *appShowItForAuthenticated>
+      &nbsp;&nbsp;<i *ngIf="!isSingle" class="text-primary cursor-pointer fa fa-plus-circle" title="Add new item" (click)="onCreate()"></i>
+      &nbsp;&nbsp;<i *ngIf="!isSingle" class="text-secondary cursor-pointer fa fa-copy" title="Copy to clipboard" (click)="onCopy()"></i>
+      <span *ngIf="!isSingle && !isPrivate()">&nbsp;&nbsp;<i class="text-warning cursor-pointer fa fa-eye-slash" title="Make it private" (click)="makePrivate()"></i></span>
+      <span *ngIf="!isSingle && isPrivate()">&nbsp;&nbsp;<i *ngIf="!isSingle && isPrivate()" class="text-success cursor-pointer fa fa-eye" title="Make it public" (click)="makePublic()"></i></span>
+    </ng-container>
   </div>
 
-  <div class="card-block pl-3 ">
+  <div class="card-block">
     <app-report-item *ngFor="let item of items" [item]="item"></app-report-item>
   </div>
 </div>

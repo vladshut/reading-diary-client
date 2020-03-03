@@ -350,6 +350,38 @@
           <context context-type="sourcefile">app/reading-report/components/report-items/report-item-term/report-item-term.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-goal/report-item-goal.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-quote/report-item-quote.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-question/report-item-question.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-resume/report-item-resume.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-reference/report-item-reference.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-information-evaluation/report-item-information-evaluation.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-review/report-item-review.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-forward-research/report-item-forward-research.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
       </trans-unit><trans-unit id="actions.select" datatype="html">
         <source>Select</source>
         <context-group purpose="location">
@@ -580,11 +612,17 @@
           <context context-type="sourcefile">app/books/component/user-book-item/user-book-item.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
+      </trans-unit><trans-unit id="book.actions.view_report" datatype="html">
+        <source>View Report</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/books/component/user-book-item/user-book-item.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
       </trans-unit><trans-unit id="book.status.read" datatype="html">
         <source>Completed</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/books/component/user-book-item/user-book-item.component.html</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit><trans-unit id="my_library" datatype="html">
         <source>My Library</source>
@@ -717,37 +755,63 @@
           <context context-type="sourcefile">app/reading-report/pages/reading-report-page/sections-list/sections-list.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
-      </trans-unit><trans-unit id="reading_diary" datatype="html">
-        <source><x id="INTERPOLATION" equiv-text="{{this._section.name}}"/></source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-report/section-report.component.html</context>
-          <context context-type="linenumber">3</context>
-        </context-group>
       </trans-unit><trans-unit id="saving" datatype="html">
         <source>Saving</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-report/section-report.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit><trans-unit id="saved" datatype="html">
         <source>Saved</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-report/section-report.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit><trans-unit id="report.no_entries_in_section_report" datatype="html">
         <source>
-        There are no entries in this section report
-      </source>
+          There are no entries in this section report
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-report/section-report.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit><trans-unit id="actions.update" datatype="html">
         <source>Update</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/components/report-items/report-item-term/report-item-term.component.html</context>
           <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-goal/report-item-goal.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-quote/report-item-quote.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-question/report-item-question.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-resume/report-item-resume.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-reference/report-item-reference.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-information-evaluation/report-item-information-evaluation.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-review/report-item-review.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-forward-research/report-item-forward-research.component.html</context>
+          <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
       <trans-unit id="auth.forgot_password.alert.success" datatype="html">
@@ -954,6 +1018,13 @@
         <source>Do you really want to delete book section?</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/reading-report/pages/reading-report-page/section-item/section-item.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="finish_reading_confirmation" datatype="html">
+        <source>Do you really want to complete this book?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/reading-report/pages/reading-report-page/section-report/section-report.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>

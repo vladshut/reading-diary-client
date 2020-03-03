@@ -11,6 +11,7 @@ export class UserBookItemComponent extends WithLoading() implements OnInit {
   @Input() userBook: UserBook;
   @Output() startReading = new EventEmitter<UserBook>();
   @Output() continueReading = new EventEmitter<UserBook>();
+  @Output() viewReport = new EventEmitter<UserBook>();
 
   constructor() {
     super();
@@ -25,5 +26,9 @@ export class UserBookItemComponent extends WithLoading() implements OnInit {
 
   onContinueReading() {
     this.continueReading.emit(this.userBook);
+  }
+
+  onViewReport() {
+    this.viewReport.emit(this.userBook);
   }
 }

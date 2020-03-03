@@ -51,6 +51,8 @@ import {ToggleFullscreenDirective} from "@app/shared/directives/toggle-fullscree
 import { ControlLangComponent } from './components/form/fields/control-lang/control-lang.component';
 import {FieldWrapperComponent} from "@app/shared/components/form/field-wrapper/field-wrapper.component";
 import { AutofocusDirective } from './directives/autofocus.directive';
+import {ShowItForAuthenticatedDirective} from "@app/shared/directives/show-it-for-authenticated.directive";
+import {PDFExportModule} from "@progress/kendo-angular-pdf-export";
 
 @NgModule({
   imports: [
@@ -70,6 +72,7 @@ import { AutofocusDirective } from './directives/autofocus.directive';
     NgMathPipesModule,
     NgBytesPipeModule,
     BsDropdownModule.forRoot(),
+    PDFExportModule,
   ],
   exports: [
     CommonModule,
@@ -113,6 +116,7 @@ import { AutofocusDirective } from './directives/autofocus.directive';
 
     ReadMoreDirective,
     ShowItForRolesDirective,
+    ShowItForAuthenticatedDirective,
     HideItForRolesDirective,
     ToggleFullscreenDirective,
     FieldWrapperComponent,
@@ -137,6 +141,7 @@ import { AutofocusDirective } from './directives/autofocus.directive';
     ShowItForRolesDirective,
     HideItForRolesDirective,
     ToggleFullscreenDirective,
+    ShowItForAuthenticatedDirective,
 
     CurrPipe,
     PercPipe,

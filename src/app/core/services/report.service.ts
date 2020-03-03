@@ -25,8 +25,16 @@ export class ReportService extends BaseService {
     );
   }
 
-  saveReportItemsForSection(bookSectionId: string): Observable<SectionReport> {
-    const storedReport = this.findStoredReportBySectionId(bookSectionId);
+  saveReportItemsForSection(bookSectionId: string | SectionReport): Observable<SectionReport> {
+    let storedReport;
+    console.log(bookSectionId);
+
+    if (typeof bookSectionId === 'string' || typeof bookSectionId === 'number') {
+      storedReport = this.findStoredReportBySectionId(bookSectionId);
+    } else {
+      storedReport = bookSectionId;
+      this.addStoredReport(storedReport)
+    }
 
     if (!storedReport) {
       return of(plainToClass(SectionReport, {items: [], bookSectionId}));
@@ -41,14 +49,14 @@ export class ReportService extends BaseService {
 
     const data = {updatedItems: classToPlain(itemsToUpdate), deletedItems: itemsToDelete.map(i => i.id)};
 
-    return this.http.post(this.getUrl('save-book-section-report', {bookSectionId}), data)
+    return this.http.post(this.getUrl('save-book-section-report', {bookSectionId: storedReport.bookSectionId}), data)
       .pipe(
         map(items => {
           return storedReport;
         }),
         tap(report => {
           report.clearDeletedItems();
-          report.markAsUpdated();
+          itemsToUpdate.forEach(i => i.markAsUpdated());
         }),
       );
   }

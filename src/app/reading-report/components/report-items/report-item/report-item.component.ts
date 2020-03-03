@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ReportItem} from "@app/models/report-item";
 
 @Component({
@@ -8,6 +8,7 @@ import {ReportItem} from "@app/models/report-item";
 })
 export class ReportItemComponent implements OnInit {
   @Input() item: ReportItem;
+  @Output() editingCancelled = new EventEmitter<ReportItem>();
 
   constructor() { }
 

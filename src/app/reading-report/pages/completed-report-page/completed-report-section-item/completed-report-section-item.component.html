@@ -1,0 +1,47 @@
+<ngx-loading [show]="isLoading()"></ngx-loading>
+<div class="card">
+  <div class="card-block" [ngStyle]="{ 'padding-left': (50 + deep * 20) + 'px' }">
+    <div class="pb-2 mb-2">
+      <ng-container *ngIf="!section.isRoot()">
+        <h1 *ngIf="deep === 0">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h1>
+        <h2 *ngIf="deep === 1">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h2>
+        <h3 *ngIf="deep === 2">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h3>
+        <h4 *ngIf="deep === 3">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h4>
+        <h5 *ngIf="deep === 4">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h5>
+        <h6 *ngIf="deep === 5">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h6>
+      </ng-container>
+
+      <div class="d-flex justify-content-between" *appShowItForAuthenticated>
+        <div ngbDropdown class="dropdown">
+          <button ngbDropdownToggle class="btn btn-sm btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" i18n="actions.add">
+            Add
+          </button>
+          <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <ng-container *ngFor="let type of typesWithNames">
+              <span *ngIf="section.report.canAddItemOfType(type.type)" class="cursor-pointer dropdown-item" (click)="createReportItem(type.type)">{{type.name}}</span>
+            </ng-container>
+          </div>
+        </div>
+
+        <p class="text-muted ml-3 pt-1">
+          <ng-container *ngIf="isSaving" i18n="@@saved">Saving...</ng-container>
+          <ng-container *ngIf="!isSaving && savedTime"><ng-container i18n="@@saved">Saved</ng-container>&nbsp;{{savedTime.fromNow()}}</ng-container>
+        </p>
+      </div>
+      <div *ngIf="section.report.items.length === 0" class="w-100">
+        <p i18n="@@report.no_entries_in_section_report" class="text-secondary">
+          There are no entries in this section report
+        </p>
+      </div>
+      <ng-container *ngFor="let type of typesWithNames">
+        <app-section-report-block *ngIf="section.report.getItemsByType(type.type).length"
+                                  [isSingle]="section.report.isSingleType(type.type)"
+                                  (createItem)="onCreate(type.type)"
+                                  [icon]="type.icon" [name]="section.report.isSingleType(type.type) ? type.name : type.pluralName"
+                                  [items]="section.report.getItemsByType(type.type)">
+        </app-section-report-block>
+      </ng-container>
+    </div>
+    <app-completed-report-section-item [deep]="deep + 1" *ngFor="let subSection of section.children" [section]="subSection"></app-completed-report-section-item>
+  </div>
+</div>

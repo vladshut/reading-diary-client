@@ -1,18 +1,22 @@
 import {Constructor} from "@app/mixins/Constructor";
-import {Input, OnInit} from "@angular/core";
+import {EventEmitter, Input, OnInit, Output} from "@angular/core";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {ReportItem} from "@app/models/report-item";
 import {plainToClassFromExist} from "class-transformer";
 import {ActionConfirmDialogComponent} from "@app/shared/components/action-confirm-dialog/action-confirm-dialog.component";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {validateAllFormFields} from "@app/shared/helpers/form.helper";
+import {AlertService} from "@app/core/services/alert.service";
+import {copyToClipboard} from "@app/shared/helpers/functions.helper";
 
 export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> = Constructor<{}>>(Base: T = (class {} as any))  {
   abstract class Temporary extends Base implements OnInit {
     @Input() item: T2;
+    @Output() editingCancelled = new EventEmitter<ReportItem>();
 
     form: FormGroup;
     editMode = false;
+    protected alertService: AlertService;
     protected formBuilder: FormBuilder;
     protected ngbModal: NgbModal;
 
@@ -28,7 +32,10 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
         return;
       }
 
-      plainToClassFromExist(this.item, this.form.value);
+      const formValue = this.form.value;
+      Object.keys(formValue).forEach(k => formValue[k] = typeof formValue[k] == 'string' ? formValue[k].trim() : formValue[k]);
+
+      plainToClassFromExist(this.item, formValue);
 
       this.editMode = false;
       this.item.markAsNeedUpdate();
@@ -44,6 +51,12 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
       if (this.form.valid) {
         this.editMode = false;
       }
+
+      console.log(this.item.isNew(), this.item.isNeedUpdate());
+
+      if (this.item.isNew()) {
+        this.item.delete();
+      }
     }
 
     onDelete() {
@@ -55,6 +68,19 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
       });}
 
     protected abstract initForm(): void;
+
+
+    onCopy() {
+      copyToClipboard(this.item.asFormattedString);
+
+      if (this.alertService) {
+        this.alertService.info('Copied to clipboard');
+      }
+    }
+
+    onSwitchVisibility() {
+      this.item.switchPrivacy();
+    }
   }
 
   return Temporary;

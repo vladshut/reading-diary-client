@@ -2,7 +2,7 @@
   <div class="form-body">
     <div class="row">
       <div class="col-md-4 form-group">
-        <input type="text" placeholder="Term" i18n="@@term" formControlName="term" class="form-control form-control-sm" appAutofocus>
+        <input type="text" placeholder="Term" i18n="@@term" formControlName="term" class="form-control form-control-sm" appAutofocus (escapePressed)="onCancelEdit()">
         <app-control-messages [control]="form.controls.term"></app-control-messages>
       </div>
       <div class="col-md-8 form-group">
@@ -17,9 +17,7 @@
   </div>
 </form>
 <div class="d-flex" *ngIf="!editMode" (mouseover)="hover = true" (mouseleave)="hover = false">
-  <div class="pr-1" style="min-width: 30px">
-    <i *ngIf="hover" class="far fa-trash-alt text-danger cursor-pointer" (click)="onDelete()"></i>
-  </div>
+  <app-report-item-actions (copy)="onCopy()" (delete)="onDelete()" (switchVisibility)="onSwitchVisibility()" [isPublic]="item.isPublic()" [visible]="hover"></app-report-item-actions>
   <div (click)="editMode = true">
     <p><span class="font-italic">{{item.term}}</span>&nbsp;&nbsp;-&nbsp;&nbsp;<span class="text-muted">{{item.term_definition}}</span></p>
   </div>

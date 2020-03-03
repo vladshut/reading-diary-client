@@ -1,21 +1,26 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 <div class="pb-2 mb-2">
   <div class="card mb-0">
-    <div class="card-header mb-0 pb-0" *ngIf="_section && userBook">
-      <h2 class="card-title text-capitalize">
-        {{userBook.book.title}}&nbsp;&nbsp;<span class="text-muted">Report</span>
-      </h2>
-      <h4 class="card-subtitle text-capitalize" *ngIf="_section.isLeaf()">
-        {{_section.name}}&nbsp;&nbsp;<span class="text-muted">Section</span>
-      </h4>
-      <h4 class="card-subtitle text-capitalize" *ngIf="_section.isRoot()">
-        <span class="text-muted">General</span>
-      </h4>
-      <h6 class="card-subtitle text-muted text-right mb-0 mt-0 pt-0 pb-0">
-        &nbsp;
-        <ng-container *ngIf="isSaving"><ng-container i18n="@@saving">Saving</ng-container>&nbsp;...</ng-container>
-        <ng-container *ngIf="!isSaving && savedTime"><ng-container i18n="@@saved">Saved</ng-container>&nbsp;{{savedTime.fromNow()}}</ng-container>
-      </h6>
+    <div class="card-header mb-0 pb-0 d-flex justify-content-between" *ngIf="_section && userBook">
+      <div>
+        <h2 class="card-title text-capitalize">
+          {{userBook.book.title}}&nbsp;&nbsp;<span class="text-muted">Report</span>
+        </h2>
+        <h4 class="card-subtitle text-capitalize" *ngIf="_section.isLeaf()">
+          {{_section.name}}&nbsp;&nbsp;<span class="text-muted">Section</span>
+        </h4>
+        <h4 class="card-subtitle text-capitalize" *ngIf="_section.isRoot()">
+          <span class="text-muted">General</span>
+        </h4>
+      </div>
+      <div>
+        <button class="btn btn-outline-success d-block btn-sm" (click)="onCompleteReading()">Complete reading</button>
+        <h6 class="card-subtitle text-muted text-right mb-0 mt-0 pt-0 pb-0">
+          &nbsp;
+          <ng-container *ngIf="isSaving"><ng-container i18n="@@saving">Saving</ng-container>&nbsp;...</ng-container>
+          <ng-container *ngIf="!isSaving && savedTime"><ng-container i18n="@@saved">Saved</ng-container>&nbsp;{{savedTime.fromNow()}}</ng-container>
+        </h6>
+      </div>
     </div>
     <div class="card-body" *ngIf="report" style="min-height: 600px">
       <div class="line-divider mb-0"></div>

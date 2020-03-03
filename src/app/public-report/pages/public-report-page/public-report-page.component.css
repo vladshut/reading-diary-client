@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'DejaVu Sans';
+  src: url('/assets/fonts/DejaVuSans.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: "open sans";
+  src: url("/assets/fonts/Open_Sans/OpenSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "open sans";
+  font-weight: bold;
+  src: url("/assets/fonts/Open_Sans/OpenSans-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "open sans";
+  font-style: italic;
+  src: url("/assets/fonts/Open_Sans/OpenSans-Italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "open sans";
+  font-weight: bold;
+  font-style: italic;
+  src: url("/assets/fonts/Open_Sans/OpenSans-BoldItalic.ttf") format("truetype");
+}
+
+kendo-pdf-export {
+  font-family: "open sans", "Arial", sans-serif;
+  font-size: 5px;
+}

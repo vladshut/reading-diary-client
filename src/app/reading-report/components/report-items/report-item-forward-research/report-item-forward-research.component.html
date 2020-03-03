@@ -2,7 +2,7 @@
   <div class="form-body">
     <div class="row">
       <div class="col-12 form-group">
-        <textarea rows="5" placeholder="Forward research" i18n="@@forward_research" class="form-control form-control-sm" formControlName="forward_research" appAutofocus></textarea>
+        <textarea rows="5" placeholder="Forward research" i18n="@@forward_research" class="form-control form-control-sm" formControlName="forward_research" appAutofocus (escapePressed)="onCancelEdit()"></textarea>
         <app-control-messages [control]="form.controls.forward_research"></app-control-messages>
       </div>
     </div>
@@ -13,10 +13,10 @@
   </div>
 </form>
 <div class="d-flex" *ngIf="!editMode" (mouseover)="hover = true" (mouseleave)="hover = false">
-  <div class="pr-1" style="min-width: 30px">
-    <i *ngIf="hover" class="far fa-trash-alt text-danger cursor-pointer" (click)="onDelete()"></i>
-  </div>
+  <app-report-item-actions (copy)="onCopy()" (delete)="onDelete()" (switchVisibility)="onSwitchVisibility()" [isPublic]="item.isPublic()" [visible]="hover"></app-report-item-actions>
   <div (click)="editMode = true">
     <p>{{item.forward_research}}</p>
   </div>
 </div>
+
+

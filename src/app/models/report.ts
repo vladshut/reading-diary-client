@@ -27,16 +27,12 @@ export class Report {
     return this.items.filter(i => i.isNeedUpdate());
   }
 
-  public getItemsToDelete() {
+  public getItemsToDelete(): ReportItem[] {
     return this.items.filter(i => i.isDeleted());
   }
 
   public clearDeletedItems() {
     this.items = this.items.filter(i => !i.isDeleted());
-  }
-
-  public markAsUpdated() {
-   this.items.forEach(i => i.markAsUpdated());
   }
 }
 

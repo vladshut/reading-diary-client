@@ -30,7 +30,6 @@ export class ReadingReportPageComponent extends WithLoading() implements OnInit 
     const book$ = this.bookService.get(this.userBookId);
     this.withLoading(book$).subscribe(ub => {
       this.userBook = ub;
-      console.log(ub);
     });
   }
 

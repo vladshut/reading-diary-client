@@ -18,15 +18,27 @@ import { ReportItemReviewComponent } from './components/report-items/report-item
 import { ReportItemRatingComponent } from './components/report-items/report-item-rating/report-item-rating.component';
 import { ReportItemForwardResearchComponent } from './components/report-items/report-item-forward-research/report-item-forward-research.component';
 import {NgxStarsModule} from "ngx-stars";
+import { CompletedReportPageComponent } from './pages/completed-report-page/completed-report-page.component';
+import { CompletedReportSectionItemComponent } from './pages/completed-report-page/completed-report-section-item/completed-report-section-item.component';
+import { ManagePublicAccessModalComponent } from './modals/manage-public-access-modal/manage-public-access-modal.component';
+import { ReportItemActionsComponent } from './components/report-items/report-item-actions/report-item-actions.component';
+import {PDFExportModule} from "@progress/kendo-angular-pdf-export";
 
 
 
 @NgModule({
-  declarations: [ReadingReportPageComponent, SectionItemComponent, SectionsListComponent, SectionReportComponent, SectionReportBlockComponent, ReportItemComponent, ReportItemTermComponent, ReportItemGoalComponent, ReportItemQuoteComponent, ReportItemQuestionComponent, ReportItemResumeComponent, ReportItemReferenceComponent, ReportItemInformationEvaluationComponent, ReportItemReviewComponent, ReportItemRatingComponent, ReportItemForwardResearchComponent],
+  declarations: [ReadingReportPageComponent, SectionItemComponent, SectionsListComponent, SectionReportComponent, SectionReportBlockComponent, ReportItemComponent, ReportItemTermComponent, ReportItemGoalComponent, ReportItemQuoteComponent, ReportItemQuestionComponent, ReportItemResumeComponent, ReportItemReferenceComponent, ReportItemInformationEvaluationComponent, ReportItemReviewComponent, ReportItemRatingComponent, ReportItemForwardResearchComponent, CompletedReportPageComponent, CompletedReportSectionItemComponent, ManagePublicAccessModalComponent, ReportItemActionsComponent],
+  exports: [
+    CompletedReportSectionItemComponent
+  ],
     imports: [
         SharedModule,
         ReadingReportRoutingModule,
         NgxStarsModule,
-    ]
+        PDFExportModule,
+    ],
+  entryComponents: [
+    ManagePublicAccessModalComponent,
+  ],
 })
 export class ReadingReportModule { }

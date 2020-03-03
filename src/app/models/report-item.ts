@@ -23,6 +23,7 @@ export class ReportItem {
   private _needUpdate: boolean = false;
   private _deleted: boolean = false;
   private _isNew: boolean = false;
+  private visibility: boolean = true;
 
   markAsNeedUpdate() {
     this._needUpdate = true;
@@ -121,48 +122,121 @@ export class ReportItem {
       {icon: 'fas fa-flask', type: ReportItemType.FORWARD_RESEARCH},
     ].find(i => i.type === t).icon;
   }
+
+
+  get asFormattedString() {
+    return '';
+  }
+
+  switchPrivacy() {
+    this.visibility = !this.visibility;
+    this.markAsNeedUpdate();
+  }
+
+  isPublic() {
+    return this.visibility === true;
+  }
+
+  isPrivate() {
+    return this.visibility === false;
+  }
+
+  makePrivate(): void {
+    if (this.visibility === true) {
+      this.visibility = false;
+      this.markAsNeedUpdate();
+    }
+  }
+
+  makePublic(): void {
+    if (this.visibility === false) {
+      this.visibility = true;
+      this.markAsNeedUpdate()
+    }
+  }
 }
 
 export class ReportItemTerm extends ReportItem {
-  term: string;
-  term_definition: string;
+  term: string = '';
+  term_definition: string = '';
+
+  get asFormattedString() {
+    return this.term + ' - ' + this.term_definition;
+  }
 }
 
 export class ReportItemGoal extends ReportItem {
-  goal: string;
+  goal: string = '';
   goal_result: string = '';
   goal_is_reached: boolean = false;
+
+
+  get asFormattedString() {
+    return this.goal + '\nSolution: ' + (this.goal_result ? this.goal_result : '-');
+  }
 }
 
 export class ReportItemQuote extends ReportItem {
-  quote: string;
+  quote: string = '';
   quote_note: string = '';
+
+  get asFormattedString() {
+    return this.quote + '\nNote: ' + (this.quote_note ? this.quote_note : '-');
+  }
 }
 
 export class ReportItemQuestion extends ReportItem {
-  question: string;
+  question: string = '';
+
+  get asFormattedString() {
+    return this.question;
+  }
 }
 
 export class ReportItemResume extends ReportItem {
-  resume: string;
+  resume: string = '';
+
+  get asFormattedString() {
+    return this.resume;
+  }
 }
 
 export class ReportItemReference extends ReportItem {
-  reference: string;
+  reference: string = '';
+
+  get asFormattedString() {
+    return this.reference;
+  }
 }
 
 export class ReportItemInformationEvaluation extends ReportItem {
-  information_evaluation: string;
+  information_evaluation: string = '';
+
+  get asFormattedString() {
+    return this.information_evaluation;
+  }
 }
 
 export class ReportItemReview extends ReportItem {
-  review: string;
+  review: string = '';
+
+  get asFormattedString() {
+    return this.review;
+  }
 }
 
 export class ReportItemRating extends ReportItem {
   rating: number;
+
+  get asFormattedString() {
+    return '' + this.rating;
+  }
 }
 
 export class ReportItemForwardResearch extends ReportItem {
-  forward_research: number;
+  forward_research: string = '';
+
+  get asFormattedString() {
+    return this.forward_research;
+  }
 }

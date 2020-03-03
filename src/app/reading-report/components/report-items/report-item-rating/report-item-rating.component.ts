@@ -3,6 +3,7 @@ import {WithReportItem} from "@app/mixins/WithReportItem";
 import {ReportItemGoal, ReportItemRating} from "@app/models/report-item";
 import {FormBuilder, Validators} from "@angular/forms";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {AuthService} from "@app/core/services/auth.service";
 
 @Component({
   selector: 'app-report-item-rating',
@@ -15,6 +16,7 @@ export class ReportItemRatingComponent extends WithReportItem(ReportItemRating) 
   constructor(
     protected formBuilder: FormBuilder,
     protected ngbModal: NgbModal,
+    protected auth: AuthService,
   ) {
     super();
   }

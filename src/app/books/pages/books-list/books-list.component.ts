@@ -45,4 +45,8 @@ export class BooksListComponent extends WithLoading() implements OnInit {
   private navigateToUserBookReport(ub: UserBook): void {
     this.router.navigate([`/reading-report/${ub.id}`]);
   }
+
+  onViewReport(ub: UserBook) {
+    this.router.navigate([`/reading-report/completed/${ub.id}`]);
+  }
 }

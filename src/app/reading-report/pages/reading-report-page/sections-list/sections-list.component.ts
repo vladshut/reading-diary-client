@@ -27,7 +27,7 @@ export class SectionsListComponent extends WithLoading() implements OnInit {
   }
 
   ngOnInit() {
-    const content$ = this.bookSectionService.content(this.userBookId);
+    const content$ = this.bookSectionService.list(this.userBookId);
     this.withLoading(content$).subscribe(content => {
       this.content = content;
       this.selectSection(content);

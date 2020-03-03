@@ -1,0 +1,12 @@
+<div class="d-flex" *appShowItForAuthenticated>
+  <div class="pr-1" style="min-width: 30px">
+    <i *ngIf="visible" class="far fa-trash-alt text-danger cursor-pointer" i18n-title="@@actions.copy_to_clipboard" title="Delete" (click)="delete.emit()"></i>
+  </div>
+  <div class="pr-1" style="min-width: 30px">
+    <i *ngIf="visible" class="far fa-copy text-secondary cursor-pointer" (click)="copy.emit()" i18n-title="@@actions.copy_to_clipboard" title="Copy to clipboard"></i>
+  </div>
+  <div class="pr-1" style="min-width: 30px">
+    <i *ngIf="isPublic && visible" class="far fa-eye text-success cursor-pointer" (click)="switchVisibility.emit()" i18n-title="@@actions.make_private" title="Make private"></i>
+    <i *ngIf="!isPublic" class="far fa-eye-slash text-warning cursor-pointer" (click)="switchVisibility.emit()" i18n-title="@@actions.make_public" title="Make public"></i>
+  </div>
+</div>

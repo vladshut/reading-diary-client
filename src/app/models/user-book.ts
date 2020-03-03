@@ -17,6 +17,7 @@ export class UserBook {
   start_reading_dt: Moment;
   @Transform(momentTransform)
   end_reading_dt: Moment;
+  report_public_key: string;
 
   isReading(): boolean {
     return this.status === 'reading';
@@ -32,5 +33,9 @@ export class UserBook {
 
   isReadingCanceled(): boolean {
     return this.status === 'canceled';
+  }
+
+  isPublic(): boolean {
+    return !!this.report_public_key;
   }
 }

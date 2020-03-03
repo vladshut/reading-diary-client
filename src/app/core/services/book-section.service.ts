@@ -5,16 +5,19 @@ import {map} from "rxjs/operators";
 import {plainToClass} from "class-transformer";
 import {BookSection} from "@app/models/book-section";
 import {createDataTree} from "@app/shared/helpers/functions.helper";
+import {SectionReport} from "@app/models/report";
 
 @Injectable()
 export class BookSectionService extends BaseService {
   protected apiUrl = 'books/my/:userBookId/sections/:sectionId';
 
-  content(userBookId: string): Observable<BookSection> {
+  list(userBookId: string): Observable<BookSection> {
     return this.http.get<BookSection>(this.getUrl('', {userBookId})).pipe(
       map((res: any) => {
+        res.forEach(s => s.report = plainToClass(SectionReport, {items: s.reportItems, bookSectionId: s.id}));
+
         let sections = plainToClass(BookSection, <[]>res);
-        console.log(sections, res);
+
         sections = createDataTree(sections);
 
         return sections.length > 0 ? sections[0] : undefined;

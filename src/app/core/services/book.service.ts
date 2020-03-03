@@ -46,9 +46,27 @@ export class BookService extends BaseService {
     );
   }
 
+  makePublic(userBook: UserBook): Observable<UserBook> {
+    return this.http.post<UserBook>(this.getUrl(`my/${userBook.id}/make-public`), {}).pipe(
+      map(data => plainToClass(UserBook, data))
+    );
+  }
+
+  makePrivate(userBook: UserBook): Observable<UserBook> {
+    return this.http.post<UserBook>(this.getUrl(`my/${userBook.id}/make-private`), {}).pipe(
+      map(data => plainToClass(UserBook, data))
+    );
+  }
+
   get(userBookId: string):Observable<UserBook> {
     return this.http.get<UserBook>(this.getUrl(`my/${userBookId}`)).pipe(
       map(res => plainToClass(UserBook, res))
+    );
+  }
+
+  finishReading(userBook: UserBook) {
+    return this.http.post<UserBook>(this.getUrl(`my/${userBook.id}/finish-reading`), {}).pipe(
+      map(data => plainToClass(UserBook, data))
     );
   }
 }

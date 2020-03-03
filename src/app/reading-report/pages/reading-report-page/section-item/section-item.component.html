@@ -11,7 +11,7 @@
   <ng-container *ngIf="editMode">
     <form ngForm="editForm" (ngSubmit)="onSubmitEdit()">
       <div class="input-group">
-        <input [formControl]="editForm.controls.name" type="text" class="form-control form-control-sm mr-1">
+        <input [formControl]="editForm.controls.name" type="text" class="form-control form-control-sm mr-1" appAutofocus (escapePressed)="onCancelEdit()">
         <span class="input-group-btn">
             <button (click)="onCancelEdit()" type="button" class="btn btn-sm btn-raised btn-warning mr-1" i18n="@@actions.cancel">Cancel</button>
             <button type="submit" class="btn btn-sm btn-raised btn-primary mr-1">
@@ -25,7 +25,7 @@
     <li *ngIf="addMode">
       <form ngForm="addForm" (ngSubmit)="onSubmitAdd()">
         <div class="input-group">
-          <input [formControl]="addForm.controls.name" type="text" class="form-control form-control-sm mr-1">
+          <input [formControl]="addForm.controls.name" type="text" class="form-control form-control-sm mr-1" appAutofocus (escapePressed)="onCancelAdd()">
           <span class="input-group-btn">
           <button (click)="onCancelAdd()" type="button" class="btn btn-sm btn-raised btn-warning mr-1" i18n="@@actions.cancel">Cancel</button>
           <button type="submit" class="btn btn-sm btn-raised btn-primary mr-1">

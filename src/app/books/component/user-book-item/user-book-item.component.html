@@ -8,9 +8,9 @@
     <div class="card-block p-0 pt-3 text-center">
       <p class="card-text mb-0">{{userBook.book.title}}</p>
       <p class="text-muted font-small-2 mt-0"><ng-container i18n="@@by">by</ng-container>&nbsp;<span>{{userBook.book.author.name}}</span></p>
-      <a *ngIf="userBook.isNotRead()" (click)="onStartReading()" class="btn btn-raised btn-primary" i18n="@@book.actions.start_reading">Start Reading</a>
-      <a *ngIf="userBook.isReading()" (click)="onContinueReading()" class="btn btn-raised btn-success" i18n="@@book.actions.continue_reading">Continue Reading</a>
-      <span *ngIf="userBook.isRead()" class="text-success text-uppercase" i18n="@@book.status.read">Completed</span>
+      <button *ngIf="userBook.isNotRead()" (click)="onStartReading()" class="btn btn-raised btn-primary cursor-pointer" i18n="@@book.actions.start_reading">Start Reading</button>
+      <button *ngIf="userBook.isReading()" (click)="onContinueReading()" class="btn btn-raised btn-success cursor-pointer" i18n="@@book.actions.continue_reading">Continue Reading</button>
+      <button *ngIf="userBook.isRead()" (click)="onViewReport()" class="btn btn-outline-success cursor-pointer" i18n="@@book.actions.view_report">View Report</button>
     </div>
   </div>
 </div>

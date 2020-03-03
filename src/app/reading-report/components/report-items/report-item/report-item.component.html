@@ -1,32 +1,32 @@
 <div  [ngSwitch]="item.type">
   <div *ngSwitchCase="'term'">
-    <app-report-item-term [item]="item"></app-report-item-term>
+    <app-report-item-term [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-term>
   </div>
   <div *ngSwitchCase="'goal'">
-    <app-report-item-goal [item]="item"></app-report-item-goal>
+    <app-report-item-goal [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-goal>
   </div>
   <div *ngSwitchCase="'quote'">
-    <app-report-item-quote [item]="item"></app-report-item-quote>
+    <app-report-item-quote [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-quote>
   </div>
   <div *ngSwitchCase="'question'">
-    <app-report-item-question [item]="item"></app-report-item-question>
+    <app-report-item-question [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-question>
   </div>
   <div *ngSwitchCase="'resume'">
-    <app-report-item-resume [item]="item"></app-report-item-resume>
+    <app-report-item-resume [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-resume>
   </div>
   <div *ngSwitchCase="'reference'">
-    <app-report-item-reference [item]="item"></app-report-item-reference>
+    <app-report-item-reference [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-reference>
   </div>
   <div *ngSwitchCase="'information_evaluation'">
-    <app-report-item-information-evaluation [item]="item"></app-report-item-information-evaluation>
+    <app-report-item-information-evaluation [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-information-evaluation>
   </div>
   <div *ngSwitchCase="'review'">
-    <app-report-item-review [item]="item"></app-report-item-review>
+    <app-report-item-review [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-review>
   </div>
   <div *ngSwitchCase="'rating'">
-    <app-report-item-rating [item]="item"></app-report-item-rating>
+    <app-report-item-rating [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-rating>
   </div>
   <div *ngSwitchCase="'forward_research'">
-    <app-report-item-forward-research [item]="item"></app-report-item-forward-research>
+    <app-report-item-forward-research [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-forward-research>
   </div>
 </div>

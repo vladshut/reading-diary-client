@@ -1,0 +1,15 @@
+<app-modal title="Manage public access" i18n-title="@@manage_public_access">
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span (click)="copyToClipBoard()" title="Copy to clipboard" i18n="@@actions.copy_to_clipboard" class="cursor-pointer input-group-text" id="basic-addon1"><i class="fa fa-copy"></i></span>
+    </div>
+    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="{{publicLink()}}" [disabled]="true">
+  </div>
+
+  <div class="form-actions text-center">
+    <button type="button" class="btn btn-raised btn-danger" (click)="closePublicAccess.emit()">
+      <ng-container i18n="@@actions.remove_access">Remove access</ng-container>
+    </button>
+  </div>
+</app-modal>

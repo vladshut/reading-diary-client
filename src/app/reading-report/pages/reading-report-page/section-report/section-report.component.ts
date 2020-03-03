@@ -9,6 +9,11 @@ import { Moment } from 'moment';
 import * as moment from 'moment';
 import {WithLoading} from "@app/mixins/WithLoading";
 import {UserBook} from "@app/models/user-book";
+import {BookService} from "@app/core/services/book.service";
+import {Router} from "@angular/router";
+import {ActionConfirmDialogComponent} from "@app/shared/components/action-confirm-dialog/action-confirm-dialog.component";
+import {NgbActiveModal, NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {I18n} from "@ngx-translate/i18n-polyfill";
 
 @Component({
   selector: 'app-section-report',
@@ -28,12 +33,16 @@ export class SectionReportComponent extends WithLoading() implements OnInit, OnD
 
   constructor(
     private reportService: ReportService,
+    private bookService: BookService,
+    private router: Router,
+    private modalService: NgbModal,
+    private activeModal: NgbActiveModal,
+    private i18n: I18n,
   ) {
     super();
   }
 
   ngOnInit() {
-    console.log(this.userBook);
     this.typesWithNames = ReportItem.getTypesWithInfo();
 
     this.timeToSaveSubscription = this.saveInterval.subscribe(val => this.saveReport());
@@ -80,5 +89,23 @@ export class SectionReportComponent extends WithLoading() implements OnInit, OnD
 
   onCreate(type: ReportItemType) {
     this.report.createItem(type);
+  }
+
+  onCompleteReading() {
+    const modalRef = this.modalService.open(ActionConfirmDialogComponent, {size: 'lg'});
+    modalRef.componentInstance.text = this.i18n({
+      value: 'Do you really want to complete this book?',
+      id: 'finish_reading_confirmation'
+    });
+
+    modalRef.componentInstance.confirmed.subscribe(() => {
+      const finishReading$ = this.bookService.finishReading(this.userBook);
+      this.withLoading(finishReading$).subscribe(ub => this.navigateToBooksList());
+    });
+  }
+
+
+  private navigateToBooksList() {
+    this.router.navigate([`/books/list`]);
   }
 }
