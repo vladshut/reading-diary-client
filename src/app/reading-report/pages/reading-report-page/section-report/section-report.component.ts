@@ -14,6 +14,7 @@ import {Router} from "@angular/router";
 import {ActionConfirmDialogComponent} from "@app/shared/components/action-confirm-dialog/action-confirm-dialog.component";
 import {NgbActiveModal, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {I18n} from "@ngx-translate/i18n-polyfill";
+import {Hotkey, HotkeysService} from "angular2-hotkeys";
 
 @Component({
   selector: 'app-section-report',
@@ -31,12 +32,15 @@ export class SectionReportComponent extends WithLoading() implements OnInit, OnD
   isSaving = false;
   savedTime: Moment;
 
+  createReportItemsHotkeys: {combo: string, type: ReportItemType}[] = [];
+
   constructor(
     private reportService: ReportService,
     private bookService: BookService,
     private router: Router,
     private modalService: NgbModal,
     private activeModal: NgbActiveModal,
+    private hotkeysService: HotkeysService,
     private i18n: I18n,
   ) {
     super();
@@ -44,6 +48,23 @@ export class SectionReportComponent extends WithLoading() implements OnInit, OnD
 
   ngOnInit() {
     this.typesWithNames = ReportItem.getTypesWithInfo();
+
+    let i = 1;
+    this.typesWithNames.forEach(t => {
+      this.createReportItemsHotkeys.push({combo: 'meta+shift+' + i, type: t.type});
+      i++;
+    });
+
+    this.createReportItemsHotkeys.forEach(h =>
+      this.hotkeysService.add(new Hotkey(h.combo, (event: KeyboardEvent): boolean => {
+        this.createReportItem(h.type);
+        return false; // Prevent bubbling
+      })));
+
+    this.hotkeysService.add(new Hotkey('meta+shift+g', (event: KeyboardEvent): boolean => {
+      console.log('Typed hotkey');
+      return false; // Prevent bubbling
+    }));
 
     this.timeToSaveSubscription = this.saveInterval.subscribe(val => this.saveReport());
   }

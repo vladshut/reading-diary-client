@@ -6,7 +6,7 @@
       &nbsp;&nbsp;<i class="text-primary cursor-pointer fa fa-plus-circle" (click)="onAdd()"></i>
     </ng-container>
     &nbsp;&nbsp;<i class="text-success cursor-pointer far fa-edit" (click)="onEdit()"></i>
-    &nbsp;&nbsp;<i class="text-danger cursor-pointer far fa-trash-alt" (click)="onDelete()"></i>
+    &nbsp;&nbsp;<i class="text-danger cursor-pointer far fa-trash-alt" *ngIf="!section.isRoot()" (click)="onDelete()"></i>
   </ng-container>
   <ng-container *ngIf="editMode">
     <form ngForm="editForm" (ngSubmit)="onSubmitEdit()">

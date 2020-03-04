@@ -16,7 +16,7 @@ export class ReportItemRatingComponent extends WithReportItem(ReportItemRating) 
   constructor(
     protected formBuilder: FormBuilder,
     protected ngbModal: NgbModal,
-    protected auth: AuthService,
+    public auth: AuthService,
   ) {
     super();
   }

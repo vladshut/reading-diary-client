@@ -1,28 +1,30 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 <div class="pb-2 mb-2">
   <div class="card mb-0">
-    <div class="card-header mb-0 pb-0 d-flex justify-content-between" *ngIf="_section && userBook">
+    <div class="card-header mb-0 pb-0 d-flex justify-content-between pr-0" *ngIf="_section && userBook">
       <div>
         <h2 class="card-title text-capitalize">
           {{userBook.book.title}}&nbsp;&nbsp;<span class="text-muted">Report</span>
         </h2>
-        <h4 class="card-subtitle text-capitalize" *ngIf="_section.isLeaf()">
+        <h4 class="card-subtitle text-capitalize" *ngIf="!_section.isRoot() && _section.isLeaf()">
           {{_section.name}}&nbsp;&nbsp;<span class="text-muted">Section</span>
         </h4>
         <h4 class="card-subtitle text-capitalize" *ngIf="_section.isRoot()">
           <span class="text-muted">General</span>
         </h4>
       </div>
-      <div>
-        <button class="btn btn-outline-success d-block btn-sm" (click)="onCompleteReading()">Complete reading</button>
-        <h6 class="card-subtitle text-muted text-right mb-0 mt-0 pt-0 pb-0">
+      <div class="text-right">
+        <button class="btn btn-outline-success d-inline-block btn-sm" (click)="onCompleteReading()"><i class="fa fa-flag-checkered"></i>&nbsp;&nbsp;Complete reading</button>
+        <p class="card-subtitle text-muted text-right mb-0 mt-0 pt-0 pb-0">
           &nbsp;
           <ng-container *ngIf="isSaving"><ng-container i18n="@@saving">Saving</ng-container>&nbsp;...</ng-container>
           <ng-container *ngIf="!isSaving && savedTime"><ng-container i18n="@@saved">Saved</ng-container>&nbsp;{{savedTime.fromNow()}}</ng-container>
-        </h6>
+          <ng-container *ngIf="!isSaving && !savedTime"><ng-container i18n="@@no_changes">No changes</ng-container></ng-container>
+        </p>
       </div>
     </div>
     <div class="card-body" *ngIf="report" style="min-height: 600px">
+      <p class="text-secondary mt-3 mb-0 w-100 text-right">For searching in report use hotkey "ctrl + f"</p>
       <div class="line-divider mb-0"></div>
       <div *ngIf="report.items.length === 0" class="card-block w-100" style="padding-top: 250px">
         <h4 i18n="@@report.no_entries_in_section_report"class="text-secondary w-100 text-center">
@@ -37,9 +39,9 @@
   <div *ngIf="report" class="btn-group-fab" (click)="isFabActive=!isFabActive" [ngClass]="{active: isFabActive}" role="group" aria-label="FAB Menu">
     <div>
       <button type="button" class="btn btn-main btn-primary btn-raised"> <i class="fas fa-pencil-alt"></i> </button>
-      <ng-container *ngFor="let type of typesWithNames">
+      <ng-container *ngFor="let type of typesWithNames; let i = index">
         <button *ngIf="report.canAddItemOfType(type.type)" type="button" class="btn-xs btn btn-sub btn-outline-primary" (click)="createReportItem(type.type)">
-          {{type.name}}&nbsp;&nbsp;&nbsp;<i class="{{type.icon}}"></i>
+          {{type.name}}&nbsp;&nbsp;&nbsp;<span class="text-muted">{{createReportItemsHotkeys[i].combo}}</span>&nbsp;&nbsp;<i class="{{type.icon}}"></i>
         </button>
       </ng-container>
     </div>

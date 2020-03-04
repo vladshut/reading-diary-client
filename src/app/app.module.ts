@@ -14,7 +14,7 @@ import {CountryPickerModule} from "ngx-country-picker";
 import {JwtModule} from "@auth0/angular-jwt";
 import localeEnNl from '@angular/common/locales/en-NL';
 import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
-
+import {HotkeyModule} from 'angular2-hotkeys';
 
 @NgModule({
   imports: [
@@ -25,6 +25,7 @@ import { PDFExportModule } from '@progress/kendo-angular-pdf-export';
     ToastrModule.forRoot(),
     ModalModule.forRoot(),
     CountryPickerModule.forRoot(),
+    HotkeyModule.forRoot(),
     JwtModule.forRoot({
       config: {
         tokenGetter: AuthService.getToken,
