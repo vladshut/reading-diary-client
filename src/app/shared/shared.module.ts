@@ -53,6 +53,8 @@ import {FieldWrapperComponent} from "@app/shared/components/form/field-wrapper/f
 import { AutofocusDirective } from './directives/autofocus.directive';
 import {ShowItForAuthenticatedDirective} from "@app/shared/directives/show-it-for-authenticated.directive";
 import {PDFExportModule} from "@progress/kendo-angular-pdf-export";
+import {DragulaModule} from "ng2-dragula";
+import {TextareaAutosizeModule} from "ngx-textarea-autosize";
 
 @NgModule({
   imports: [
@@ -73,6 +75,8 @@ import {PDFExportModule} from "@progress/kendo-angular-pdf-export";
     NgBytesPipeModule,
     BsDropdownModule.forRoot(),
     PDFExportModule,
+    DragulaModule.forRoot(),
+    TextareaAutosizeModule,
   ],
   exports: [
     CommonModule,

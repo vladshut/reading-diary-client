@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {BookSection} from "@app/models/book-section";
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NgbActiveModal, NgbModal} from "@ng-bootstrap/ng-bootstrap";
@@ -142,5 +142,9 @@ export class SectionItemComponent extends WithLoading() implements OnInit {
 
   isSelected(): boolean {
     return this.section.id === this.selectedSectionId;
+  }
+
+  childrenSortBy(prop: string) {
+    return this.section.children.sort((a, b) => a[prop] > b[prop] ? 1 : a[prop] === b[prop] ? 0 : -1);
   }
 }

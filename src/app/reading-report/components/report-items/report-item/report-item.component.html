@@ -29,4 +29,7 @@
   <div *ngSwitchCase="'forward_research'">
     <app-report-item-forward-research [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-forward-research>
   </div>
+  <div *ngSwitchCase="'figure'">
+    <app-report-item-figure [item]="item" (editingCancelled)="editingCancelled.emit(item)"></app-report-item-figure>
+  </div>
 </div>

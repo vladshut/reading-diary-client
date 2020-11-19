@@ -9,7 +9,7 @@
     </ng-container>
   </div>
 
-  <div class="card-block">
+  <div class="card-block" [dragulaModel]="items" dragula="REPORT_ITEMS_BLOCK_{{name | uppercase}}">
     <app-report-item *ngFor="let item of items" [item]="item"></app-report-item>
   </div>
 </div>

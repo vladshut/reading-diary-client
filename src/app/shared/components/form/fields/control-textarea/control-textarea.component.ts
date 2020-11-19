@@ -13,10 +13,15 @@ export class ControlTextareaComponent implements OnInit {
   @Input() class = '';
   @Input() name = '';
   @Input() placeholder = '';
-  
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  submitParentForm($event: KeyboardEvent) {
+    if ($event.ctrlKey) {
+     console.log('submit');
+    }
+  }
 }

@@ -1,7 +1,9 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 <div class="row">
   <div class="col-md-4">
-    <app-sections-list [userBookId]="userBookId" (sectionSelected)="onSectionSelected($event)"></app-sections-list>
+    <div class="sticky-top position-top-0">
+      <app-sections-list [userBookId]="userBookId" (sectionSelected)="onSectionSelected($event)"></app-sections-list>
+    </div>
   </div>
   <div class="col-md-8">
     <div class="card">

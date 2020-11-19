@@ -6,6 +6,7 @@ export enum ReportItemType {
   GOAL = 'goal',
   TERM = 'term',
   QUOTE = 'quote',
+  FIGURE = 'figure',
   REFERENCE = 'reference',
   RESUME = 'resume',
   INFORMATION_EVALUATION = 'information_evaluation',
@@ -19,6 +20,7 @@ export class ReportItem {
   id: string;
   book_section_id: string;
   order: number;
+  is_favorite = false;
   type: ReportItemType;
   private _needUpdate: boolean = false;
   private _deleted: boolean = false;
@@ -32,6 +34,13 @@ export class ReportItem {
   markAsUpdated() {
     this._needUpdate = false;
     this._isNew = false;
+  }
+
+  setOrder(order: number) {
+    if (this.order !== order) {
+      this.order = order;
+      this.markAsNeedUpdate();
+    }
   }
 
   delete(): void {
@@ -90,6 +99,7 @@ export class ReportItem {
       {value: ReportItemTerm, name: ReportItemType.TERM},
       {value: ReportItemGoal, name: ReportItemType.GOAL},
       {value: ReportItemQuote, name: ReportItemType.QUOTE},
+      {value: ReportItemFigure, name: ReportItemType.FIGURE},
       {value: ReportItemQuestion, name: ReportItemType.QUESTION},
       {value: ReportItemResume, name: ReportItemType.RESUME},
       {value: ReportItemReference, name: ReportItemType.REFERENCE},
@@ -120,6 +130,7 @@ export class ReportItem {
       {icon: 'far fa-comment', type: ReportItemType.REVIEW},
       {icon: 'far fa-star', type: ReportItemType.RATING},
       {icon: 'fas fa-flask', type: ReportItemType.FORWARD_RESEARCH},
+      {icon: 'far fa-images', type: ReportItemType.FIGURE},
     ].find(i => i.type === t).icon;
   }
 
@@ -133,8 +144,17 @@ export class ReportItem {
     this.markAsNeedUpdate();
   }
 
+  switchFavorite() {
+    this.is_favorite = !this.is_favorite;
+    this.markAsNeedUpdate();
+  }
+
   isPublic() {
     return this.visibility === true;
+  }
+
+  isFavorite() {
+    return this.is_favorite === true;
   }
 
   isPrivate() {
@@ -182,6 +202,14 @@ export class ReportItemQuote extends ReportItem {
 
   get asFormattedString() {
     return this.quote + '\nNote: ' + (this.quote_note ? this.quote_note : '-');
+  }
+}
+
+export class ReportItemFigure extends ReportItem {
+  figure: string = '';
+
+  get asFormattedString() {
+    return this.figure;
   }
 }
 

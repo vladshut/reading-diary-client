@@ -2,6 +2,9 @@
           [name]="name"
           [formControl]="control"
           [placeholder]="placeholder"
+          (keydown.enter)="submitParentForm($event)"
           class="form-control {{class}}"
-          style="width: 100%; height: 200px">
+          style="width: 100%; height: 200px"
+          autosize
+>
 </textarea>

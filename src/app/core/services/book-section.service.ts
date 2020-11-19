@@ -40,6 +40,7 @@ export class BookSectionService extends BaseService {
     const payload = {
       name: section.name,
       order: section.order,
+      parent_id: section.parent_id,
     };
 
     return this.http.put<BookSection>(this.getUrl('', {sectionId: section.id}), payload).pipe(

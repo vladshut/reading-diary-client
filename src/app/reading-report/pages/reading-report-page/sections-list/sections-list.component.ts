@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {BookSection} from "@app/models/book-section";
 import {
   SectionEvent,
@@ -6,24 +6,59 @@ import {
 } from "@app/reading-report/pages/reading-report-page/section-item/section-item.component";
 import {BookSectionService} from "@app/core/services/book-section.service";
 import {WithLoading} from "@app/mixins/WithLoading";
+import {forkJoin, Observable, Subscription} from "rxjs";
+import {DragulaService} from "ng2-dragula";
+import {contains} from "@app/shared/helpers/functions.helper";
 
 @Component({
   selector: 'app-sections-list',
   templateUrl: './sections-list.component.html',
   styleUrls: ['./sections-list.component.css']
 })
-export class SectionsListComponent extends WithLoading() implements OnInit {
+export class SectionsListComponent extends WithLoading() implements OnInit, OnDestroy {
   @Input() userBookId: string;
 
   @Output() sectionSelected = new EventEmitter<BookSection>();
 
   content: BookSection;
   activeSectionId: string;
+  subs = new Subscription();
+  dragulaGroup = 'REPORT_SECTIONS';
 
   constructor(
     private bookSectionService: BookSectionService,
+    private dragulaService: DragulaService,
   ) {
     super();
+
+    dragulaService.createGroup(this.dragulaGroup, {
+      moves: function (el, container, handle) {
+        return handle.classList.contains('js-section-drag-handle');
+      },
+      accepts: function (el, target, source, sibling) {
+        return !contains(el,target);
+      }
+    });
+
+    this.subs.add(this.dragulaService.dropModel(this.dragulaGroup)
+      .subscribe(({ name, el, target, source, sibling , targetModel, sourceModel, item}) => {
+        console.log(name, el, target, source, sibling,targetModel, sourceModel, item);
+        const parentId = target.getAttribute('data-parent-id');
+
+        if (!parentId) {
+          return;
+        }
+
+        const updatedSections$ = [];
+        targetModel.forEach((bs: BookSection, index) => {
+          bs.parent_id = parentId;
+          bs.order = index + 1;
+          updatedSections$.push(this.bookSectionService.update(bs));
+        });
+
+        this.withLoading(forkJoin(updatedSections$)).subscribe(() => {});
+      })
+    );
   }
 
   ngOnInit() {
@@ -76,5 +111,9 @@ export class SectionsListComponent extends WithLoading() implements OnInit {
   selectSection(section: BookSection) {
     this.activeSectionId = section.id;
     this.sectionSelected.emit(section);
+  }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
   }
 }

@@ -1,12 +1,14 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WithLoading} from "@app/mixins/WithLoading";
 import {UserBook} from "@app/models/user-book";
 import {BookService} from "@app/core/services/book.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {BookSectionService} from "@app/core/services/book-section.service";
 import {BookSection} from "@app/models/book-section";
 import {NgbActiveModal, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ManagePublicAccessModalComponent} from "@app/reading-report/modals/manage-public-access-modal/manage-public-access-modal.component";
+import {ActionConfirmDialogComponent} from "@app/shared/components/action-confirm-dialog/action-confirm-dialog.component";
+import {I18n} from "@ngx-translate/i18n-polyfill";
 
 @Component({
   selector: 'app-completed-report-page',
@@ -25,6 +27,9 @@ export class CompletedReportPageComponent extends WithLoading() implements OnIni
     private route: ActivatedRoute,
     private modal: NgbModal,
     private activeModal: NgbActiveModal,
+    private modalService: NgbModal,
+    private i18n: I18n,
+    private router: Router,
   ) {
     super();
   }
@@ -65,6 +70,24 @@ export class CompletedReportPageComponent extends WithLoading() implements OnIni
         this.userBook.report_public_key = null;
       });
 
+    });
+  }
+
+  onSectionSelected(bs: BookSection) {
+    const el = document.getElementById('section_' + bs.id);
+    el.scrollIntoView({behavior: 'smooth'});
+  }
+
+  resumeReading() {
+    const modalRef = this.modalService.open(ActionConfirmDialogComponent, {size: 'lg'});
+    modalRef.componentInstance.text = this.i18n({
+      value: 'Do you really want to resume reading this book?',
+      id: 'resume_reading_confirmation'
+    });
+
+    modalRef.componentInstance.confirmed.subscribe(() => {
+      const resumeReading$ = this.bookService.resumeReading(this.userBook);
+      this.withLoading(resumeReading$).subscribe(ub => this.router.navigate([`/reading-report/` + ub.id]));
     });
   }
 }

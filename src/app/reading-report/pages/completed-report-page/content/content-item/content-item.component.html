@@ -1,0 +1,10 @@
+<li>
+  <span (click)="onSelect()" class="cursor-pointer" [ngClass]="{'text-primary': isSelected()}">{{section.name}}</span>
+
+  <ul>
+    <app-content-item *ngFor="let subSection of childrenSortBy('order')" [section]="subSection"
+                      [selectedSectionId]="selectedSectionId"
+                      (sectionSelected)="onSubSectionSelected($event)"
+    ></app-content-item>
+  </ul>
+</li>

@@ -69,4 +69,10 @@ export class BookService extends BaseService {
       map(data => plainToClass(UserBook, data))
     );
   }
+
+  resumeReading(userBook: UserBook) {
+    return this.http.post<UserBook>(this.getUrl(`my/${userBook.id}/resume-reading`), {}).pipe(
+      map(data => plainToClass(UserBook, data))
+    );
+  }
 }

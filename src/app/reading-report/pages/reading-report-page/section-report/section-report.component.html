@@ -32,7 +32,15 @@
         </h4>
       </div>
       <ng-container *ngFor="let type of typesWithNames">
-        <app-section-report-block *ngIf="report.getItemsByType(type.type).length" [isSingle]="report.isSingleType(type.type)" (createItem)="onCreate(type.type)" [icon]="type.icon" [name]="report.isSingleType(type.type) ? type.name : type.pluralName" [items]="report.getItemsByType(type.type)"></app-section-report-block>
+        <app-section-report-block
+          *ngIf="report.getItemsByType(type.type).length"
+          [sectionId]="_section.id"
+          [isSingle]="report.isSingleType(type.type)"
+          (createItem)="onCreate(type.type)"
+          [icon]="type.icon"
+          [name]="report.isSingleType(type.type) ? type.name : type.pluralName"
+          [items]="report.getItemsByType(type.type)">
+        </app-section-report-block>
       </ng-container>
     </div>
   </div>

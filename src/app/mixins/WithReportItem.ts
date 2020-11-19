@@ -27,13 +27,21 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
       this.initForm();
     }
 
+    canBeUpdated() {
+      return this.form.valid && this.form.dirty;
+    }
+
     onUpdate() {
-      if (!this.form.valid) {
+      if (!this.canBeUpdated()) {
         return;
       }
 
       const formValue = this.form.value;
-      Object.keys(formValue).forEach(k => formValue[k] = typeof formValue[k] == 'string' ? formValue[k].trim() : formValue[k]);
+      Object.keys(formValue).forEach(k => {
+        if (typeof formValue[k] == 'string') {
+          formValue[k] = formValue[k].trim().replace(/(?:(?:\r\n|\r|\n)\s*){2}/s, '\n\n');
+        }
+      });
 
       plainToClassFromExist(this.item, formValue);
 
@@ -80,6 +88,10 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
 
     onSwitchVisibility() {
       this.item.switchPrivacy();
+    }
+
+    onSwitchFavorite() {
+      this.item.switchFavorite();
     }
   }
 

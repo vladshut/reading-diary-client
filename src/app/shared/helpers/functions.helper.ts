@@ -319,5 +319,10 @@ export function copyToClipboard(text: string): void {
   selBox.select();
   document.execCommand('copy');
   document.body.removeChild(selBox);
+}
 
+export function contains(a, b){
+  return a.contains ?
+    a != b && a.contains(b) :
+    !!(a.compareDocumentPosition(b) & 16);
 }

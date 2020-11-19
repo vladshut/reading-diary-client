@@ -23,11 +23,16 @@ import { CompletedReportSectionItemComponent } from './pages/completed-report-pa
 import { ManagePublicAccessModalComponent } from './modals/manage-public-access-modal/manage-public-access-modal.component';
 import { ReportItemActionsComponent } from './components/report-items/report-item-actions/report-item-actions.component';
 import {PDFExportModule} from "@progress/kendo-angular-pdf-export";
+import {DragulaModule} from "ng2-dragula";
+import {TextareaAutosizeModule} from "ngx-textarea-autosize";
+import { ContentItemComponent } from './pages/completed-report-page/content/content-item/content-item.component';
+import {ContentComponent} from "@app/reading-report/pages/completed-report-page/content/content.component";
+import { ReportItemFigureComponent } from './components/report-items/report-item-figure/report-item-figure.component';
 
 
 
 @NgModule({
-  declarations: [ReadingReportPageComponent, SectionItemComponent, SectionsListComponent, SectionReportComponent, SectionReportBlockComponent, ReportItemComponent, ReportItemTermComponent, ReportItemGoalComponent, ReportItemQuoteComponent, ReportItemQuestionComponent, ReportItemResumeComponent, ReportItemReferenceComponent, ReportItemInformationEvaluationComponent, ReportItemReviewComponent, ReportItemRatingComponent, ReportItemForwardResearchComponent, CompletedReportPageComponent, CompletedReportSectionItemComponent, ManagePublicAccessModalComponent, ReportItemActionsComponent],
+    declarations: [ReadingReportPageComponent, SectionItemComponent, SectionsListComponent, SectionReportComponent, SectionReportBlockComponent, ReportItemComponent, ReportItemTermComponent, ReportItemGoalComponent, ReportItemQuoteComponent, ReportItemQuestionComponent, ReportItemResumeComponent, ReportItemReferenceComponent, ReportItemInformationEvaluationComponent, ReportItemReviewComponent, ReportItemRatingComponent, ReportItemForwardResearchComponent, CompletedReportPageComponent, CompletedReportSectionItemComponent, ManagePublicAccessModalComponent, ReportItemActionsComponent, ContentComponent, ContentItemComponent, ContentComponent, ReportItemFigureComponent],
   exports: [
     CompletedReportSectionItemComponent
   ],
@@ -36,6 +41,8 @@ import {PDFExportModule} from "@progress/kendo-angular-pdf-export";
         ReadingReportRoutingModule,
         NgxStarsModule,
         PDFExportModule,
+        DragulaModule,
+        TextareaAutosizeModule,
     ],
   entryComponents: [
     ManagePublicAccessModalComponent,

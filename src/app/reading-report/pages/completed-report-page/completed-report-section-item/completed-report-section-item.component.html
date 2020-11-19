@@ -1,5 +1,5 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
-<div class="card">
+<div class="card" id="section_{{section.id}}">
   <div class="card-block" [ngStyle]="{ 'padding-left': (50 + deep * 20) + 'px' }">
     <div class="pb-2 mb-2">
       <ng-container *ngIf="!section.isRoot()">
@@ -38,7 +38,9 @@
                                   [isSingle]="section.report.isSingleType(type.type)"
                                   (createItem)="onCreate(type.type)"
                                   [icon]="type.icon" [name]="section.report.isSingleType(type.type) ? type.name : type.pluralName"
-                                  [items]="section.report.getItemsByType(type.type)">
+                                  [items]="section.report.getItemsByType(type.type)"
+                                  [sectionId]="section.id"
+        >
         </app-section-report-block>
       </ng-container>
     </div>

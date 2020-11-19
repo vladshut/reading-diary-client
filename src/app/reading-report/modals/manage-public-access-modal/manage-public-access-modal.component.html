@@ -2,9 +2,14 @@
 
   <div class="input-group mb-3">
     <div class="input-group-prepend">
-      <span (click)="copyToClipBoard()" title="Copy to clipboard" i18n="@@actions.copy_to_clipboard" class="cursor-pointer input-group-text" id="basic-addon1"><i class="fa fa-copy"></i></span>
+      <span (click)="copyToClipBoard()" title="Copy to clipboard" i18n-title="@@actions.copy_to_clipboard" class="cursor-pointer input-group-text" id="basic-addon1"><i class="fa fa-copy"></i></span>
     </div>
     <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="{{publicLink()}}" [disabled]="true">
+    <div class="input-group-append">
+      <span class="input-group-text">
+        <a href="{{publicLink()}}" target="_blank" title="Open in a new tab" i18n-title="@@actions.open_in_new_tab"><i class="fas fa-external-link-alt"></i></a>
+      </span>
+    </div>
   </div>
 
   <div class="form-actions text-center">

@@ -1,7 +1,13 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 
 <div class="row d-flex justify-content-center">
-  <div class="col-md-8" style="max-width: 1500px">
+  <div class="col-md-3">
+    <div class="sticky-top position-top-0">
+      <app-content [userBookId]="userBookId" (sectionSelected)="onSectionSelected($event)"></app-content>
+    </div>
+  </div>
+
+  <div class="col-md-9" style="max-width: 1500px">
     <kendo-pdf-export #pdf paperSize="A4" margin="0cm" [scale]="0.6">
       <div class="card">
         <div class="card-header d-flex justify-content-between">
@@ -10,12 +16,17 @@
           </h1>
           <div>
             <ng-container *appShowItForAuthenticated>
-              <button *ngIf="userBook && !userBook.isPublic()" class="btn btn-outline-primary" (click)="makePublic()">
+              <button class="btn btn-outline-warning mr-2 btn-xs" (click)="resumeReading()">
+                <i class="fa fa-book"></i>
+                &nbsp;&nbsp;
+                <ng-container i18n="actions.resume_reading">Resume reading</ng-container>
+              </button>
+              <button *ngIf="userBook && !userBook.isPublic()" class="btn btn-outline-primary btn-xs" (click)="makePublic()">
                 <i class="fa fa-share"></i>
                 &nbsp;&nbsp;
                 <ng-container i18n="actions.share">Share</ng-container>
               </button>
-              <button *ngIf="userBook && userBook.isPublic()" class="btn btn-outline-primary" (click)="openManageAccessModal()">
+              <button *ngIf="userBook && userBook.isPublic()" class="btn btn-outline-primary btn-xs" (click)="openManageAccessModal()">
                 <i class="fa fa-users"></i>
                 &nbsp;&nbsp;
                 <ng-container i18n="actions.manage_access">Manage access</ng-container>
@@ -23,7 +34,7 @@
             </ng-container>
 
 
-            <button class="btn btn-outline-success ml-2" kendo-button
+            <button class="btn btn-outline-success ml-2 btn-xs" kendo-button
                     (click)="pdf.saveAs(userBook.book.title + ' Report.pdf')">
               <i class="fa fa-download"></i>&nbsp;&nbsp;Download PDF
             </button>

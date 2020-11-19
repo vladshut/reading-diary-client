@@ -5,13 +5,10 @@
   <div class="card-body">
 
     <ul *ngIf="content" [attr.data-parent-id]="content.id">
-      <app-section-item [section]="content"
+      <app-content-item [section]="content"
                         [selectedSectionId]="activeSectionId"
-                        (sectionAdded)="onSectionAdded($event, contentComponent)"
-                        (sectionUpdated)="onSectionUpdated($event, contentComponent)"
-                        (sectionRemoved)="onSectionRemoved($event, contentComponent)"
                         (sectionSelected)="onSectionSelected($event, contentComponent)"
-                        #contentComponent></app-section-item>
+                        #contentComponent></app-content-item>
     </ul>
   </div>
 </div>

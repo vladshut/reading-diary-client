@@ -7,6 +7,7 @@
     </ng-container>
     &nbsp;&nbsp;<i class="text-success cursor-pointer far fa-edit" (click)="onEdit()"></i>
     &nbsp;&nbsp;<i class="text-danger cursor-pointer far fa-trash-alt" *ngIf="!section.isRoot()" (click)="onDelete()"></i>
+    &nbsp;&nbsp;<i class="js-section-drag-handle text-muted cursor-move fas fa-arrows-alt" *ngIf="!section.isRoot()"></i>
   </ng-container>
   <ng-container *ngIf="editMode">
     <form ngForm="editForm" (ngSubmit)="onSubmitEdit()">
@@ -21,7 +22,7 @@
       </div>
     </form>
   </ng-container>
-  <ul>
+  <ul dragula="REPORT_SECTIONS" [dragulaModel]="section.children" [attr.data-parent-id]="section.id" class="dropzone">
     <li *ngIf="addMode">
       <form ngForm="addForm" (ngSubmit)="onSubmitAdd()">
         <div class="input-group">
@@ -35,7 +36,7 @@
         </div>
       </form>
     </li>
-    <app-section-item *ngFor="let subSection of section.children" [section]="subSection"
+    <app-section-item *ngFor="let subSection of childrenSortBy('order')" [section]="subSection"
                       [selectedSectionId]="selectedSectionId"
                       (sectionAdded)="onSubSectionAdded($event)"
                       (sectionUpdated)="onSubSectionUpdated($event)"
