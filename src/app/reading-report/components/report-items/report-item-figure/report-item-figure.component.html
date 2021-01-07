@@ -1,1 +1,34 @@
-<p>report-item-figure works!</p>
+<div>
+<form [formGroup]="form" *ngIf="editMode">
+  <div class="form-body">
+    <div class="row">
+      <div class="col-12 form-group">
+        <file-pond *ngIf="pondOptions && this.item.isNew() && !this.item.isNeedUpdate()" #figureUpload
+                   (onprocessfiles)="onProcessFile($event)"
+                   [options]="pondOptions"
+                   [files]="pondFiles"
+        >
+        </file-pond>
+        <app-control-messages [control]="form.controls.figure"></app-control-messages>
+      </div>
+      <div class="col-12 form-group">
+        <input type="hidden" formControlName="figure">
+        <input type="text" placeholder="Caption" i18n-placeholder="@@caption" formControlName="figure_caption" class="form-control form-control-sm" appAutofocus (escapePressed)="onCancelEdit()">
+        <app-control-messages [control]="form.controls.figure_caption"></app-control-messages>
+      </div>
+    </div>
+  </div>
+  <div class="form-actions">
+    <button class="btn btn-xs btn-raised btn-primary" i18n="@@actions.update" (click)="onUpdate()" [disabled]="!canBeUpdated()">Update</button>
+    <button class="btn btn-xs btn-outline-danger" i18n="@@actions.cancel" (click)="onCancelEdit()">Cancel</button>
+  </div>
+</form>
+<div class="d-flex" *ngIf="!editMode && item" (mouseover)="hover = true" (mouseleave)="hover = false">
+  <app-report-item-actions [except]="['favorite']" [imgSrc]="item.src" (copy)="onCopy()" (delete)="onDelete()" (switchVisibility)="onSwitchVisibility()" [isPublic]="item.isPublic()" [visible]="hover"></app-report-item-actions>
+  <div (click)="editMode = true">
+    <app-image [src]="item.src" [caption]="item.figure_caption"></app-image>
+  </div>
+</div>
+<br>
+</div>
+

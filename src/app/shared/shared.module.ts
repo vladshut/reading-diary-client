@@ -55,6 +55,27 @@ import {ShowItForAuthenticatedDirective} from "@app/shared/directives/show-it-fo
 import {PDFExportModule} from "@progress/kendo-angular-pdf-export";
 import {DragulaModule} from "ng2-dragula";
 import {TextareaAutosizeModule} from "ngx-textarea-autosize";
+import { ImageComponent } from './components/image/image.component';
+import { ImageModalComponent } from './components/image-modal/image-modal.component';
+import { ImgFallbackDirective } from './directives/img-fallback.directive';
+import {DictPipe} from "@app/shared/pipes/dict.pipe";
+import {SimpleNamePipe} from "@app/shared/pipes/simple-name.pipe";
+import {TruncateMiddlePipe} from "@app/shared/pipes/truncate-middle.pipe";
+import { ImageUploadModalComponent } from './components/image-upload-modal/image-upload-modal.component';
+
+import {FilePondModule, registerPlugin} from "ngx-filepond";
+
+import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
+registerPlugin(FilePondPluginImagePreview);
+
+import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
+registerPlugin(FilePondPluginFileValidateSize);
+
+import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+registerPlugin(FilePondPluginFileValidateType);
+
+import FilePondPluginImageCrop from 'filepond-plugin-image-crop';
+registerPlugin(FilePondPluginImageCrop);
 
 @NgModule({
   imports: [
@@ -77,6 +98,7 @@ import {TextareaAutosizeModule} from "ngx-textarea-autosize";
     PDFExportModule,
     DragulaModule.forRoot(),
     TextareaAutosizeModule,
+    FilePondModule,
   ],
   exports: [
     CommonModule,
@@ -125,6 +147,8 @@ import {TextareaAutosizeModule} from "ngx-textarea-autosize";
     ToggleFullscreenDirective,
     FieldWrapperComponent,
     AutofocusDirective,
+    ImageComponent,
+    SimpleNamePipe,
   ],
   declarations: [
     FooterComponent,
@@ -149,6 +173,9 @@ import {TextareaAutosizeModule} from "ngx-textarea-autosize";
 
     CurrPipe,
     PercPipe,
+    DictPipe,
+    SimpleNamePipe,
+    TruncateMiddlePipe,
 
     FieldWrapperComponent,
     ControlHtmlBuilderComponent,
@@ -173,10 +200,20 @@ import {TextareaAutosizeModule} from "ngx-textarea-autosize";
     ModalComponent,
 
     AutofocusDirective,
+
+    ImageComponent,
+
+    ImageModalComponent,
+
+    ImgFallbackDirective,
+
+    ImageUploadModalComponent,
   ],
   entryComponents: [
+    ImageModalComponent,
     SelectItemsModalComponent,
     ActionConfirmDialogComponent,
+    ImageUploadModalComponent,
   ],
   providers: [
     CurrencyPipe,

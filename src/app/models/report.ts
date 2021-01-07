@@ -19,6 +19,10 @@ export class Report {
     return this.items.filter(i => i.type === type && !i.isDeleted());
   }
 
+  public findItemById(id: any) {
+    return this.items.find(i => i.id === id && !i.isDeleted());
+  }
+
   public isNeededToBeSaved() {
     return this.items.find(i => i.isNeedUpdate() || i.isDeleted()) !== undefined;
   }

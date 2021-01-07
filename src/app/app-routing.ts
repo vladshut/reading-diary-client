@@ -8,6 +8,7 @@ const appRoutes: Routes = [
       {path: 'books', loadChildren: './books/books.module#BooksModule'},
       {path: 'reading-report', loadChildren: './reading-report/reading-report.module#ReadingReportModule'},
       {path: 'public-report', loadChildren: './public-report/public-report.module#PublicReportModule'},
+      {path: 'user', loadChildren: './user/user.module#UserModule'},
     ]
   },
 

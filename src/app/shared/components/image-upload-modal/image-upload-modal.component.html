@@ -1,0 +1,8 @@
+<app-modal title="Image uploader" i18n-title="Image uploader" (closed)="onClose()" #modal>
+  <file-pond *ngIf="pondOptions" #imageUpload
+             (onprocessfiles)="onProcessFile($event)"
+             [options]="pondOptions"
+             [files]="pondFiles"
+  >
+  </file-pond>
+</app-modal>

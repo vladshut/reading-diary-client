@@ -37,9 +37,9 @@ export class SectionReportBlockComponent implements OnInit, OnDestroy {
 
     this.subs.add(this.dragulaService.dropModel(this.dragulaGroup())
       .subscribe(({ name, el, target, source, sibling , targetModel, sourceModel, item}) => {
-        console.log(name, el, target, source, sibling,targetModel, sourceModel, item);
         targetModel.forEach((ri: ReportItem, index) => {
           ri.setOrder(index + 1);
+          ri.markAsNeedUpdate();
         });
       })
     );

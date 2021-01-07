@@ -36,12 +36,7 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
         return;
       }
 
-      const formValue = this.form.value;
-      Object.keys(formValue).forEach(k => {
-        if (typeof formValue[k] == 'string') {
-          formValue[k] = formValue[k].trim().replace(/(?:(?:\r\n|\r|\n)\s*){2}/s, '\n\n');
-        }
-      });
+      const formValue = this.getFormValue();
 
       plainToClassFromExist(this.item, formValue);
 
@@ -59,8 +54,6 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
       if (this.form.valid) {
         this.editMode = false;
       }
-
-      console.log(this.item.isNew(), this.item.isNeedUpdate());
 
       if (this.item.isNew()) {
         this.item.delete();
@@ -92,6 +85,21 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
 
     onSwitchFavorite() {
       this.item.switchFavorite();
+    }
+
+    get isCreating(): boolean {
+      return this.item.isNew() && this.item.isNeedUpdate();
+    }
+
+    getFormValue(): any {
+      const formValue = this.form.value;
+      Object.keys(formValue).forEach(k => {
+        if (typeof formValue[k] == 'string') {
+          formValue[k] = formValue[k].trim().replace(/(?:(?:\r\n|\r|\n)\s*){2}/s, '\n\n');
+        }
+      });
+
+      return formValue;
     }
   }
 

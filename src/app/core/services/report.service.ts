@@ -1,6 +1,6 @@
-import {Injectable} from "@angular/core";
+import {EventEmitter, Injectable} from "@angular/core";
 import {BaseService} from "@app/core/services/base.service";
-import {ReportItem} from "@app/models/report-item";
+import {ReportItem, ReportItemFigure, ReportItemType} from "@app/models/report-item";
 import {Observable, of} from "rxjs";
 import {map, tap} from "rxjs/operators";
 import {classToPlain, plainToClass} from "class-transformer";
@@ -8,8 +8,8 @@ import {SectionReport} from "@app/models/report";
 
 @Injectable()
 export class ReportService extends BaseService {
+  sectionReportItemsUpdated = new EventEmitter<SectionReport>();
   protected apiUrl = 'books/my/sections/:bookSectionId/report-items';
-
   protected storedSectionReports: SectionReport[] = [];
 
   getReportForSection(bookSectionId: string): Observable<SectionReport> {
@@ -49,14 +49,27 @@ export class ReportService extends BaseService {
 
     const data = {updatedItems: classToPlain(itemsToUpdate), deletedItems: itemsToDelete.map(i => i.id)};
 
-    return this.http.post(this.getUrl('save-book-section-report', {bookSectionId: storedReport.bookSectionId}), data)
+    return this.http.post<ReportItem[]>(this.getUrl('save-book-section-report', {bookSectionId: storedReport.bookSectionId}), data)
       .pipe(
+        tap(
+          items => {
+            // const report = plainToClass(SectionReport, {items, bookSectionId});
+          }
+        ),
         map(items => {
+          const figures = items.filter(i => i.type === ReportItemType.FIGURE)
+          figures.forEach((f) => {
+            const storedFigure = <ReportItemFigure>storedReport.findItemById(f.id);
+            if (storedFigure) {
+              storedFigure.figure = f['figure'];
+            }
+          });
           return storedReport;
         }),
         tap(report => {
           report.clearDeletedItems();
           itemsToUpdate.forEach(i => i.markAsUpdated());
+          this.sectionReportItemsUpdated.emit(report);
         }),
       );
   }

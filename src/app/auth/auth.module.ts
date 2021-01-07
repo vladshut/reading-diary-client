@@ -8,6 +8,7 @@ import { LogoutPageComponent } from './pages/logout-page/logout-page.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AuthFormBasePageComponent } from './pages/form-base-page/auth-form-base-page.component';
+import { VerifyEmailPageComponent } from './pages/verify-email-page/verify-email-page.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { AuthFormBasePageComponent } from './pages/form-base-page/auth-form-base
     ForgotPasswordComponent,
     AuthFormBasePageComponent,
     ResetPasswordComponent,
+    VerifyEmailPageComponent,
   ],
   imports: [
     SharedModule,

@@ -1,6 +1,7 @@
 import {ucFirst} from "@app/shared/helpers/functions.helper";
 import {toTitleCase} from "codelyzer/util/utils";
 import {Constructor} from "@app/mixins/Constructor";
+import {env} from "@env/env";
 
 export enum ReportItemType {
   GOAL = 'goal',
@@ -207,9 +208,14 @@ export class ReportItemQuote extends ReportItem {
 
 export class ReportItemFigure extends ReportItem {
   figure: string = '';
+  figure_caption: string = '';
+
+  get src(): string {
+    return env.apiHost + this.figure
+  }
 
   get asFormattedString() {
-    return this.figure;
+    return this.figure_caption + ' - ' + this.src;
   }
 }
 

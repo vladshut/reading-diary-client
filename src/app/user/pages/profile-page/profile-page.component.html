@@ -1,0 +1,79 @@
+<ngx-loading [show]="isLoading()"></ngx-loading>
+
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-12">
+      <div class="content-header" i18n="@@account_settings.title">Account Settings</div>
+      <p class="content-sub-header mb-1" i18n="@@account_settings.subtitle">Configure account settings to your
+        needs.</p></div>
+  </div>
+  <div class="row">
+    <div class="col-md-3 mt-3">
+      <ul id="myTab" role="tablist" class="nav flex-column nav-pills">
+        <li class="nav-item"><a [ngClass]="{'active': isTab('general')}" (click)="currentTab = 'general'" href="javascript:;" id="general-tab" data-toggle="tab"
+                                role="tab"
+                                aria-controls="general" aria-selected="true" class="nav-link"><i
+          class="ft-settings mr-1 align-middle"></i><span class="align-middle"
+                                                          i18n="@@profile.tab.general">General</span></a></li>
+        <li class="nav-item"><a [ngClass]="{'active': isTab('change-password')}" (click)="currentTab = 'change-password'" href="javascript:;" id="change-password-tab"
+                                data-toggle="tab" role="tab"
+                                aria-controls="change-password" aria-selected="false" class="nav-link"><i
+          class="ft-lock mr-1 align-middle"></i><span class="align-middle" i18n="@@profile.tab.password">Password</span></a>
+        </li>
+        <li class="nav-item"><a [ngClass]="{'active': isTab('info')}" (click)="currentTab = 'info'" href="javascript:;" id="info-tab" data-toggle="tab"
+                                role="tab" aria-controls="info"
+                                aria-selected="false" class="nav-link"><i class="ft-info mr-1 align-middle"></i><span
+          class="align-middle">Info</span></a></li>
+        <li class="nav-item"><a [ngClass]="{'active': isTab('social-links')}" (click)="currentTab = 'social-links'" href="javascript:;" id="social-links-tab"
+                                data-toggle="tab" role="tab"
+                                aria-controls="social-links" aria-selected="false" class="nav-link"><i
+          class="ft-twitter mr-1 align-middle"></i><span class="align-middle" i18n="@@profile.tab.social_links">Social Links</span></a>
+        </li>
+        <li class="nav-item"><a [ngClass]="{'active': isTab('connections')}" (click)="currentTab = 'connections'" href="javascript:;" id="connections-tab"
+                                data-toggle="tab" role="tab"
+                                aria-controls="connections" aria-selected="false" class="nav-link"><i
+          class="ft-link mr-1 align-middle"></i><span class="align-middle"
+                                                      i18n="@@profile.tab.connections">Connections</span></a></li>
+        <li class="nav-item"><a [ngClass]="{'active': isTab('notifications')}" (click)="currentTab = 'notifications'" href="javascript:;" id="notifications-tab"
+                                data-toggle="tab" role="tab"
+                                aria-controls="notifications" aria-selected="false" class="nav-link"><i
+          class="ft-bell mr-1 align-middle"></i><span class="align-middle" i18n="@@profile.tab.notifications">Notifications</span></a>
+        </li>
+      </ul>
+    </div>
+    <div class="col-md-9">
+      <div class="card">
+        <div class="card-content">
+          <div class="card-body">
+            <div class="tab-content">
+              <div [ngClass]="{'active': isTab('general')}" id="general" role="tabpanel" aria-labelledby="general-tab"
+                   class="tab-pane active">
+                <app-profile-general-tab></app-profile-general-tab>
+              </div>
+              <div [ngClass]="{'active': isTab('change-password')}" id="change-password" role="tabpanel"
+                   aria-labelledby="change-password-tab" class="tab-pane active">
+                <app-profile-password-tab></app-profile-password-tab>
+              </div>
+              <div [ngClass]="{'active': isTab('info')}" id="info" role="tabpanel" aria-labelledby="info-tab"
+                   class="tab-pane active">
+                <h1 class="text-muted" i18n="@@coming_soon">Coming soon ...</h1>
+              </div>
+              <div [ngClass]="{'active': isTab('social-links')}" id="social-links" role="tabpanel"
+                   aria-labelledby="social-links-tab" class="tab-pane active">
+                <h1 class="text-muted" i18n="@@coming_soon">Coming soon ...</h1>
+              </div>
+              <div [ngClass]="{'active': isTab('connections')}" id="connections" role="tabpanel"
+                   aria-labelledby="connections-tab" class="tab-pane active">
+                <h1 class="text-muted" i18n="@@coming_soon">Coming soon ...</h1>
+              </div>
+              <div [ngClass]="{'active': isTab('notifications')}" id="notifications" role="tabpanel"
+                   aria-labelledby="notifications-tab" class="tab-pane active">
+                <h1 class="text-muted" i18n="@@coming_soon">Coming soon ...</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

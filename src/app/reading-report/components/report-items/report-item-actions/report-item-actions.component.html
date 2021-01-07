@@ -16,4 +16,7 @@
     <i *ngIf="!isFavorite && visible" class="far fa-star text-muted cursor-pointer" (click)="switchFavorite.emit()" i18n-title="@@actions.add_to_favorite" title="Add to favorite"></i>
     <i *ngIf="isFavorite" class="fas fa-star text-warning cursor-pointer" (click)="switchFavorite.emit()" i18n-title="@@actions.remove_from_favorite" title="Remove from favorite"></i>
   </div>
+  <div *ngIf="hasAction(IMAGE_PREVIEW)" class="pr-1" style="min-width: 30px">
+    <i *ngIf="visible" class="fas fa-external-link-alt text-primary cursor-pointer" (click)="imagePreview()" i18n-title="@@actions.preview" title="Preview"></i>
+  </div>
 </div>

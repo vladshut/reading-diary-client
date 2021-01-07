@@ -5,8 +5,8 @@ import { AuthGuard, UnAuthGuard } from '../core/guards';
 import { AutologinPageComponent } from './pages/autologin-page/autologin-page.component';
 import { LogoutPageComponent } from './pages/logout-page/logout-page.component';
 import { ContentLayoutComponent } from '../shared/layouts/content/content-layout.component';
-import { CanDeactivateGuard } from '../core/guards/can-deactivate.guard';
 import { FullLayoutComponent } from '../shared/layouts/full/full-layout.component';
+import {VerifyEmailPageComponent} from "@app/auth/pages/verify-email-page/verify-email-page.component";
 
 const CONTENT_ROUTES: Routes = [
   {path: '', component: AuthFormBasePageComponent, data: {mode: 'login'}, canActivate: [UnAuthGuard]},
@@ -16,7 +16,7 @@ const CONTENT_ROUTES: Routes = [
   {path: 'reset-password', component: AuthFormBasePageComponent, data: {mode: 'reset_password'}, canActivate: [UnAuthGuard]},
   {path: 'autologin', component: AutologinPageComponent, canActivate: [UnAuthGuard]},
   {path: 'logout', component: LogoutPageComponent, canActivate: [AuthGuard]},
-
+  {path: 'verify-email', component: VerifyEmailPageComponent, canActivate: [AuthGuard]},
 ];
 
 const FULL_ROUTES: Routes = [];

@@ -210,6 +210,20 @@
           <context context-type="sourcefile">app/shared/components/footer/footer.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
+      </trans-unit><trans-unit id="87596713c4117de7eee7257e8f09a9876a4fa6a7" datatype="html">
+        <source>User settings</source><target state="final">User settings</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">user_settings</note>
+      </trans-unit><trans-unit id="bb694b49d408265c91c62799c2b3a7e3151c824d" datatype="html">
+        <source>Logout</source><target state="final">Logout</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">logout</note>
       </trans-unit><trans-unit id="ConfirmAction" datatype="html">
         <source>Confirm action</source><target state="final">Confirm action</target>
         <context-group purpose="location">
@@ -218,11 +232,8 @@
         </context-group>
       </trans-unit><trans-unit id="Cancel" datatype="html">
         <source>Cancel</source><target state="final">Cancel</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/shared/components/action-confirm-dialog/action-confirm-dialog.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit><trans-unit id="Confirm" datatype="html">
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/shared/components/action-confirm-dialog/action-confirm-dialog.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">119</context></context-group></trans-unit><trans-unit id="Confirm" datatype="html">
         <source>Confirm</source><target state="final">Confirm</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/action-confirm-dialog/action-confirm-dialog.component.html</context>
@@ -335,7 +346,7 @@
       </trans-unit><trans-unit id="actions.cancel" datatype="html">
         <source>Cancel</source><target state="final">Cancel</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/shared/components/select-items-modal/select-items-modal.component.html</context><context context-type="linenumber">44</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-item/section-item.component.html</context><context context-type="linenumber">17</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-item/section-item.component.html</context><context context-type="linenumber">31</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-term/report-item-term.component.html</context><context context-type="linenumber">16</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-goal/report-item-goal.component.html</context><context context-type="linenumber">16</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-quote/report-item-quote.component.html</context><context context-type="linenumber">16</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-question/report-item-question.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-resume/report-item-resume.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-reference/report-item-reference.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-information-evaluation/report-item-information-evaluation.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-review/report-item-review.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-forward-research/report-item-forward-research.component.html</context><context context-type="linenumber">12</context></context-group></trans-unit><trans-unit id="actions.select" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/shared/components/select-items-modal/select-items-modal.component.html</context><context context-type="linenumber">44</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-item/section-item.component.html</context><context context-type="linenumber">17</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-item/section-item.component.html</context><context context-type="linenumber">31</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-term/report-item-term.component.html</context><context context-type="linenumber">16</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-goal/report-item-goal.component.html</context><context context-type="linenumber">16</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-quote/report-item-quote.component.html</context><context context-type="linenumber">16</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-question/report-item-question.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-resume/report-item-resume.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-reference/report-item-reference.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-information-evaluation/report-item-information-evaluation.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-review/report-item-review.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-forward-research/report-item-forward-research.component.html</context><context context-type="linenumber">12</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-figure/report-item-figure.component.html</context><context context-type="linenumber">23</context></context-group></trans-unit><trans-unit id="actions.select" datatype="html">
         <source>Select</source><target state="final">Select</target>
         
       <context-group purpose="location"><context context-type="sourcefile">app/shared/components/select-items-modal/select-items-modal.component.html</context><context context-type="linenumber">48</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/books/pages/add-book-page/add-book-page.component.html</context><context context-type="linenumber">15</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/books/pages/add-book-page/add-book-page.component.html</context><context context-type="linenumber">66</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/books/pages/add-book-page/add-book-page.component.html</context><context context-type="linenumber">98</context></context-group></trans-unit><trans-unit id="select" datatype="html">
@@ -360,6 +371,13 @@
           <context context-type="sourcefile">app/shared/components/attachments-count/attachments-count.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
+      </trans-unit><trans-unit id="85f5ab5596db2d9a01353a24d3dacd36e476d49e" datatype="html">
+        <source>Image uploader</source><target state="final">Image uploader</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/components/image-upload-modal/image-upload-modal.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Image uploader</note>
       </trans-unit><trans-unit id="Login" datatype="html">
         <source>Sign in</source><target state="final">Sign in</target>
         
@@ -695,7 +713,7 @@
       <context-group purpose="location"><context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context><context context-type="linenumber">32</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-report/section-report.component.html</context><context context-type="linenumber">30</context></context-group></trans-unit><trans-unit id="actions.update" datatype="html">
         <source>Update</source><target state="final">Update</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-term/report-item-term.component.html</context><context context-type="linenumber">15</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-goal/report-item-goal.component.html</context><context context-type="linenumber">15</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-quote/report-item-quote.component.html</context><context context-type="linenumber">15</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-question/report-item-question.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-resume/report-item-resume.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-reference/report-item-reference.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-information-evaluation/report-item-information-evaluation.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-review/report-item-review.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-forward-research/report-item-forward-research.component.html</context><context context-type="linenumber">11</context></context-group></trans-unit><trans-unit id="actions.copy_to_clipboard" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-term/report-item-term.component.html</context><context context-type="linenumber">15</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-goal/report-item-goal.component.html</context><context context-type="linenumber">15</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-quote/report-item-quote.component.html</context><context context-type="linenumber">15</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-question/report-item-question.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-resume/report-item-resume.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-reference/report-item-reference.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-information-evaluation/report-item-information-evaluation.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-review/report-item-review.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-forward-research/report-item-forward-research.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/reading-report/components/report-items/report-item-figure/report-item-figure.component.html</context><context context-type="linenumber">22</context></context-group></trans-unit><trans-unit id="actions.copy_to_clipboard" datatype="html">
         <source>Copy to clipboard</source><target state="final">Copy to clipboard</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/modals/manage-public-access-modal/manage-public-access-modal.component.html</context>
@@ -778,6 +796,111 @@
           <context context-type="sourcefile">app/reading-report/components/report-items/report-item-actions/report-item-actions.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
+      </trans-unit><trans-unit id="actions.preview" datatype="html">
+        <source>Preview</source><target state="final">Preview</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-actions/report-item-actions.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit><trans-unit id="caption" datatype="html">
+        <source>Caption</source><target state="final">Caption</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-figure/report-item-figure.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit><trans-unit id="account_settings.title" datatype="html">
+        <source>Account Settings</source><target state="final">Account Settings</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit><trans-unit id="account_settings.subtitle" datatype="html">
+        <source>Configure account settings to your
+        needs.</source><target state="final">Configure account settings to your
+        needs.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.general" datatype="html">
+        <source>General</source><target state="final">General</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.change_password" datatype="html">
+        <source>Change Password</source><target state="final">Change Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.social_links" datatype="html">
+        <source>Social Links</source><target state="final">Social Links</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.connections" datatype="html">
+        <source>Connections</source><target state="final">Connections</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.notifications" datatype="html">
+        <source>Notifications</source><target state="final">Notifications</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit><trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
+        <source>Edit</source><target state="final">Edit</target>
+        
+        <note priority="1" from="description">actions.edit</note>
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">59</context></context-group></trans-unit><trans-unit id="profile.avatar.restrictions" datatype="html">
+        <source>Allowed JPG, PNG. Max size of 1MB</source><target state="final">Allowed JPG, PNG. Max size of 1MB</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.email" datatype="html">
+        <source>Email</source><target state="final">Email</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">73</context></context-group></trans-unit><trans-unit id="user.email.verified" datatype="html">
+        <source>Verified</source><target state="final">Verified</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">77</context></context-group></trans-unit><trans-unit id="user.email.not_verified" datatype="html">
+        <source>Not verified</source><target state="final">Not verified</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">79</context></context-group></trans-unit><trans-unit id="actions.resend_verification" datatype="html">
+        <source>Resend verification</source><target state="final">Resend verification</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">81</context></context-group></trans-unit><trans-unit id="user.name" datatype="html">
+        <source>Name</source><target state="final">Name</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">95</context></context-group></trans-unit><trans-unit id="user.bio" datatype="html">
+        <source>Bio</source><target state="final">Bio</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">107</context></context-group></trans-unit><trans-unit id="Save" datatype="html">
+        <source>Save</source><target state="final">Save</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">118</context></context-group></trans-unit><trans-unit id="coming_soon" datatype="html">
+        <source>Coming soon ...</source><target state="final">Coming soon ...</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">159</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">163</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">167</context>
+        </context-group>
       </trans-unit><trans-unit id="actions.save" datatype="html">
         <source>Save</source><target state="final">Save</target>
         
@@ -822,6 +945,18 @@
         <source>Your password has been changed successfully!</source><target state="final">Your password has been changed successfully!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/reset-password/reset-password.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit><trans-unit id="auth.email_verification.success" datatype="html">
+        <source>Email is verified!</source><target state="final">Email is verified!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/verify-email-page/verify-email-page.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit><trans-unit id="auth.email_verification.error" datatype="html">
+        <source>Email is not verified!</source><target state="final">Email is not verified!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/verify-email-page/verify-email-page.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
@@ -915,6 +1050,12 @@
       </trans-unit>
       <trans-unit id="444015d32a0cc9a79cd471d655c3dbb0cb72fd7e" datatype="html">
         <source>One of <x id="INTERPOLATION" equiv-text="{{fields}}"/> must be provided</source><target state="final">One of <x id="INTERPOLATION" equiv-text="{{fields}}"/> must be provided</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/validation.service.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit><trans-unit id="same" datatype="html">
+        <source>All fields <x id="INTERPOLATION" equiv-text="{{fields}}"/> must be the same.</source><target state="final">All fields <x id="INTERPOLATION" equiv-text="{{fields}}"/> must be the same.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/validation.service.ts</context>
           <context context-type="linenumber">1</context>
@@ -1060,6 +1201,24 @@
           <context context-type="linenumber">1</context>
         </context-group>
         <note priority="1" from="description">sidebar</note>
+      </trans-unit><trans-unit id="new_password" datatype="html">
+        <source>New Password</source><target state="final">New Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile-page/profile-page.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit><trans-unit id="confirm_password" datatype="html">
+        <source>Confirm Password</source><target state="final">Confirm Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile-page/profile-page.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.confirmation.resend_successfully" datatype="html">
+        <source>Confirmation was sent you to your email</source><target state="final">Confirmation was sent you to your email</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile-page/profile-page.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
       </trans-unit>
       
       

@@ -102,4 +102,24 @@ export class AuthService {
       .pipe(map(user => plainToClass(User, user)))
       .pipe(tap((user: User) => this.setCurrentUser(user)));
   }
+
+  me(): Observable<User> {
+    return this.http.post<User>(`${env.apiHost}/api/auth/me`, {})
+      .pipe(map(user => plainToClass(User, user)))
+      .pipe(tap((user: User) => this.setCurrentUser(user)));
+  }
+
+  changePassword(oldPassword: string, newPassword: string, confirmPassword: string): Observable<void> {
+    const data = {
+      'old_password': oldPassword,
+      'new_password': newPassword,
+      'confirmPassword': confirmPassword,
+    };
+
+    return this.http.post<void>(`${env.apiHost}/api/auth/change-password`, data);
+  }
+
+  verifyEmail(link: string): Observable<void> {
+    return this.http.get<void>(link);
+  }
 }

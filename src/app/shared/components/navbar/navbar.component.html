@@ -25,9 +25,13 @@
               <p class="d-none">User Settings</p>
             </a>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic3">
-              <a class="dropdown-item" href="javascript:;">
+              <a routerLink="/user/settings" class="dropdown-item" href="javascript:;">
+                <i class="ft-settings mr-2"></i>
+                <span i18n="user_settings">User settings</span>
+              </a>
+              <a routerLink="/logout"  class="dropdown-item" href="javascript:;">
                 <i class="ft-power mr-2"></i>
-                <span routerLink="/logout">Logout</span>
+                <span i18n="logout">Logout</span>
               </a>
             </div>
           </li>

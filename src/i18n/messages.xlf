@@ -210,6 +210,20 @@
           <context context-type="sourcefile">app/shared/components/footer/footer.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
+      </trans-unit><trans-unit id="87596713c4117de7eee7257e8f09a9876a4fa6a7" datatype="html">
+        <source>User settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">user_settings</note>
+      </trans-unit><trans-unit id="bb694b49d408265c91c62799c2b3a7e3151c824d" datatype="html">
+        <source>Logout</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <note priority="1" from="description">logout</note>
       </trans-unit><trans-unit id="ConfirmAction" datatype="html">
         <source>Confirm action</source>
         <context-group purpose="location">
@@ -221,6 +235,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/action-confirm-dialog/action-confirm-dialog.component.html</context>
           <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">119</context>
         </context-group>
       </trans-unit><trans-unit id="Confirm" datatype="html">
         <source>Confirm</source>
@@ -382,6 +400,10 @@
           <context context-type="sourcefile">app/reading-report/components/report-items/report-item-forward-research/report-item-forward-research.component.html</context>
           <context context-type="linenumber">12</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-figure/report-item-figure.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
       </trans-unit><trans-unit id="actions.select" datatype="html">
         <source>Select</source>
         <context-group purpose="location">
@@ -422,6 +444,13 @@
           <context context-type="sourcefile">app/shared/components/attachments-count/attachments-count.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
+      </trans-unit><trans-unit id="85f5ab5596db2d9a01353a24d3dacd36e476d49e" datatype="html">
+        <source>Image uploader</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/components/image-upload-modal/image-upload-modal.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">Image uploader</note>
       </trans-unit><trans-unit id="auth.registration" datatype="html">
         <source>Sign up</source>
         <context-group purpose="location">
@@ -876,6 +905,10 @@
           <context context-type="sourcefile">app/reading-report/components/report-items/report-item-forward-research/report-item-forward-research.component.html</context>
           <context context-type="linenumber">11</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-figure/report-item-figure.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
       </trans-unit><trans-unit id="actions.copy_to_clipboard" datatype="html">
         <source>Copy to clipboard</source>
         <context-group purpose="location">
@@ -959,6 +992,135 @@
           <context context-type="sourcefile">app/reading-report/components/report-items/report-item-actions/report-item-actions.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
+      </trans-unit><trans-unit id="actions.preview" datatype="html">
+        <source>Preview</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-actions/report-item-actions.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit><trans-unit id="caption" datatype="html">
+        <source>Caption</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/components/report-items/report-item-figure/report-item-figure.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit><trans-unit id="account_settings.title" datatype="html">
+        <source>Account Settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit><trans-unit id="account_settings.subtitle" datatype="html">
+        <source>Configure account settings to your
+        needs.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.general" datatype="html">
+        <source>General</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.change_password" datatype="html">
+        <source>Change Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.social_links" datatype="html">
+        <source>Social Links</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.connections" datatype="html">
+        <source>Connections</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.notifications" datatype="html">
+        <source>Notifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit><trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
+        <source>Edit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <note priority="1" from="description">actions.edit</note>
+      </trans-unit><trans-unit id="profile.avatar.restrictions" datatype="html">
+        <source>Allowed JPG, PNG. Max size of 1MB</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.email" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.email.verified" datatype="html">
+        <source>Verified</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.email.not_verified" datatype="html">
+        <source>Not verified</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit><trans-unit id="actions.resend_verification" datatype="html">
+        <source>Resend verification
+                        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.name" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">95</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.bio" datatype="html">
+        <source>Bio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit><trans-unit id="Save" datatype="html">
+        <source>Save</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">118</context>
+        </context-group>
+      </trans-unit><trans-unit id="coming_soon" datatype="html">
+        <source>Coming soon ...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">155</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">159</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">163</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
+          <context context-type="linenumber">167</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="auth.forgot_password.alert.success" datatype="html">
         <source>Please check your mailbox for future instructions.</source>
@@ -999,6 +1161,20 @@
         <source>Your password has been changed successfully!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/reset-password/reset-password.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="auth.email_verification.success" datatype="html">
+        <source>Email is verified!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/verify-email-page/verify-email-page.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="auth.email_verification.error" datatype="html">
+        <source>Email is not verified!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/pages/verify-email-page/verify-email-page.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
@@ -1092,6 +1268,13 @@
       </trans-unit>
       <trans-unit id="444015d32a0cc9a79cd471d655c3dbb0cb72fd7e" datatype="html">
         <source>One of <x id="INTERPOLATION" equiv-text="{{fields}}"/> must be provided</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/validation.service.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="same" datatype="html">
+        <source>All fields <x id="INTERPOLATION" equiv-text="{{fields}}"/> must be the same.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/validation.service.ts</context>
           <context context-type="linenumber">1</context>
@@ -1244,6 +1427,27 @@
           <context context-type="linenumber">1</context>
         </context-group>
         <note priority="1" from="description">sidebar</note>
+      </trans-unit>
+      <trans-unit id="new_password" datatype="html">
+        <source>New Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile-page/profile-page.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="confirm_password" datatype="html">
+        <source>Confirm Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile-page/profile-page.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="user.confirmation.resend_successfully" datatype="html">
+        <source>Confirmation was sent you to your email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/user/pages/profile-page/profile-page.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>

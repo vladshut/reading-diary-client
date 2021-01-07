@@ -20,6 +20,7 @@ export class ValidationService {
       'minlength': this.i18n('Minimum length {{length}}', {length: validatorValue.requiredLength}),
       'email': this.i18n('Invalid email address'),
       'onlyOneOfFieldsRequired': this.i18n('One of {{fields}} must be provided', {fields: validatorValue.fieldsNames ? validatorValue.fieldsNames.join(', ') : ''}),
+      'same': this.i18n({value: 'All fields {{fields}} must be the same.', id: 'same'}, {fields: validatorValue.fieldsNames ? validatorValue.fieldsNames.join(', ') : ''}),
       'iban': this.i18n('This is not a valid International Bank Account Number (IBAN)'),
       'validatePhoneNumber': this.i18n('Invalid phone number'),
       'max-file-size': this.i18n({

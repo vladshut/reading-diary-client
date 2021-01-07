@@ -2,6 +2,8 @@ import { HttpParams } from '@angular/common/http';
 import { TransformationType } from 'class-transformer/TransformOperationExecutor';
 import { Moment } from 'moment';
 import * as moment from 'moment';
+import uuidv4 from "uuid/v4";
+import {env} from "@env/env";
 
 export function removeFromArray(arr, ...items) {
   const a = items;
@@ -325,4 +327,42 @@ export function contains(a, b){
   return a.contains ?
     a != b && a.contains(b) :
     !!(a.compareDocumentPosition(b) & 16);
+}
+
+export function uuid4 () {
+  return uuidv4();
+}
+
+export function getInputValueByName(name: string) {
+  const inputs = document.getElementsByName(name);
+
+  if (inputs.length != 1) {
+    return;
+  }
+
+  const input = inputs[0];
+  const value = input.getAttribute('value');
+
+  if (!value) {
+    return;
+  }
+
+  return value;
+}
+
+export function getFilepondOptions(options) {
+  const defaultOptions = {
+    name: 'filepond',
+    class: 'my-filepond',
+    maxFileSize: '1MB',
+    multiple: true,
+    labelIdle: 'Drop files here',
+    server: {
+      url: `${env.apiHost}/api/files`,
+      process: '/process',
+      revert: '/process',
+    },
+  };
+
+  return {...defaultOptions, ...options};
 }
