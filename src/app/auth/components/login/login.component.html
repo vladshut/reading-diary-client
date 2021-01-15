@@ -1,25 +1,62 @@
 ﻿<!--Login Page Starts-->
-<ngx-loading [show]="loading > 0"></ngx-loading>
+<ngx-loading [show]="isLoading()"></ngx-loading>
 <div class="card">
   <div class="card-content text-center">
-    <img class="card-img-top img-fluid" src="assets/img/working-place.jpg">
-    <div class="card-header">
-      <img src="assets/img/logo.png"/>
-    </div>
     <div class="card-body">
       <div class="card-block">
-        Tool to create reading report. Tool to make your reading more efficient.
+        <h2 class="pt-4 pb-4 text-bold-500" i18n="@@auth.login">Sign in</h2>
+      </div>
+
+      <div class="card-block">
+        <app-auth-social></app-auth-social>
+      </div>
+
+      <span class="login-form__or"><span i18n="@@auth.or_divider">or</span></span>
+      <div class="card-block">
+        <form novalidate="" [formGroup]="loginForm" (ngSubmit)="onSubmit()" #f>
+          <div class="form-group mb-4">
+            <div class="col-md-12">
+              <div class="position-relative has-icon-left">
+                <input type="email" formControlName="email" class="form-control form-control-lg" name="inputEmail"
+                       id="inputEmail" placeholder="Email" i18n-placeholder="@@Email" required email>
+                <app-control-messages [control]="f.email"></app-control-messages>
+                <div class="form-control-position pt-1">
+                  <i class="fa fa-envelope text-secondary" style="font-size: 24px"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group mb-4">
+            <div class="col-md-12">
+              <div class="position-relative has-icon-left">
+                <input type="password" formControlName="password" class="form-control form-control-lg" name="inputPass"
+                       id="inputPass" placeholder="Password" i18n-placeholder="@@Password" required>
+                <app-control-messages [control]="f.password"></app-control-messages>
+                <div class="form-control-position pt-1">
+                  <i class="fa fa-lock text-secondary" style="font-size: 24px"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-md-12">
+              <button type="submit" class="btn btn-primary btn-raised btn-block btn-lg" i18n="@@Login">Sign in</button>
+            </div>
+            <div class="col-md-12 text-right">
+              <button routerLink="/forgot-password" type="button" class="mr-0 pr-0 btn btn-link"
+                      i18n="@@auth.forgot_password">Forgot your password?
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+    <div class="card-footer">
+      <p class="text-secondary" i18n="@@login.have_an_account">Don't have an account?</p>
+      <button [routerLink]="['/register']" [preserveQueryParams]="true" type="button"
+              class="btn btn-outline-primary btn-block btn-raised btn-lg" i18n="@@auth.registration">Sign up
+      </button>
+    </div>
   </div>
-  <div class="card-footer">
-    <button (click)="login('google')" class="btn btn-social btn-google">
-      <span class="fab fa-google"></span> Sign in with Google
-    </button>
-    &nbsp;&nbsp;&nbsp;
-    <button (click)="login('facebook')" class="btn btn-social btn-facebook">
-      <span class="fab fa-facebook"></span> Sign in with Facebook
-
-    </button>
-  </div>
-</div>

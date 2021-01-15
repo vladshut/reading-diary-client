@@ -5,6 +5,9 @@ import {I18n} from "@ngx-translate/i18n-polyfill";
 import {User} from "@app/models/user";
 import {AuthService} from "@app/core/services/auth.service";
 import {WithLoading} from "@app/mixins/WithLoading";
+import {addErrorsToForm, validateAllFormFields} from "@app/shared/helpers/form.helper";
+import {finalize} from "rxjs/operators";
+import {AlertService} from "@app/core/services/alert.service";
 
 @Component({
   selector: 'app-profile-password-tab',
@@ -19,6 +22,7 @@ export class ProfilePasswordTabComponent extends WithLoading() implements OnInit
   constructor(
     private auth: AuthService,
     private formBuilder: FormBuilder,
+    private alertService: AlertService,
     protected i18n: I18n,
   ) {
     super();
@@ -48,6 +52,34 @@ export class ProfilePasswordTabComponent extends WithLoading() implements OnInit
   }
 
   onSubmit() {
+    if (this.form.invalid) {
+      this.alertService.formError();
+      validateAllFormFields(this.form);
+      return;
+    }
 
+    this.startLoading();
+
+    const oldPassword = this.form.get('old_password') ? this.form.get('old_password').value : null;
+    const newPassword = this.form.get('new_password').value;
+    const confirmPassword = this.form.get('confirm_password').value;
+
+    this.auth.changePassword(oldPassword, newPassword, confirmPassword).pipe(
+      finalize(() => {
+        this.stopLoading();
+      })
+    ).subscribe(
+      () => {
+        this.auth.me().subscribe(user => {
+          this.user = user;
+          this.initForm();
+        });
+        this.alertService.updated();
+      },
+      (errors) => {
+        addErrorsToForm(this.form, errors);
+        this.alertService.formError();
+      }
+    );
   }
 }

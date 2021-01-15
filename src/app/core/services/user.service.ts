@@ -15,15 +15,6 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
-  register(email, password, name, agreementConfirmed, extraParams?): Observable<User> {
-    const params = {...extraParams};
-    params['email'] = email;
-    params['password'] = password;
-    params['name'] = name;
-    params['agreementConfirmed'] = agreementConfirmed ? '1' : '0';
-    return this.http.post<User>(`${this.apiUrl}/register`, params);
-  }
-
   update(user: User): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${user.id}`, user).pipe(
       map(data => plainToClass(User, data))

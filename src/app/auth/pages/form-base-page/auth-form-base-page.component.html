@@ -1,7 +1,15 @@
   <div class="container-fluid">
     <div class="row full-height-vh justify-content-center">
-      <div class="col-xl-6 col-lg-9 col-md-12 d-flex align-items-center align-self-center">
-        <app-login class="w-100"></app-login>
+      <div class="col-xl-4 col-lg-6 col-md-9 align-self-center" style="max-width: 600px;" [ngSwitch]="mode">
+        <div class="w-100 text-center mb-5">
+          <img src="assets/img/logo.png" alt="logo" class="d-inline-block"/>
+        </div>
+
+        <app-login *ngSwitchCase="modes.Login" style="width: 100%;"></app-login>
+        <app-register *ngSwitchCase="modes.Registration" style="width: 100%;"></app-register>
+        <app-forgot-password *ngSwitchCase="modes.ForgotPassword" style="width: 100%;"></app-forgot-password>
+        <app-reset-password *ngSwitchCase="modes.ResetPassword" style="width: 100%;"></app-reset-password>
+        <h1 *ngSwitchDefault style="width: 100%;" i18n>Not Found</h1>
       </div>
     </div>
   </div>

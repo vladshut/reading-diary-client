@@ -106,6 +106,10 @@ export class ProfileGeneralTabComponent extends WithLoading() implements OnInit 
   }
 
   getAvatarLink() {
+    if (!this.user.avatar) {
+      return;
+    }
+
     if (this.user.avatar.startsWith('http') || this.user.avatar.startsWith('https')) {
       return this.user.avatar;
     }

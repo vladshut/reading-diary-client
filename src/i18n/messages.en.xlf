@@ -233,7 +233,7 @@
       </trans-unit><trans-unit id="Cancel" datatype="html">
         <source>Cancel</source><target state="final">Cancel</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/shared/components/action-confirm-dialog/action-confirm-dialog.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">119</context></context-group></trans-unit><trans-unit id="Confirm" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/shared/components/action-confirm-dialog/action-confirm-dialog.component.html</context><context context-type="linenumber">11</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context><context context-type="linenumber">69</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context><context context-type="linenumber">41</context></context-group></trans-unit><trans-unit id="Confirm" datatype="html">
         <source>Confirm</source><target state="final">Confirm</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/action-confirm-dialog/action-confirm-dialog.component.html</context>
@@ -281,15 +281,9 @@
         </context-group>
       </trans-unit><trans-unit id="Name" datatype="html">
         <source>Name</source><target state="final">Name</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/shared/components/file-uploader/file-uploader.component.html</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/auth/components/register/register.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-      </trans-unit><trans-unit id="Size" datatype="html">
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/shared/components/file-uploader/file-uploader.component.html</context><context context-type="linenumber">46</context></context-group></trans-unit><trans-unit id="Size" datatype="html">
         <source>Size</source><target state="final">Size</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/file-uploader/file-uploader.component.html</context>
@@ -378,35 +372,78 @@
           <context context-type="linenumber">1</context>
         </context-group>
         <note priority="1" from="description">Image uploader</note>
+      </trans-unit><trans-unit id="d04a7bcd0c10157e6135e0230e30d3e6539655f3" datatype="html">
+        <source>Not Found</source><target state="final">Not Found</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/pages/form-base-page/auth-form-base-page.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit><trans-unit id="auth.login" datatype="html">
+        <source>Sign in</source><target state="final">Sign in</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/components/login/login.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit><trans-unit id="auth.or_divider" datatype="html">
+        <source>or</source><target state="final">or</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/components/login/login.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/components/register/register.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
       </trans-unit><trans-unit id="Login" datatype="html">
         <source>Sign in</source><target state="final">Sign in</target>
         
         
         
-      <context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">72</context></context-group></trans-unit><trans-unit id="Email" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/auth/components/login/login.component.html</context><context context-type="linenumber">45</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">69</context></context-group></trans-unit><trans-unit id="auth.forgot_password" datatype="html">
+        <source>Forgot your password?
+              </source><target state="final">Forgot your password?
+              </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/components/login/login.component.html</context>
+          <context context-type="linenumber">49</context>
+        </context-group>
+      </trans-unit><trans-unit id="login.have_an_account" datatype="html">
+        <source>Don't have an account?</source><target state="final">Don't have an account?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/components/login/login.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit><trans-unit id="Email" datatype="html">
         <source>Email</source><target state="final">Email</target>
         
         
         
-      <context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">24</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/auth/components/forgot-password/forgot-password.component.html</context><context context-type="linenumber">13</context></context-group></trans-unit><trans-unit id="Password" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/auth/components/login/login.component.html</context><context context-type="linenumber">21</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">20</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/auth/components/forgot-password/forgot-password.component.html</context><context context-type="linenumber">13</context></context-group></trans-unit><trans-unit id="Password" datatype="html">
         <source>Password</source><target state="final">Password</target>
         
         
         
-      <context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">37</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/auth/components/reset-password/reset-password.component.html</context><context context-type="linenumber">14</context></context-group></trans-unit><trans-unit id="auth.registration" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/auth/components/login/login.component.html</context><context context-type="linenumber">34</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">33</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/auth/components/reset-password/reset-password.component.html</context><context context-type="linenumber">14</context></context-group></trans-unit><trans-unit id="auth.registration" datatype="html">
         <source>Sign up
     </source><target state="final">Sign up
     </target>
         
         
         
-      <context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">5</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">63</context></context-group></trans-unit><trans-unit id="auth.have_account" datatype="html">
-        <source>Already have an account?</source><target state="final">Already have an account?</target>
+      <context-group purpose="location"><context context-type="sourcefile">app/auth/components/login/login.component.html</context><context context-type="linenumber">59</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">5</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">60</context></context-group></trans-unit><trans-unit id="auth.register_agreement" datatype="html">
+        <source>
+                  I have read and accept Reading Diary's terms and conditions, cookie policy and privacy policy.
+                </source><target state="final">
+                  I have read and accept Reading Diary's terms and conditions, cookie policy and privacy policy.
+                </target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/components/register/register.component.html</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">47</context>
         </context-group>
-      </trans-unit><trans-unit id="6a6a5a45d7df5b7f0169fd2096d78910bb5d0b7d" datatype="html">
+      </trans-unit><trans-unit id="auth.have_account" datatype="html">
+        <source>Already have an account?</source><target state="final">Already have an account?</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/auth/components/register/register.component.html</context><context context-type="linenumber">67</context></context-group></trans-unit><trans-unit id="6a6a5a45d7df5b7f0169fd2096d78910bb5d0b7d" datatype="html">
         <source>Forgot your password?</source><target state="final">Forgot your password?</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/components/forgot-password/forgot-password.component.html</context>
@@ -457,6 +494,18 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/auth/components/reset-password/reset-password.component.html</context>
           <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit><trans-unit id="app.auth.google" datatype="html">
+        <source>Continue with Google</source><target state="final">Continue with Google</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/components/auth-social/auth-social.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit><trans-unit id="app.auth.facebook" datatype="html">
+        <source>Continue with Facebook</source><target state="final">Continue with Facebook</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/auth/components/auth-social/auth-social.component.html</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit><trans-unit id="name" datatype="html">
         <source>Name</source><target state="final">Name</target>
@@ -828,8 +877,8 @@
           <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
           <context context-type="linenumber">17</context>
         </context-group>
-      </trans-unit><trans-unit id="profile.tab.change_password" datatype="html">
-        <source>Change Password</source><target state="final">Change Password</target>
+      </trans-unit><trans-unit id="profile.tab.password" datatype="html">
+        <source>Password</source><target state="final">Password</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
           <context context-type="linenumber">21</context>
@@ -856,52 +905,61 @@
         <source>Edit</source><target state="final">Edit</target>
         
         <note priority="1" from="description">actions.edit</note>
-      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">59</context></context-group></trans-unit><trans-unit id="profile.avatar.restrictions" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context><context context-type="linenumber">9</context></context-group></trans-unit><trans-unit id="profile.avatar.restrictions" datatype="html">
         <source>Allowed JPG, PNG. Max size of 1MB</source><target state="final">Allowed JPG, PNG. Max size of 1MB</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">63</context>
-        </context-group>
-      </trans-unit><trans-unit id="user.email" datatype="html">
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context><context context-type="linenumber">13</context></context-group></trans-unit><trans-unit id="user.email" datatype="html">
         <source>Email</source><target state="final">Email</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">73</context></context-group></trans-unit><trans-unit id="user.email.verified" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context><context context-type="linenumber">23</context></context-group></trans-unit><trans-unit id="user.email.verified" datatype="html">
         <source>Verified</source><target state="final">Verified</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">77</context></context-group></trans-unit><trans-unit id="user.email.not_verified" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context><context context-type="linenumber">27</context></context-group></trans-unit><trans-unit id="user.email.not_verified" datatype="html">
         <source>Not verified</source><target state="final">Not verified</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">79</context></context-group></trans-unit><trans-unit id="actions.resend_verification" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context><context context-type="linenumber">29</context></context-group></trans-unit><trans-unit id="actions.resend_verification" datatype="html">
         <source>Resend verification</source><target state="final">Resend verification</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">81</context></context-group></trans-unit><trans-unit id="user.name" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context><context context-type="linenumber">31</context></context-group></trans-unit><trans-unit id="user.name" datatype="html">
         <source>Name</source><target state="final">Name</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">95</context></context-group></trans-unit><trans-unit id="user.bio" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context><context context-type="linenumber">45</context></context-group></trans-unit><trans-unit id="user.bio" datatype="html">
         <source>Bio</source><target state="final">Bio</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">107</context></context-group></trans-unit><trans-unit id="Save" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context><context context-type="linenumber">57</context></context-group></trans-unit><trans-unit id="Save" datatype="html">
         <source>Save</source><target state="final">Save</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">118</context></context-group></trans-unit><trans-unit id="coming_soon" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context><context context-type="linenumber">68</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context><context context-type="linenumber">40</context></context-group></trans-unit><trans-unit id="user.old_password" datatype="html">
+        <source>Old Password</source><target state="final">Old Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.new_password" datatype="html">
+        <source>New Password</source><target state="final">New Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.confirm_new_password" datatype="html">
+        <source>Retype New Password</source><target state="final">Retype New Password</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit><trans-unit id="validation.same_passwords" datatype="html">
+        <source>Passwords mismatch</source><target state="final">Passwords mismatch</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit><trans-unit id="coming_soon" datatype="html">
         <source>Coming soon ...</source><target state="final">Coming soon ...</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">155</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">159</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">163</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">167</context>
-        </context-group>
-      </trans-unit><trans-unit id="actions.save" datatype="html">
+        
+        
+        
+        
+      <context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">59</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">63</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">67</context></context-group><context-group purpose="location"><context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context><context context-type="linenumber">71</context></context-group></trans-unit><trans-unit id="actions.save" datatype="html">
         <source>Save</source><target state="final">Save</target>
         
         
@@ -912,21 +970,30 @@
           <context context-type="sourcefile">src/app/auth/components/forgot-password/forgot-password.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
-      </trans-unit><trans-unit id="auth.login.wrong_token_is_provided" datatype="html">
-        <source>Wrong token is provided!</source><target state="final">Wrong token is provided!</target>
+      </trans-unit><trans-unit id="auth.login.success" datatype="html">
+        <source>You are logged in</source><target state="final">You are logged in</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/login/login.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
-      </trans-unit>
-      
-      <trans-unit id="aa456288f1b4438f6e0028e7ed886b92f3a1d3ce" datatype="html">
+      </trans-unit><trans-unit id="auth.login.error" datatype="html">
         <source>Bad credentials!</source><target state="final">Bad credentials!</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/components/login/login.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
+      </trans-unit><trans-unit id="auth.login.wrong_token_is_provided" datatype="html">
+        <source>Wrong token is provided!</source><target state="final">Wrong token is provided!</target>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/auth/components/auth-social/auth-social.component.ts</context><context context-type="linenumber">1</context></context-group></trans-unit><trans-unit id="auth.bad_credentials" datatype="html">
+        <source>Bad credentials!</source><target state="final">Bad credentials!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/components/auth-social/auth-social.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
       </trans-unit>
+      
+      
       <trans-unit id="6fa4461d7ca6e4f820b8c39afc08465df79e03c1" datatype="html">
         <source>Registration successful</source><target state="final">Registration successful</target>
         <context-group purpose="location">
@@ -1203,23 +1270,14 @@
         <note priority="1" from="description">sidebar</note>
       </trans-unit><trans-unit id="new_password" datatype="html">
         <source>New Password</source><target state="final">New Password</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/user/pages/profile-page/profile-page.component.ts</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit><trans-unit id="confirm_password" datatype="html">
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.ts</context><context context-type="linenumber">1</context></context-group></trans-unit><trans-unit id="confirm_password" datatype="html">
         <source>Confirm Password</source><target state="final">Confirm Password</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/user/pages/profile-page/profile-page.component.ts</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit><trans-unit id="user.confirmation.resend_successfully" datatype="html">
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.ts</context><context context-type="linenumber">1</context></context-group></trans-unit><trans-unit id="user.confirmation.resend_successfully" datatype="html">
         <source>Confirmation was sent you to your email</source><target state="final">Confirmation was sent you to your email</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/user/pages/profile-page/profile-page.component.ts</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-      </trans-unit>
+        
+      <context-group purpose="location"><context context-type="sourcefile">src/app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.ts</context><context context-type="linenumber">1</context></context-group></trans-unit>
       
       
       

@@ -4,15 +4,17 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {I18n} from '@ngx-translate/i18n-polyfill';
 import {AuthService} from '@app/core/services/auth.service';
 import {AlertService} from '@app/core/services/alert.service';
-import {finalize} from "rxjs/operators";
+import {WithLoading} from "@app/mixins/WithLoading";
+import {validateAllFormFields} from "@app/shared/helpers/form.helper";
 
 @Component({
   templateUrl: 'login.component.html',
   selector: 'app-login',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LoginComponent implements OnInit {
-  loading = 0;
+export class LoginComponent extends WithLoading() implements OnInit {
+  loginForm: FormGroup;
+  submitted = false;
   redirectUrl: string;
 
   constructor(
@@ -23,35 +25,44 @@ export class LoginComponent implements OnInit {
     private alertService: AlertService,
     private i18n: I18n,
   ) {
+    super();
   }
 
   ngOnInit() {
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required]],
+      password: ['', Validators.required],
+    });
+
     this.auth.logout();
     this.redirectUrl = this.route.snapshot.queryParams['redirectUrl'] || '/books/list';
-    const token = this.route.snapshot.queryParamMap.get('token');
-    if (token) {
-      this.loading ++;
-      this.auth.loginWithToken(token).pipe(finalize(() => this.loading --))
-        .subscribe(() => {
-          this.router.navigate([this.redirectUrl])
-        }, () => {
-          this.alertService.error(this.i18n({value: 'Wrong token is provided!', id: 'auth.login.wrong_token_is_provided'}))
-          this.loading --;
-        });
-    }
   }
 
-  login(method: string) {
-    this.loading ++;
-    this.auth.loginWith(method)
-      .subscribe((res) => {
-          this.loading --;
-          location.href = res.redirect_to;
+  get f() {
+    return this.loginForm.controls;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+      this.alertService.formError();
+      validateAllFormFields(this.loginForm);
+      return;
+    }
+
+    this.startLoading();
+    this.auth.login(this.f.email.value, this.f.password.value)
+      .subscribe(
+        user => {
+          this.alertService.success(this.i18n({value: 'You are logged in', id: 'auth.login.success'}));
+          this.stopLoading();
+          this.router.navigate([this.redirectUrl]);
         },
         error => {
-          this.alertService.error(this.i18n('Bad credentials!'));
-          this.loading --;
-        }
-      );
+          this.alertService.error(this.i18n({value: 'Bad credentials!', id: 'auth.login.error'}));
+          this.stopLoading();
+        });
   }
 }

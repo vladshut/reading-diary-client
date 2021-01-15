@@ -119,3 +119,24 @@ app-control-messages {
 footer {
   margin-top: 70px;
 }
+
+.login-form__or {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 35px 0 65px 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.33;
+  letter-spacing: 0.8px;
+  height: 1px;
+  background: #d8dfe0;
+  text-transform: uppercase;
+  color: #6b7177a6;
+}
+
+.login-form__or span {
+  background: #fff;
+  padding-left: 30px;
+  padding-right: 30px;
+}

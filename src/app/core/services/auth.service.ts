@@ -6,7 +6,7 @@ import { plainToClass } from 'class-transformer';
 import { Observable } from 'rxjs';
 import { User } from '@app/models/user';
 import { getCircularReplacer } from '@app/shared/helpers/functions.helper';
-import {map, tap} from "rxjs/operators";
+import {map, tap, switchMap} from "rxjs/operators";
 
 const CURRENT_USER_KEY = 'rd_current_user';
 const TOKEN_KEY = 'rd_access_token_key';
@@ -25,6 +25,16 @@ export class AuthService {
 
   static getToken(): string {
     return localStorage.getItem(TOKEN_KEY);
+  }
+
+  register(email, password, extraParams?): Observable<User> {
+    const params = {...extraParams};
+    params['email'] = email;
+    params['password'] = password;
+
+    return this.http
+      .post(`${env.apiHost}/api/auth/register`, params, {headers: this.headers})
+      .pipe(switchMap((data: {access_token: string}) => this.loginWithToken(data.access_token)));
   }
 
   getToken(): string {
@@ -50,14 +60,10 @@ export class AuthService {
     return this.getToken() && !this.jwtHelper.isTokenExpired(this.getToken());
   }
 
-  login(username: string, password: string, rememberMe = false): Promise<User> {
+  login(email: string, password: string): Observable<User> {
     return this.http
-      .post(`${env.apiHost}/api/login_check`, {username, password, rememberMe}, {headers: this.headers})
-      .toPromise()
-      .then((user: User) => {
-        this.setCurrentUser(user);
-        return user;
-      });
+      .post(`${env.apiHost}/api/auth/login`, {email, password}, {headers: this.headers})
+      .pipe(switchMap((data: {access_token: string}) => this.loginWithToken(data.access_token)));
   }
 
   autologin(alogin: string): Promise<User> {
@@ -109,12 +115,15 @@ export class AuthService {
       .pipe(tap((user: User) => this.setCurrentUser(user)));
   }
 
-  changePassword(oldPassword: string, newPassword: string, confirmPassword: string): Observable<void> {
+  changePassword(oldPassword: string|null, newPassword: string, confirmPassword: string): Observable<void> {
     const data = {
-      'old_password': oldPassword,
       'new_password': newPassword,
-      'confirmPassword': confirmPassword,
+      'confirm_password': confirmPassword,
     };
+
+    if (oldPassword) {
+      data['old_password'] = oldPassword;
+    }
 
     return this.http.post<void>(`${env.apiHost}/api/auth/change-password`, data);
   }
