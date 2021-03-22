@@ -38,9 +38,8 @@ export class ForgotPasswordComponent implements OnInit {
     }
 
     this.loading ++;
-    const redirectUri = env.baseUrl + '/reset-password';
     const email = this.form.value.email;
-    this.auth.sendResetPasswordEmail(email, redirectUri).subscribe(() => {
+    this.auth.sendResetPasswordEmail(email).subscribe(() => {
       this.loading --;
       this.alertService.info(this.i18n({value: 'Please check your mailbox for future instructions.', id: 'auth.forgot_password.alert.success'}));
       this.router.navigate(['/login']);

@@ -140,3 +140,13 @@ footer {
   padding-left: 30px;
   padding-right: 30px;
 }
+
+.preserve-line-breaks {
+  white-space: pre-wrap;
+}
+
+.title-inline {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

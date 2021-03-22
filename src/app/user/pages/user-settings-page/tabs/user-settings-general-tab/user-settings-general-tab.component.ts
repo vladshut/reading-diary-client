@@ -14,11 +14,11 @@ import {I18n} from "@ngx-translate/i18n-polyfill";
 import {WithLoading} from "@app/mixins/WithLoading";
 
 @Component({
-  selector: 'app-profile-general-tab',
-  templateUrl: './profile-general-tab.component.html',
-  styleUrls: ['./profile-general-tab.component.css']
+  selector: 'app-user-settings-general-tab',
+  templateUrl: './user-settings-general-tab.component.html',
+  styleUrls: ['./user-settings-general-tab.component.css']
 })
-export class ProfileGeneralTabComponent extends WithLoading() implements OnInit {
+export class UserSettingsGeneralTabComponent extends WithLoading() implements OnInit {
   user: User;
   form: FormGroup = new FormGroup({});
 

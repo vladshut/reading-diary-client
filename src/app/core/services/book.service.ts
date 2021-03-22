@@ -6,6 +6,9 @@ import {map} from "rxjs/operators";
 import {plainToClass} from "class-transformer";
 import {objectToFormData, toHttpParams} from "@app/shared/helpers/functions.helper";
 import {UserBook} from "@app/models/user-book";
+import {TopLanguage} from "@app/dashboard/models/top-language";
+import {TopAuthor} from "@app/dashboard/models/top-author";
+import {TopStatus} from "@app/dashboard/models/top-status";
 
 @Injectable()
 export class BookService extends BaseService {
@@ -59,7 +62,7 @@ export class BookService extends BaseService {
   }
 
   get(userBookId: string):Observable<UserBook> {
-    return this.http.get<UserBook>(this.getUrl(`my/${userBookId}`)).pipe(
+    return this.http.get<UserBook>(this.getUrl(`user/${userBookId}`)).pipe(
       map(res => plainToClass(UserBook, res))
     );
   }
@@ -72,6 +75,31 @@ export class BookService extends BaseService {
 
   resumeReading(userBook: UserBook) {
     return this.http.post<UserBook>(this.getUrl(`my/${userBook.id}/resume-reading`), {}).pipe(
+      map(data => plainToClass(UserBook, data))
+    );
+  }
+
+  topLanguages(userId: string) {
+    return this.http.get<TopLanguage[]>(this.getUrl(`users/${userId}/books/top-languages`, {}, true), {});
+  }
+
+  topAuthors(userId: string) {
+    return this.http.get<TopAuthor[]>(this.getUrl(`users/${userId}/books/top-authors`, {}, true), {});
+  }
+
+
+  topStatuses(userId: string) {
+    return this.http.get<TopStatus[]>(this.getUrl(`users/${userId}/books/top-statuses`, {}, true), {});
+  }
+
+  publish(userBook: UserBook): Observable<UserBook> {
+    return this.http.post<UserBook>(this.getUrl(`my/${userBook.id}/publish-report`), {}).pipe(
+      map(data => plainToClass(UserBook, data))
+    );
+  }
+
+  unpublish(userBook: UserBook): Observable<UserBook> {
+    return this.http.post<UserBook>(this.getUrl(`my/${userBook.id}/unpublish-report`), {}).pipe(
       map(data => plainToClass(UserBook, data))
     );
   }

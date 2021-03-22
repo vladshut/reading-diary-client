@@ -13,7 +13,7 @@
   </div>
 </form>
 <div class="d-flex" *ngIf="!editMode" (mouseover)="hover = true" (mouseleave)="hover = false">
-  <app-report-item-actions [except]="['favorite', 'move']" (copy)="onCopy()" (delete)="onDelete()" (switchVisibility)="onSwitchVisibility()" [isPublic]="item.isPublic()" [visible]="hover"></app-report-item-actions>
+  <app-report-item-actions *ngIf="showActions()" [except]="['favorite', 'move']" (copy)="onCopy()" (delete)="onDelete()" (switchVisibility)="onSwitchVisibility()" [isPublic]="item.isPublic()" [visible]="hover"></app-report-item-actions>
   <div (click)="editMode = true">
     <p style="white-space: pre-wrap">{{item.information_evaluation}}</p>
   </div>

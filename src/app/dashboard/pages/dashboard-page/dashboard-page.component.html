@@ -1,0 +1,28 @@
+<ngx-loading [show]="isLoading()"></ngx-loading>
+<app-page-title title="Dashboard" i18n-title="@@dashboard"></app-page-title>
+
+
+<div class="row">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-4 col-lg-6 col-md-9" style="max-width: 600px;">
+        <app-user-profile *ngIf="user"
+                          [user]="user"
+                          [isCurrentUser]="true"
+        ></app-user-profile>
+      </div>
+
+      <div class="col-xl-4 col-lg-6 col-md-9" style="max-width: 600px;">
+        <app-top-languages></app-top-languages>
+      </div>
+
+      <div class="col-xl-4 col-lg-6 col-md-9" style="max-width: 600px;">
+        <app-top-authors></app-top-authors>
+      </div>
+
+      <div class="col-xl-4 col-lg-6 col-md-9" style="max-width: 600px;">
+        <app-top-statuses></app-top-statuses>
+      </div>
+    </div>
+  </div>
+</div>

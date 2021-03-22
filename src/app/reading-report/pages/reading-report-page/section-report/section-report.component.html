@@ -39,7 +39,9 @@
           (createItem)="onCreate(type.type)"
           [icon]="type.icon"
           [name]="report.isSingleType(type.type) ? type.name : type.pluralName"
-          [items]="report.getItemsByType(type.type)">
+          [items]="report.getItemsByType(type.type)"
+          [withActions]="true"
+        >
         </app-section-report-block>
       </ng-container>
     </div>

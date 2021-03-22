@@ -81,17 +81,17 @@ export class AuthService {
     localStorage.removeItem(TOKEN_KEY);
   }
 
-  sendResetPasswordEmail(email: string, redirectUri: string): Observable<void> {
+  sendResetPasswordEmail(email: string): Observable<void> {
     const url = `${env.apiHost}/api/auth/send-reset-password-mail`;
-    const body = {email, redirectUri};
+    const body = {email};
     const options = {headers: this.headers};
 
     return this.http.post<void>(url, body, options);
   }
 
-  resetPassword(password: string, token: string) {
+  resetPassword(password: string, token: string, email: string) {
     const url = `${env.apiHost}/api/auth/reset-password`;
-    const body = {password, token};
+    const body = {password, token, email};
     const options = {headers: this.headers};
 
     return this.http.post<void>(url, body, options);

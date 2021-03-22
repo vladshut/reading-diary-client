@@ -31,6 +31,7 @@ import {FileService} from "@app/core/services/file.service";
 import {BookSectionService} from "@app/core/services/book-section.service";
 import {ReportService} from "@app/core/services/report.service";
 import {PublicReportService} from "@app/core/services/public-report.service";
+import {FeedService} from "@app/core/services/feed.service";
 
 export function loadDictionaries(dictionaryService: DictionaryService) {
   return () => dictionaryService.load();
@@ -64,6 +65,7 @@ export function loadDictionaries(dictionaryService: DictionaryService) {
     BookSectionService,
     ReportService,
     PublicReportService,
+    FeedService,
 
     { provide: APP_INITIALIZER, useFactory: loadDictionaries, deps: [DictionaryService], multi: true },
 

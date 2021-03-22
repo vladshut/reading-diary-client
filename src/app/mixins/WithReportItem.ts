@@ -12,6 +12,7 @@ import {copyToClipboard} from "@app/shared/helpers/functions.helper";
 export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> = Constructor<{}>>(Base: T = (class {} as any))  {
   abstract class Temporary extends Base implements OnInit {
     @Input() item: T2;
+    @Input() withActions: boolean = false;
     @Output() editingCancelled = new EventEmitter<ReportItem>();
 
     form: FormGroup;
@@ -100,6 +101,10 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
       });
 
       return formValue;
+    }
+
+    showActions(): boolean {
+      return this.withActions;
     }
   }
 

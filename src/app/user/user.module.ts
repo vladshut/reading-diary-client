@@ -1,24 +1,34 @@
 import {NgModule} from '@angular/core';
 import {SharedModule} from '../shared/shared.module';
-import {ProfilePageComponent} from '@app/user/pages/profile-page/profile-page.component';
+import {UserSettingsPageComponent} from '@app/user/pages/user-settings-page/user-settings-page.component';
 import {UserRoutingModule} from '@app/user/user-routing.module';
 import {TextareaAutosizeModule} from "ngx-textarea-autosize";
-import {ProfileGeneralTabComponent} from './pages/profile-page/tabs/profile-general-tab/profile-general-tab.component';
-import { ProfilePasswordTabComponent } from './pages/profile-page/tabs/profile-password-tab/profile-password-tab.component';
+import {UserSettingsGeneralTabComponent} from './pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component';
+import { UserSettingsPasswordTabComponent } from './pages/user-settings-page/tabs/user-settings-password-tab/user-settings-password-tab.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { UserPreviewComponent } from './components/user-preview/user-preview.component';
+import { UserReportsComponent } from './components/user-reports/user-reports.component';
 
 @NgModule({
   declarations: [
+    UserSettingsPageComponent,
+    UserSettingsGeneralTabComponent,
+    UserSettingsPasswordTabComponent,
     ProfilePageComponent,
-    ProfileGeneralTabComponent,
-    ProfileGeneralTabComponent,
-    ProfilePasswordTabComponent,
+    UserProfileComponent,
+    UserPreviewComponent,
+    UserReportsComponent,
   ],
   imports: [
     SharedModule,
     UserRoutingModule,
     TextareaAutosizeModule,
   ],
-  exports: []
+    exports: [
+        UserProfileComponent,
+        UserPreviewComponent
+    ]
 })
 export class UserModule {
 }

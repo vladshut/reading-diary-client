@@ -15,6 +15,7 @@ import * as moment from 'moment';
 })
 export class CompletedReportSectionItemComponent extends WithLoading() implements OnInit, OnDestroy {
   @Input() section: BookSection;
+  @Input() withActions: boolean;
   @Input() deep = 0;
 
   typesWithNames = [];
@@ -31,9 +32,7 @@ export class CompletedReportSectionItemComponent extends WithLoading() implement
 
   ngOnInit() {
     this.typesWithNames = ReportItem.getTypesWithInfo();
-
     this.timeToSaveSubscription = this.saveInterval.subscribe(val => this.saveReport());
-
   }
 
   ngOnDestroy(): void {

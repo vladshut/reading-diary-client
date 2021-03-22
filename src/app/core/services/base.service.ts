@@ -11,8 +11,8 @@ export class BaseService {
   constructor(protected http: HttpClient) {
   }
 
-  protected getUrl(urlPart: string = '', params: {[key: string]: string} = {}) {
-    let url = this.apiUrl + '/' + urlPart;
+  protected getUrl(urlPart: string = '', params: {[key: string]: string} = {}, absolute = false) {
+    let url = (absolute ? '' : (this.apiUrl + '/')) + urlPart;
 
     for (let [key, value] of Object.entries(params)) {
       value = value ? value : '';

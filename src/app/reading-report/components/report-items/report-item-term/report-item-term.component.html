@@ -17,7 +17,7 @@
   </div>
 </form>
 <div class="d-flex" *ngIf="!editMode" (mouseover)="hover = true" (mouseleave)="hover = false">
-  <app-report-item-actions (copy)="onCopy()" (switchFavorite)="onSwitchFavorite()" (delete)="onDelete()" (switchVisibility)="onSwitchVisibility()" [isPublic]="item.isPublic()" [isFavorite]="item.isFavorite()" [visible]="hover"></app-report-item-actions>
+  <app-report-item-actions *ngIf="showActions()" (copy)="onCopy()" (switchFavorite)="onSwitchFavorite()" (delete)="onDelete()" (switchVisibility)="onSwitchVisibility()" [isPublic]="item.isPublic()" [isFavorite]="item.isFavorite()" [visible]="hover"></app-report-item-actions>
   <div (click)="editMode = true">
     <p><span class="font-italic">{{item.term}}</span>&nbsp;&nbsp;-&nbsp;&nbsp;<span class="text-muted">{{item.term_definition}}</span></p>
   </div>

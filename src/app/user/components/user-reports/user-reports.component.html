@@ -1,0 +1,36 @@
+<ngx-loading [show]="isLoading()"></ngx-loading>
+<div class="card">
+  <div class="card-header"><h4 class="card-title mb-0" i18n="@@shared_reports">Shared Reports</h4></div>
+  <div class="card-content">
+    <div class="card-body">
+      <div class="card-block" *ngIf="pagination">
+        <div class="feed media p-2 cursor-pointer" [routerLink]="['/reading-report/published/' + feed.data.user_book_id]" *ngFor="let feed of pagination.data">
+
+          <div class="mr-3" style="width: 35px; height: calc(35px * (5/3));">
+          <img
+          src="{{feed.image}}"
+          alt="feed image"
+          class="avatar rounded"
+          style="object-fit: cover;width: 100%;height: 100%">
+
+          </div>
+
+          <div class="media-body"><h4 class="font-medium-1 mb-0 title-inline">{{feed.title}}</h4>
+            <p class="grey font-small-3 m-0 title-inline">{{feed.data.book_author_name}}</p></div>
+
+          <p>{{feed.data.rating}}&nbsp;<i class="fa fa-star text-warning"></i></p>
+        </div>
+      </div>
+
+      <div class="card-block" *ngIf="pagination && !pagination.data">
+        <p class="text-muted text-center" i18n="no_shared_reports_yet">No shared reports yet</p>
+      </div>
+
+      <div class="card-block" *ngIf="pagination && pagination.last_page > 1">
+        <div class="col-12 d-flex justify-content-center">
+          <pagination-controls (pageChange)="goToPage($event)" previousLabel="" nextLabel=""></pagination-controls>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

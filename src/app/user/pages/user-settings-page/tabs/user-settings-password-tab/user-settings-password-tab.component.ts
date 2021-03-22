@@ -10,11 +10,11 @@ import {finalize} from "rxjs/operators";
 import {AlertService} from "@app/core/services/alert.service";
 
 @Component({
-  selector: 'app-profile-password-tab',
-  templateUrl: './profile-password-tab.component.html',
-  styleUrls: ['./profile-password-tab.component.css']
+  selector: 'app-user-settings-password-tab',
+  templateUrl: './user-settings-password-tab.component.html',
+  styleUrls: ['./user-settings-password-tab.component.css']
 })
-export class ProfilePasswordTabComponent extends WithLoading() implements OnInit {
+export class UserSettingsPasswordTabComponent extends WithLoading() implements OnInit {
 
   user: User;
   form: FormGroup = new FormGroup({});

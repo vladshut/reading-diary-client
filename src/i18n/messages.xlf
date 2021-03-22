@@ -210,18 +210,25 @@
           <context context-type="sourcefile">app/shared/components/footer/footer.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
-      </trans-unit><trans-unit id="87596713c4117de7eee7257e8f09a9876a4fa6a7" datatype="html">
-        <source>User settings</source>
+      </trans-unit><trans-unit id="994363f08f9fbfa3b3994ff7b35c6904fdff18d8" datatype="html">
+        <source>Profile</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">30</context>
+        </context-group>
+        <note priority="1" from="description">user_profile</note>
+      </trans-unit><trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
+        <source>Settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/components/navbar/navbar.component.html</context>
+          <context context-type="linenumber">34</context>
         </context-group>
         <note priority="1" from="description">user_settings</note>
       </trans-unit><trans-unit id="bb694b49d408265c91c62799c2b3a7e3151c824d" datatype="html">
         <source>Logout</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/navbar/navbar.component.html</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">38</context>
         </context-group>
         <note priority="1" from="description">logout</note>
       </trans-unit><trans-unit id="ConfirmAction" datatype="html">
@@ -237,11 +244,11 @@
           <context context-type="linenumber">11</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context>
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
           <context context-type="linenumber">69</context>
         </context-group>
         <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context>
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-password-tab/user-settings-password-tab.component.html</context>
           <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit><trans-unit id="Confirm" datatype="html">
@@ -833,6 +840,201 @@
           <context context-type="sourcefile">app/books/pages/add-book-page/add-book-page.component.html</context>
           <context context-type="linenumber">113</context>
         </context-group>
+      </trans-unit><trans-unit id="dashboard" datatype="html">
+        <source>Dashboard</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dashboard/pages/dashboard-page/dashboard-page.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.member_since" datatype="html">
+        <source>Member since</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-profile/user-profile.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.read_books" datatype="html">
+        <source>Read books</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-profile/user-profile.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit><trans-unit id="top_languages" datatype="html">
+        <source>TOP Languages</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dashboard/components/top-languages/top-languages.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit><trans-unit id="books_stats" datatype="html">
+        <source>Books statistics</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dashboard/components/top-languages/top-languages.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dashboard/components/top-statuses/top-statuses.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dashboard/components/top-authors/top-authors.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit><trans-unit id="statuses" datatype="html">
+        <source>Statuses</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dashboard/components/top-statuses/top-statuses.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit><trans-unit id="top_authors" datatype="html">
+        <source>TOP Authors</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/dashboard/components/top-authors/top-authors.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit><trans-unit id="account_settings.title" datatype="html">
+        <source>Account Settings</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit><trans-unit id="account_settings.subtitle" datatype="html">
+        <source>Configure account settings to your
+        needs.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.general" datatype="html">
+        <source>General</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.password" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.social_links" datatype="html">
+        <source>Social Links</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.connections" datatype="html">
+        <source>Connections</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit><trans-unit id="profile.tab.notifications" datatype="html">
+        <source>Notifications</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit><trans-unit id="coming_soon" datatype="html">
+        <source>Coming soon ...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit><trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
+        <source>Edit</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description">actions.edit</note>
+      </trans-unit><trans-unit id="profile.avatar.restrictions" datatype="html">
+        <source>Allowed JPG, PNG. Max size of 1MB</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.email" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.email.verified" datatype="html">
+        <source>Verified</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.email.not_verified" datatype="html">
+        <source>Not verified</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit><trans-unit id="actions.resend_verification" datatype="html">
+        <source>Resend verification
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.name" datatype="html">
+        <source>Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.bio" datatype="html">
+        <source>Bio</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit><trans-unit id="Save" datatype="html">
+        <source>Save</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-password-tab/user-settings-password-tab.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.old_password" datatype="html">
+        <source>Old Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-password-tab/user-settings-password-tab.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.new_password" datatype="html">
+        <source>New Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-password-tab/user-settings-password-tab.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit><trans-unit id="user.confirm_new_password" datatype="html">
+        <source>Retype New Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-password-tab/user-settings-password-tab.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit><trans-unit id="validation.same_passwords" datatype="html">
+        <source>Passwords mismatch</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-password-tab/user-settings-password-tab.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
       </trans-unit><trans-unit id="f72992030f134408b675152c397f9d0ec00f3b2a" datatype="html">
         <source>Report</source>
         <context-group purpose="location">
@@ -1075,151 +1277,6 @@
           <context context-type="sourcefile">app/reading-report/components/report-items/report-item-figure/report-item-figure.component.html</context>
           <context context-type="linenumber">16</context>
         </context-group>
-      </trans-unit><trans-unit id="account_settings.title" datatype="html">
-        <source>Account Settings</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-      </trans-unit><trans-unit id="account_settings.subtitle" datatype="html">
-        <source>Configure account settings to your
-        needs.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-      </trans-unit><trans-unit id="profile.tab.general" datatype="html">
-        <source>General</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-      </trans-unit><trans-unit id="profile.tab.password" datatype="html">
-        <source>Password</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit><trans-unit id="profile.tab.social_links" datatype="html">
-        <source>Social Links</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">30</context>
-        </context-group>
-      </trans-unit><trans-unit id="profile.tab.connections" datatype="html">
-        <source>Connections</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">36</context>
-        </context-group>
-      </trans-unit><trans-unit id="profile.tab.notifications" datatype="html">
-        <source>Notifications</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">40</context>
-        </context-group>
-      </trans-unit><trans-unit id="coming_soon" datatype="html">
-        <source>Coming soon ...</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">59</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">63</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">67</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/profile-page.component.html</context>
-          <context context-type="linenumber">71</context>
-        </context-group>
-      </trans-unit><trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
-        <source>Edit</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-        <note priority="1" from="description">actions.edit</note>
-      </trans-unit><trans-unit id="profile.avatar.restrictions" datatype="html">
-        <source>Allowed JPG, PNG. Max size of 1MB</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-      </trans-unit><trans-unit id="user.email" datatype="html">
-        <source>Email</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context>
-          <context context-type="linenumber">23</context>
-        </context-group>
-      </trans-unit><trans-unit id="user.email.verified" datatype="html">
-        <source>Verified</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context>
-          <context context-type="linenumber">27</context>
-        </context-group>
-      </trans-unit><trans-unit id="user.email.not_verified" datatype="html">
-        <source>Not verified</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context>
-          <context context-type="linenumber">29</context>
-        </context-group>
-      </trans-unit><trans-unit id="actions.resend_verification" datatype="html">
-        <source>Resend verification
-        </source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context>
-          <context context-type="linenumber">31</context>
-        </context-group>
-      </trans-unit><trans-unit id="user.name" datatype="html">
-        <source>Name</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-      </trans-unit><trans-unit id="user.bio" datatype="html">
-        <source>Bio</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context>
-          <context context-type="linenumber">57</context>
-        </context-group>
-      </trans-unit><trans-unit id="Save" datatype="html">
-        <source>Save</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.html</context>
-          <context context-type="linenumber">68</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context>
-          <context context-type="linenumber">40</context>
-        </context-group>
-      </trans-unit><trans-unit id="user.old_password" datatype="html">
-        <source>Old Password</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
-      </trans-unit><trans-unit id="user.new_password" datatype="html">
-        <source>New Password</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-      </trans-unit><trans-unit id="user.confirm_new_password" datatype="html">
-        <source>Retype New Password</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context>
-          <context context-type="linenumber">25</context>
-        </context-group>
-      </trans-unit><trans-unit id="validation.same_passwords" datatype="html">
-        <source>Passwords mismatch</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.html</context>
-          <context context-type="linenumber">33</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="auth.login.wrong_token_is_provided" datatype="html">
         <source>Wrong token is provided!</source>
@@ -1456,6 +1513,31 @@
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="book_status.not_read" datatype="html">
+        <source>Not read</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/components/top-statuses/top-statuses.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="book_status.read" datatype="html">
+        <source>Completed</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/components/top-statuses/top-statuses.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="book_status.reading" datatype="html">
+        <source>In progress</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/components/top-statuses/top-statuses.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/components/top-statuses/top-statuses.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="resume_reading_confirmation" datatype="html">
         <source>Do you really want to resume reading this book?</source>
         <context-group purpose="location">
@@ -1526,15 +1608,40 @@
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="f65253954b66e929a8b4d5ecaf61f9129f8cec64" datatype="html">
-        <source>Dashboard</source>
+      <trans-unit id="books" datatype="html">
+        <source>Books</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/sidebar/sidebar.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
+        <note priority="1" from="description">sidebar</note>
       </trans-unit>
-      <trans-unit id="books" datatype="html">
-        <source>Books</source>
+      <trans-unit id="follows" datatype="html">
+        <source>Follows</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">sidebar</note>
+      </trans-unit>
+      <trans-unit id="followers" datatype="html">
+        <source>Followers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">sidebar</note>
+      </trans-unit>
+      <trans-unit id="following" datatype="html">
+        <source>Following</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/sidebar/sidebar.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description">sidebar</note>
+      </trans-unit>
+      <trans-unit id="search_users" datatype="html">
+        <source>Search</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/sidebar/sidebar.component.ts</context>
           <context context-type="linenumber">1</context>
@@ -1544,21 +1651,21 @@
       <trans-unit id="user.confirmation.resend_successfully" datatype="html">
         <source>Confirmation was sent you to your email</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/user/pages/profile-page/tabs/profile-general-tab/profile-general-tab.component.ts</context>
+          <context context-type="sourcefile">src/app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="new_password" datatype="html">
         <source>New Password</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.ts</context>
+          <context context-type="sourcefile">src/app/user/pages/user-settings-page/tabs/user-settings-password-tab/user-settings-password-tab.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
       <trans-unit id="confirm_password" datatype="html">
         <source>Confirm Password</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/user/pages/profile-page/tabs/profile-password-tab/profile-password-tab.component.ts</context>
+          <context context-type="sourcefile">src/app/user/pages/user-settings-page/tabs/user-settings-password-tab/user-settings-password-tab.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>

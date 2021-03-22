@@ -11,7 +11,7 @@
         <h6 *ngIf="deep === 5">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h6>
       </ng-container>
 
-      <div class="d-flex justify-content-between" *appShowItForAuthenticated>
+      <div class="d-flex justify-content-between" *ngIf="withActions">
         <div ngbDropdown class="dropdown">
           <button ngbDropdownToggle class="btn btn-sm btn-outline-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" i18n="actions.add">
             Add
@@ -40,10 +40,11 @@
                                   [icon]="type.icon" [name]="section.report.isSingleType(type.type) ? type.name : type.pluralName"
                                   [items]="section.report.getItemsByType(type.type)"
                                   [sectionId]="section.id"
+                                  [withActions]="withActions"
         >
         </app-section-report-block>
       </ng-container>
     </div>
-    <app-completed-report-section-item [deep]="deep + 1" *ngFor="let subSection of section.children" [section]="subSection"></app-completed-report-section-item>
+    <app-completed-report-section-item [withActions]="withActions" [deep]="deep + 1" *ngFor="let subSection of section.children" [section]="subSection"></app-completed-report-section-item>
   </div>
 </div>

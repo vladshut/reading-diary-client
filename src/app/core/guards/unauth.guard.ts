@@ -12,7 +12,7 @@ export class UnAuthGuard implements CanActivate {
             return true;
         }
 
-        const redirect = route.queryParams['redirectUrl'] || '/books/list';
+        const redirect = route.queryParams['redirectUrl'] || 'dashboard';
         this.router.navigate([redirect]);
 
         return false;

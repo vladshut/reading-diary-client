@@ -1,5 +1,5 @@
 <div class="d-flex">
-  <app-report-item-actions [except]="['favorite', 'move']" (copy)="onCopy()" (delete)="onDelete()" (switchVisibility)="onSwitchVisibility()" [isPublic]="item.isPublic()" [visible]="true"></app-report-item-actions>
+  <app-report-item-actions *ngIf="showActions()" [except]="['favorite', 'move']" (copy)="onCopy()" (delete)="onDelete()" (switchVisibility)="onSwitchVisibility()" [isPublic]="item.isPublic()" [visible]="true"></app-report-item-actions>
   <div class="pl-2">
     <ngx-stars  [initialStars]="item.rating" [readonly]="!auth.isAuthenticated()" [color]="'gold'" [size]="1.5" [maxStars]="10" (ratingOutput)="onRatingChanged($event)"></ngx-stars>
   </div>

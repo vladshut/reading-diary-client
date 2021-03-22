@@ -8,6 +8,7 @@ import {ReportItem} from "@app/models/report-item";
 })
 export class ReportItemComponent implements OnInit {
   @Input() item: ReportItem;
+  @Input() withActions: boolean;
   @Output() editingCancelled = new EventEmitter<ReportItem>();
 
   constructor() { }

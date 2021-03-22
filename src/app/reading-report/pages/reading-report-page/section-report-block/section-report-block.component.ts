@@ -3,8 +3,7 @@ import {ReportItem} from "@app/models/report-item";
 import {copyToClipboard} from "@app/shared/helpers/functions.helper";
 import {AlertService} from "@app/core/services/alert.service";
 import {DragulaService} from "ng2-dragula";
-import {BookSection} from "@app/models/book-section";
-import {forkJoin, Subscription} from "rxjs";
+import {Subscription} from "rxjs";
 
 @Component({
   selector: 'app-section-report-block',
@@ -17,6 +16,8 @@ export class SectionReportBlockComponent implements OnInit, OnDestroy {
   @Input() items: ReportItem[] = [];
   @Input() isSingle: boolean = false;
   @Input() sectionId: string;
+  @Input() ownerUserId: string;
+  @Input() withActions: boolean;
 
   @Output() createItem = new EventEmitter<void>();
 

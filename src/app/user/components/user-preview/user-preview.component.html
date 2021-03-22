@@ -1,0 +1,61 @@
+<div class="card dash2-user">
+  <div class="card-content">
+    <div class="card-body">
+      <div class="card-block">
+        <div class="text-center">
+          <br>
+          <div class="cursor-pointer" routerLink="/user/profile/{{user.id}}">
+            <ngx-avatar [name]="(user.name || user.email) | simpleName"
+                        [textSizeRatio]="2"
+                        [size]="110"
+                        [src]="user.avatarLink"
+                        class="d-flex justify-content-center font-medium-3 avatar mb-2 m-auto">
+            </ngx-avatar>
+          </div>
+
+          <br>
+
+          <h4 class="mb-0 cursor-pointer" routerLink="/user/profile/{{user.id}}">{{user.name}}</h4>
+          <p class="grey">
+            <ng-container i18n="@@user.member_since">Member since</ng-container>
+            &nbsp;
+            {{user.created_at.format('Do MMM YYYY')}}
+          </p>
+          <div class="d-flex justify-content-center align-items-center mt-3">
+            <div class="dash-followers mr-4">
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn bg-light-secondary px-2"><i
+                  class="ft-user"></i>
+                </button>
+                <div class="ml-2"><h5 class="mb-0">{{ user.followers_count }}</h5><span
+                  class="grey" i18n="@@followers">Followers</span></div>
+              </div>
+            </div>
+            <div class="dash-ratings">
+              <div class="d-flex justify-content-center align-items-center">
+                <button type="button" class="btn bg-light-secondary px-2"><i
+                  class="ft-file-text"></i>
+                </button>
+                <div class="ml-2"><h5 class="mb-0">4.7</h5><span
+                  class="grey" i18n="@@reports">Reports</span></div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <p *ngIf="isCurrentUser else followBlock">
+            <span class="badge badge-success" i18n="@@it_is_you">It's you</span>
+          </p>
+          <ng-template #followBlock>
+            <button *ngIf="!isFollowee" class="btn btn-sm btn-outline-info m-0" i18n="@@actions.follow" (click)="emitFollow()">
+              <ng-container *ngIf="!isFollower" i18n="@@actions.follow">Follow</ng-container>
+              <ng-container *ngIf="isFollower" i18n="@@actions.follow_back">Follow back</ng-container>
+            </button>
+            <button *ngIf="isFollowee" class="btn btn-sm btn-outline-warning m-0" i18n="@@actions.unfollow" (click)="emitUnfollow()">
+              <ng-container i18n="@@actions.unfollow">Unfollow</ng-container>
+            </button>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

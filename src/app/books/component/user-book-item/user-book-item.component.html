@@ -1,13 +1,13 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 <div class="card">
   <div class="card-body">
-    <div class="card-img" style="width: 100%; height: calc(13vw * (4/3));">
-      <img *ngIf="userBook.book.cover" style="object-fit: cover; width: 100%; height: 100%" class="card-img-top img-fluid" src="{{userBook.book.cover}}" alt="Card image cap">
+    <div class="card-img">
+      <img *ngIf="userBook.book.cover" class="card-img-top img-fluid book-cover-img" src="{{userBook.book.cover}}" alt="Card image cap">
       <img *ngIf="!userBook.book.cover" class="card-img-top img-fluid" src="/assets/img/book_preload.jpg" alt="Card image cap">
     </div>
     <div class="card-block p-0 pt-3 text-center">
-      <p class="card-text mb-0 pr-1 pl-1" title="{{userBook.book.title}}" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">{{userBook.book.title}}</p>
-      <p class="text-muted font-small-2 mt-0 pr-1 pl-1" title="{{userBook.book.author.name}}" style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"><ng-container i18n="@@by">by</ng-container>&nbsp;<span>{{userBook.book.author.name}}</span></p>
+      <p class="card-text mb-0 pr-1 pl-1 book-title-text" title="{{userBook.book.title}}">{{userBook.book.title}}</p>
+      <p class="text-muted font-small-2 mt-0 pr-1 pl-1 book-author-name-text" title="{{userBook.book.author.name}}"><ng-container i18n="@@by">by</ng-container>&nbsp;<span>{{userBook.book.author.name}}</span></p>
       <button *ngIf="userBook.isNotRead()" (click)="onStartReading()" class="btn btn-raised btn-primary cursor-pointer" i18n="@@book.actions.start_reading">Start Reading</button>
       <button *ngIf="userBook.isReading()" (click)="onContinueReading()" class="btn btn-raised btn-success cursor-pointer" i18n="@@book.actions.continue_reading">Continue Reading</button>
       <button *ngIf="userBook.isRead()" (click)="onViewReport()" class="btn btn-outline-success cursor-pointer" i18n="@@book.actions.view_report">View Report</button>

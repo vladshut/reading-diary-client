@@ -2,7 +2,6 @@ import { Component, Inject, Input, LOCALE_ID, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from '@app/core/services/auth.service';
-import { env } from '@env/env';
 import {User} from "@app/models/user";
 
 @Component({
@@ -14,6 +13,7 @@ import {User} from "@app/models/user";
 export class NavbarComponent implements OnInit{
   @Input() sidebarToggle;
   toggleClass = 'ft-maximize';
+  user: User;
 
   languages = [
     { code: 'en', locale: 'en', flag: 'uk', label: 'English'},
@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
+    this.user = this.auth.getUser();
   }
 
   public getCurrentLanguageConfig() {

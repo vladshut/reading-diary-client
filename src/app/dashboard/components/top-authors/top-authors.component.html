@@ -1,0 +1,20 @@
+<ngx-loading [show]="isLoading()"></ngx-loading>
+<div class="card">
+  <div class="card-content">
+    <div class="card-header">
+      <h4 class="card-title"><span i18n="@@top_authors">TOP Authors</span></h4>
+      <p class="grey" i18n="@@books_stats">Books statistics</p>
+    </div>
+    <div class="card-body">
+      <div class="card-block">
+        <ul class="list-group mb-3">
+          <li *ngFor="let stat of stats; let i = index;" class="list-group-item">
+            <span>{{stat.name}}</span>
+            <span class="badge badge-{{badgeTypes[i]}} float-right">{{stat.count}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>

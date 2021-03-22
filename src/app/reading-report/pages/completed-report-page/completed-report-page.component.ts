@@ -9,6 +9,8 @@ import {NgbActiveModal, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {ManagePublicAccessModalComponent} from "@app/reading-report/modals/manage-public-access-modal/manage-public-access-modal.component";
 import {ActionConfirmDialogComponent} from "@app/shared/components/action-confirm-dialog/action-confirm-dialog.component";
 import {I18n} from "@ngx-translate/i18n-polyfill";
+import {AlertService} from "@app/core/services/alert.service";
+import {AuthService} from "@app/core/services/auth.service";
 
 @Component({
   selector: 'app-completed-report-page',
@@ -20,6 +22,8 @@ export class CompletedReportPageComponent extends WithLoading() implements OnIni
   userBookId: string;
   userBook: UserBook;
   section: BookSection;
+  userId: string;
+  withActions: boolean = false;
 
   constructor(
     private bookService: BookService,
@@ -30,16 +34,25 @@ export class CompletedReportPageComponent extends WithLoading() implements OnIni
     private modalService: NgbModal,
     private i18n: I18n,
     private router: Router,
+    private alertService: AlertService,
+    private auth: AuthService,
   ) {
     super();
   }
 
   ngOnInit() {
+    this.userId = this.auth.getUser().id;
     this.userBookId = this.route.snapshot.paramMap.get('userBookId');
 
     const book$ = this.bookService.get(this.userBookId);
     this.withLoading(book$).subscribe(ub => {
       this.userBook = ub;
+
+      this.withActions = this.userBook.user.id === this.userId;
+
+      if (this.userBook.user.id !== this.userId) {
+        this.router.navigate(['/books/list']);
+      }
     });
 
     const section$ = this.sectionService.list(this.userBookId);
@@ -88,6 +101,24 @@ export class CompletedReportPageComponent extends WithLoading() implements OnIni
     modalRef.componentInstance.confirmed.subscribe(() => {
       const resumeReading$ = this.bookService.resumeReading(this.userBook);
       this.withLoading(resumeReading$).subscribe(ub => this.router.navigate([`/reading-report/` + ub.id]));
+    });
+  }
+
+  share() {
+    const $publish = this.bookService.publish(this.userBook);
+
+    this.withLoading($publish).subscribe(userBook => {
+      this.userBook = userBook;
+      this.alertService.success();
+    });
+  }
+
+  unshare() {
+    const $unpublish = this.bookService.unpublish(this.userBook);
+
+    this.withLoading($unpublish).subscribe(userBook => {
+      this.userBook = userBook;
+      this.alertService.success();
     });
   }
 }

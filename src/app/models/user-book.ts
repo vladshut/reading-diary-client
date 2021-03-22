@@ -18,6 +18,7 @@ export class UserBook {
   @Transform(momentTransform)
   end_reading_dt: Moment;
   report_public_key: string;
+  is_report_published: boolean;
 
   isReading(): boolean {
     return this.status === 'reading';
