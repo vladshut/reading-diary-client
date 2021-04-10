@@ -22,11 +22,11 @@
         <span class="badge badge-success" i18n="@@it_is_you">It's you</span>
       </p>
       <ng-template #followBlock>
-        <button *ngIf="!isFollowee" class="btn btn-sm btn-outline-info m-0" i18n="@@actions.follow" (click)="follow.emit(user.id)">
+        <button *ngIf="!isFollowee" class="btn btn-sm btn-outline-info m-0" (click)="follow.emit(user.id)">
           <ng-container *ngIf="!isFollower" i18n="@@actions.follow">Follow</ng-container>
           <ng-container *ngIf="isFollower" i18n="@@actions.follow_back">Follow back</ng-container>
         </button>
-        <button *ngIf="isFollowee" class="btn btn-sm btn-outline-warning m-0" i18n="@@actions.unfollow" (click)="unfollow.emit(user.id)">
+        <button *ngIf="isFollowee" class="btn btn-sm btn-outline-warning m-0" (click)="unfollow.emit(user.id)">
           <ng-container i18n="@@actions.unfollow">Unfollow</ng-container>
         </button>
       </ng-template>

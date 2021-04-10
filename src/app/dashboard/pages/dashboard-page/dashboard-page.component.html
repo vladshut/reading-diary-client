@@ -2,27 +2,14 @@
 <app-page-title title="Dashboard" i18n-title="@@dashboard"></app-page-title>
 
 
-<div class="row">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-xl-4 col-lg-6 col-md-9" style="max-width: 600px;">
-        <app-user-profile *ngIf="user"
-                          [user]="user"
-                          [isCurrentUser]="true"
-        ></app-user-profile>
-      </div>
+<div class="card-columns">
+  <app-user-profile *ngIf="user" [user]="user" [isCurrentUser]="true"></app-user-profile>
 
-      <div class="col-xl-4 col-lg-6 col-md-9" style="max-width: 600px;">
-        <app-top-languages></app-top-languages>
-      </div>
+  <app-top-languages></app-top-languages>
 
-      <div class="col-xl-4 col-lg-6 col-md-9" style="max-width: 600px;">
-        <app-top-authors></app-top-authors>
-      </div>
+  <app-top-authors></app-top-authors>
 
-      <div class="col-xl-4 col-lg-6 col-md-9" style="max-width: 600px;">
-        <app-top-statuses></app-top-statuses>
-      </div>
-    </div>
-  </div>
+  <app-top-statuses></app-top-statuses>
+
+  <app-user-reports *ngIf="user" [user]="user"></app-user-reports>
 </div>

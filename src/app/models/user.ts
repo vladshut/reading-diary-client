@@ -1,5 +1,5 @@
 ﻿import {Transform} from "class-transformer";
-import {momentTransform} from "@app/shared/helpers/functions.helper";
+import {apiUrl, momentTransform} from "@app/shared/helpers/functions.helper";
 import {Moment} from 'moment';
 import {env} from "@env/env";
 
@@ -30,14 +30,6 @@ export class User {
   }
 
   get avatarLink(): string {
-    if (!this.avatar) {
-      return '';
-    }
-
-    if (this.avatar.startsWith('http') || this.avatar.startsWith('https')) {
-      return this.avatar;
-    }
-
-    return env.apiHost + this.avatar;
+    return apiUrl(this.avatar);
   }
 }

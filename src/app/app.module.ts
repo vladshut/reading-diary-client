@@ -5,7 +5,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {AppRouterModule} from "./app-routing";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
-import {ModalModule} from "ngx-bootstrap";
+import {ModalModule} from "ngx-bootstrap/modal";
 import {AuthService} from "./core/services/auth.service";
 import {CoreModule} from "./core/core.module";
 import {SharedModule} from "./shared/shared.module";

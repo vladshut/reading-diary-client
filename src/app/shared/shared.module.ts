@@ -30,7 +30,7 @@ import { ContentLayoutComponent } from './layouts/content/content-layout.compone
 import { ActionConfirmDialogComponent } from './components/action-confirm-dialog/action-confirm-dialog.component';
 import { FileUploaderComponent } from './components/file-uploader/file-uploader.component';
 import { FileUploadModule } from 'ng2-file-upload';
-import { BsDropdownModule } from 'ngx-bootstrap';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ControlHtmlBuilderComponent } from './components/form/control-html-builder/control-html-builder.component';
 import { ControlTextComponent } from './components/form/fields/control-text/control-text.component';
 import { ControlSelectComponent } from './components/form/fields/control-select/control-select.component';
@@ -65,17 +65,19 @@ import { ImageUploadModalComponent } from './components/image-upload-modal/image
 
 import {FilePondModule, registerPlugin} from "ngx-filepond";
 
-import FilePondPluginImagePreview from 'filepond-plugin-image-preview';
+import * as FilePondPluginImagePreview from 'filepond-plugin-image-preview';
 registerPlugin(FilePondPluginImagePreview);
 
-import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
+import * as FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
 registerPlugin(FilePondPluginFileValidateSize);
 
-import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+import * as FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
 registerPlugin(FilePondPluginFileValidateType);
 
 import FilePondPluginImageCrop from 'filepond-plugin-image-crop';
 import { PageTitleComponent } from './components/page-title/page-title.component';
+import { ReadMoreComponent } from './components/read-more/read-more.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 registerPlugin(FilePondPluginImageCrop);
 
 @NgModule({
@@ -151,6 +153,8 @@ registerPlugin(FilePondPluginImageCrop);
         ImageComponent,
         SimpleNamePipe,
         PageTitleComponent,
+        ReadMoreComponent,
+        SearchBarComponent,
     ],
   declarations: [
     FooterComponent,
@@ -212,6 +216,10 @@ registerPlugin(FilePondPluginImageCrop);
     ImageUploadModalComponent,
 
     PageTitleComponent,
+
+    ReadMoreComponent,
+
+    SearchBarComponent,
   ],
   entryComponents: [
     ImageModalComponent,

@@ -21,10 +21,32 @@ export class FeedService extends BaseService {
     const url = this.getUrl();
 
     return this.http.get<Pagination<Feed>>(url, {params})
-      .pipe(map(pagination => this.mapPagination(pagination)));
+      .pipe(map(pagination => FeedService.mapPagination(pagination)));
   }
 
-  private mapPagination(pagination): Pagination<Feed> {
+  my(filter: object = {}): Observable<Pagination<Feed>> {
+    const params = toHttpParams(filter);
+
+    const url = this.getUrl('my');
+
+    return this.http.get<Pagination<Feed>>(url, {params})
+      .pipe(map(pagination => FeedService.mapPagination(pagination)));
+  }
+
+  addToFavorites(feed: Feed): Observable<void> {
+    const url = this.getUrl(feed.id + '/favorite');
+
+    return this.http.post<void>(url, {});
+  }
+
+  removeFromFavorites(feed: Feed): Observable<void> {
+    const url = this.getUrl(feed.id + '/favorite');
+
+    return this.http.delete<void>(url);
+  }
+
+
+  private static mapPagination(pagination): Pagination<Feed> {
     let paginationObj = new Pagination<Feed>(Feed);
     paginationObj = plainToClassFromExist(paginationObj, pagination);
 

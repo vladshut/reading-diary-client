@@ -11,6 +11,8 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 })
 export class ReportItemReviewComponent extends WithReportItem(ReportItemReview) implements OnInit {
   @Input() item: ReportItemReview;
+  @Input() withActions: boolean;
+
   hover = false;
 
   constructor(

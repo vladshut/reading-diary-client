@@ -6,7 +6,7 @@
         <source>Close</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/alert/alert.d.ts</context>
-          <context context-type="linenumber">2</context>
+          <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.carousel.previous" datatype="html">
         <source>Previous</source>
@@ -136,67 +136,67 @@
         <source>Decrement hours</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
         <source>Increment minutes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.timepicker.MM" datatype="html">
         <source>MM</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">33</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.timepicker.minutes" datatype="html">
         <source>Minutes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.timepicker.decrement-minutes" datatype="html">
         <source>Decrement minutes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.timepicker.increment-seconds" datatype="html">
         <source>Increment seconds</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">49</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.timepicker.SS" datatype="html">
         <source>SS</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">54</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.timepicker.seconds" datatype="html">
         <source>Seconds</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.timepicker.decrement-seconds" datatype="html">
         <source>Decrement seconds</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">63</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.timepicker.PM" datatype="html">
         <source>PM</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit><trans-unit id="ngb.timepicker.AM" datatype="html">
         <source>AM</source>
         <context-group purpose="location">
           <context context-type="sourcefile">../node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
-          <context context-type="linenumber">69</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit><trans-unit id="cc82fa89983785cb60daa0a7516c611fc02b5cd1" datatype="html">
         <source>Copyright</source>
@@ -351,6 +351,10 @@
           <context context-type="sourcefile">app/shared/components/select-items-modal/select-items-modal.component.html</context>
           <context context-type="linenumber">34</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/feeds/pages/my-feeds-page/my-feeds-page.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
       </trans-unit><trans-unit id="actions.create" datatype="html">
         <source>Create</source>
         <context-group purpose="location">
@@ -450,6 +454,12 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/attachments-count/attachments-count.component.html</context>
           <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit><trans-unit id="action.search" datatype="html">
+        <source>Search</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/shared/components/search-bar/search-bar.component.html</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit><trans-unit id="85f5ab5596db2d9a01353a24d3dacd36e476d49e" datatype="html">
         <source>Image uploader</source>
@@ -844,20 +854,97 @@
         <source>Dashboard</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/dashboard/pages/dashboard-page/dashboard-page.component.html</context>
-          <context context-type="linenumber">3</context>
+          <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit><trans-unit id="user.member_since" datatype="html">
         <source>Member since</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/components/user-profile/user-profile.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-preview/user-preview.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit><trans-unit id="it_is_you" datatype="html">
+        <source>It&apos;s you</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-profile/user-profile.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-preview/user-preview.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit><trans-unit id="actions.follow" datatype="html">
+        <source>Follow</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-profile/user-profile.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-preview/user-preview.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit><trans-unit id="actions.follow_back" datatype="html">
+        <source>Follow back</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-profile/user-profile.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-preview/user-preview.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit><trans-unit id="actions.unfollow" datatype="html">
+        <source>Unfollow</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-profile/user-profile.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-preview/user-preview.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit><trans-unit id="followers" datatype="html">
+        <source>Followers</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-profile/user-profile.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-preview/user-preview.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/follows/pages/followers-page/followers-page.component.html</context>
+          <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit><trans-unit id="profile.read_books" datatype="html">
         <source>Read books</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/components/user-profile/user-profile.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit><trans-unit id="reports" datatype="html">
+        <source>Reports</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-preview/user-preview.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit><trans-unit id="shared_reports" datatype="html">
+        <source>Shared Reports</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-reports/user-reports.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit><trans-unit id="e2bd0d43d71227f0fceb49711864d5adac424be1" datatype="html">
+        <source>No shared reports yet</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/user/components/user-reports/user-reports.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
+        <note priority="1" from="description">no_shared_reports_yet</note>
       </trans-unit><trans-unit id="top_languages" datatype="html">
         <source>TOP Languages</source>
         <context-group purpose="location">
@@ -1035,6 +1122,80 @@
           <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-password-tab/user-settings-password-tab.component.html</context>
           <context context-type="linenumber">33</context>
         </context-group>
+      </trans-unit><trans-unit id="search_reports" datatype="html">
+        <source>Search reports</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/feeds/pages/search-published-reports-page/search-published-reports-page.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/feeds/pages/favorite-feeds-page/favorite-feeds-page.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit><trans-unit id="cf2acd07b1e886e126050d07169584c4a1a63319" datatype="html">
+        <source>Enter book name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/feeds/pages/search-published-reports-page/search-published-reports-page.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">search_published_reports_placeholder</note>
+      </trans-unit><trans-unit id="not_found" datatype="html">
+        <source>Not found</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/feeds/pages/search-published-reports-page/search-published-reports-page.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/follows/pages/find-user-page/find-user-page.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/follows/pages/followers-page/followers-page.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/follows/pages/followees-page/followees-page.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit><trans-unit id="actions.go_to_report" datatype="html">
+        <source>Go
+                  to Report
+                </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/feeds/components/feed/feed.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit><trans-unit id="44275e363a76be68ffb723ba24db99921d85425c" datatype="html">
+        <source>Enter book name to filter</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/feeds/pages/favorite-feeds-page/favorite-feeds-page.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">filter_favorite_reports_placeholder</note>
+      </trans-unit><trans-unit id="favorite_reports.no_reports" datatype="html">
+        <source>No published reports added</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/feeds/pages/favorite-feeds-page/favorite-feeds-page.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit><trans-unit id="search_users" datatype="html">
+        <source>Search users</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/follows/pages/find-user-page/find-user-page.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit><trans-unit id="search.placeholder" datatype="html">
+        <source>Enter user name or email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/follows/pages/find-user-page/find-user-page.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit><trans-unit id="following" datatype="html">
+        <source>Following</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/follows/pages/followees-page/followees-page.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
       </trans-unit><trans-unit id="f72992030f134408b675152c397f9d0ec00f3b2a" datatype="html">
         <source>Report</source>
         <context-group purpose="location">
@@ -1044,6 +1205,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
           <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/pages/published-report/published-report.component.html</context>
+          <context context-type="linenumber">8</context>
         </context-group>
         <note priority="1" from="description">report</note>
       </trans-unit><trans-unit id="a173b6d508cd0b2d45875e58ebec30ba3b15ce7c" datatype="html">
@@ -1221,20 +1386,34 @@
           <context context-type="linenumber">22</context>
         </context-group>
         <note priority="1" from="description">actions.resume_reading</note>
-      </trans-unit><trans-unit id="0bd8b27f60a1f098a53e06328426d818e3508ff9" datatype="html">
-        <source>Share</source>
+      </trans-unit><trans-unit id="d85790cd08a18580ffc80b325003255260df3f39" datatype="html">
+        <source>Share via link</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
           <context context-type="linenumber">27</context>
         </context-group>
-        <note priority="1" from="description">actions.share</note>
-      </trans-unit><trans-unit id="e0db21b81ccb1f0d4f4c3ca721f91725cbcd0c6e" datatype="html">
-        <source>Manage access</source>
+        <note priority="1" from="description">actions.share_via_link</note>
+      </trans-unit><trans-unit id="4296a3d43e30f97d481f3cd326175a51bda7db04" datatype="html">
+        <source>Manage link access</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
           <context context-type="linenumber">32</context>
         </context-group>
-        <note priority="1" from="description">actions.manage_access</note>
+        <note priority="1" from="description">actions.manage_link_access</note>
+      </trans-unit><trans-unit id="0bd8b27f60a1f098a53e06328426d818e3508ff9" datatype="html">
+        <source>Share</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <note priority="1" from="description">actions.share</note>
+      </trans-unit><trans-unit id="f80abe861447e6a0ee51c8eb66bc71a18d1facb7" datatype="html">
+        <source>Stop sharing</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+        <note priority="1" from="description">actions.unshare</note>
       </trans-unit><trans-unit id="actions.move" datatype="html">
         <source>Move</source>
         <context-group purpose="location">
@@ -1608,6 +1787,20 @@
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="actions.show_less" datatype="html">
+        <source>Less</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/read-more/read-more.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="actions.show_more" datatype="html">
+        <source>More</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/components/read-more/read-more.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="books" datatype="html">
         <source>Books</source>
         <context-group purpose="location">
@@ -1624,24 +1817,16 @@
         </context-group>
         <note priority="1" from="description">sidebar</note>
       </trans-unit>
-      <trans-unit id="followers" datatype="html">
-        <source>Followers</source>
+      <trans-unit id="feeds" datatype="html">
+        <source>Feeds</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/sidebar/sidebar.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
         <note priority="1" from="description">sidebar</note>
       </trans-unit>
-      <trans-unit id="following" datatype="html">
-        <source>Following</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/shared/components/sidebar/sidebar.component.ts</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-        <note priority="1" from="description">sidebar</note>
-      </trans-unit>
-      <trans-unit id="search_users" datatype="html">
-        <source>Search</source>
+      <trans-unit id="favorite" datatype="html">
+        <source>Favorite</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/sidebar/sidebar.component.ts</context>
           <context context-type="linenumber">1</context>

@@ -1,36 +1,8 @@
-<style>
-  .search-bar .page-search-input input {
-    background-color: #fff;
-  }
-
-  .search-bar .search-btn {
-    right: .4rem;
-    top: .3rem;
-  }
-
-  .search-bar input:focus {
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
-  }
-</style>
-
 <ngx-loading [show]="isLoading()"></ngx-loading>
 
 <app-page-title [badge]="pagination ? (pagination.total || 0) : 0" title="Search users" i18n-title="@@search_users"></app-page-title>
 
-<div class="search-bar mt-3">
-  <form (ngSubmit)="onSearch()">
-    <div class="page-search-input form-group position-relative">
-      <input name="search" [(ngModel)]="query" type="text" id="searchbar" i18n-placeholder="@@search.placeholder"
-             placeholder="Enter user name or email"
-             class="form-control rounded-right form-control-lg pl-2">
-      <button type="submit" class="btn btn-primary btn-raised search-btn rounded position-absolute"
-              [disabled]="!isSearchEnabled()">
-        <span class="d-none d-sm-block" i18n="@@action.search">Search</span>
-        <i class="ft-search d-block d-sm-none"></i>
-      </button>
-    </div>
-  </form>
-</div>
+<app-search-bar [minQueryLength]="minQueryLength" (search)="onSearch($event)" i18n-placeholder="@@search.placeholder" placeholder="Enter user name or email"></app-search-bar>
 
 <div *ngIf="pagination" class="row justify-content-center">
   <div *ngFor="let user of pagination.data | paginate: pagination.paginate()" class="col-xl-4 col-lg-6 col-md-9"

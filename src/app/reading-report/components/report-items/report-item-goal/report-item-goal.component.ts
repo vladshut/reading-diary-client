@@ -12,6 +12,8 @@ import {AlertService} from "@app/core/services/alert.service";
 })
 export class ReportItemGoalComponent extends WithReportItem(ReportItemGoal) implements OnInit {
   @Input() item: ReportItemGoal;
+  @Input() withActions: boolean;
+
   hover = false;
 
   constructor(

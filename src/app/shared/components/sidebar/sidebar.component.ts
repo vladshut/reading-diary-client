@@ -77,6 +77,24 @@ export class SidebarComponent implements OnInit {
           },
         ],
       },
+      {
+        path: '/feeds',
+        title: this.i18n({value: 'Feeds', description: 'sidebar', id: 'feeds'}),
+        icon: 'fas fa-rss',
+        id: 'feeds',
+      },
+      {
+        path: '/feeds/published-reports',
+        title: this.i18n({value: 'Reports', description: 'sidebar', id: 'reports'}),
+        icon: 'far fa-file-alt',
+        id: 'reports',
+      },
+      {
+        path: '/feeds/favorites',
+        title: this.i18n({value: 'Favorites', description: 'sidebar', id: 'favorite'}),
+        icon: 'far fa-star',
+        id: 'favorite',
+      },
     ];
   }
 }

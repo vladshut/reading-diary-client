@@ -14,6 +14,8 @@ import {getInputValueByName} from "@app/shared/helpers/functions.helper";
 })
 export class ReportItemFigureComponent extends WithReportItem(ReportItemFigure) implements OnInit {
   @Input() item: ReportItemFigure;
+  @Input() withActions: boolean;
+
   hover = false;
 
   @ViewChild('figureUpload', {static: false}) myPond: any;

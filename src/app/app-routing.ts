@@ -11,6 +11,7 @@ const appRoutes: Routes = [
       {path: 'public-report', loadChildren: './public-report/public-report.module#PublicReportModule'},
       {path: 'user', loadChildren: './user/user.module#UserModule'},
       {path: 'follows', loadChildren: './follows/follows.module#FollowsModule'},
+      {path: 'feeds', loadChildren: './feeds/feeds.module#FeedsModule'},
     ]
   },
 

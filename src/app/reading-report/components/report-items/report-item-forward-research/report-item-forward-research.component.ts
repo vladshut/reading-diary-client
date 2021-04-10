@@ -11,6 +11,8 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 })
 export class ReportItemForwardResearchComponent extends WithReportItem(ReportItemForwardResearch) implements OnInit {
   @Input() item: ReportItemForwardResearch;
+  @Input() withActions: boolean;
+
   hover = false;
 
   constructor(

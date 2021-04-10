@@ -27,7 +27,8 @@ import { UserReportsComponent } from './components/user-reports/user-reports.com
   ],
     exports: [
         UserProfileComponent,
-        UserPreviewComponent
+        UserPreviewComponent,
+        UserReportsComponent
     ]
 })
 export class UserModule {

@@ -13,6 +13,7 @@ import {I18n} from "@ngx-translate/i18n-polyfill";
 export class ReportItemTermComponent extends WithReportItem<ReportItemTerm>() implements OnInit {
   hover = false;
   @Input() item: ReportItemTerm;
+  @Input() withActions: boolean;
 
   constructor(
     protected formBuilder: FormBuilder,

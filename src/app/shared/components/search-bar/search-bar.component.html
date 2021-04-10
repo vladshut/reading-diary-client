@@ -1,0 +1,32 @@
+<style>
+  .search-bar .page-search-input input {
+    background-color: #fff;
+  }
+
+  .search-bar .search-buttons-wrapper {
+    right: .4rem;
+    top: .3rem;
+  }
+
+  .search-bar input:focus {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+  }
+</style>
+
+<div class="search-bar">
+  <form (ngSubmit)="onSearch()">
+    <div class="page-search-input form-group position-relative">
+      <input name="search" [(ngModel)]="query" type="text" id="searchbar"
+             placeholder="{{placeholder}}"
+             class="form-control rounded-right form-control-lg pl-2">
+      <div class="position-absolute search-buttons-wrapper">
+        <button type="button" *ngIf="showReset()" (click)="onReset()" class="btn btn-link"><i class="fa fa-times"></i></button>
+        <button type="submit" class="btn btn-primary btn-raised rounded"
+                [disabled]="!isSearchable()">
+          <span class="d-none d-sm-block" i18n="@@action.search">Search</span>
+          <i class="ft-search d-block d-sm-none"></i>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

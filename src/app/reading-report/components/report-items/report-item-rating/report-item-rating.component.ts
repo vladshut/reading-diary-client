@@ -12,6 +12,7 @@ import {AuthService} from "@app/core/services/auth.service";
 })
 export class ReportItemRatingComponent extends WithReportItem(ReportItemRating) implements OnInit {
   @Input() item: ReportItemRating;
+  @Input() withActions: boolean;
 
   constructor(
     protected formBuilder: FormBuilder,

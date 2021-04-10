@@ -17,6 +17,7 @@ export class FindUserPageComponent extends WithLoading() implements OnInit {
   followersIds: string[] = [];
   followeesIds: string[] = [];
   currentUser: User;
+  minQueryLength: number = 3;
 
   constructor(
     private userService: UserService,
@@ -35,19 +36,12 @@ export class FindUserPageComponent extends WithLoading() implements OnInit {
     this.loadUsers(this.buildFilter(page));
   }
 
-  onSearch() {
+  onSearch(query: string) {
+    this.query = query;
     this.loadUsers(this.buildFilter());
   }
 
-  isSearchEnabled() {
-    return this.query && this.query.length > 3;
-  }
-
   private loadUsers(filter: {query: string, page: number}) {
-    if (!filter.query || filter.query.length < 4) {
-      return;
-    }
-
     const $users = this.userService.list(filter);
     this.withLoading($users).subscribe(pagination => this.pagination = pagination);
   }

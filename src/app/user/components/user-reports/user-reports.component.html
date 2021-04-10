@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="card-block" *ngIf="pagination && !pagination.data">
+      <div class="card-block" *ngIf="!pagination || !pagination.data || !pagination.data.length">
         <p class="text-muted text-center" i18n="no_shared_reports_yet">No shared reports yet</p>
       </div>
 

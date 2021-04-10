@@ -1,0 +1,3 @@
+::ng-deep .card-columns .card {
+  box-shadow: none !important;
+}

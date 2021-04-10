@@ -366,3 +366,15 @@ export function getFilepondOptions(options) {
 
   return {...defaultOptions, ...options};
 }
+
+export function apiUrl(url: string|undefined|null) {
+  if (!url) {
+    return;
+  }
+
+  if (url.startsWith('http') || url.startsWith('https')) {
+    return url;
+  }
+
+  return env.apiHost + url;
+}

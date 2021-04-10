@@ -1,0 +1,21 @@
+<ngx-loading [show]="isLoading()"></ngx-loading>
+
+<app-page-title [badge]="pagination ? (pagination.total || 0) : 0" title="Favorite reports" i18n-title="@@search_reports"></app-page-title>
+
+<app-search-bar [resettable]="true" (reset)="onResetSearch()" [minQueryLength]="minQueryLength" (search)="onSearch($event)" placeholder="Enter book name to filter" i18n-placeholder="filter_favorite_reports_placeholder"></app-search-bar>
+
+<div *ngIf="pagination" class="row justify-content-center">
+  <div *ngFor="let feed of pagination.data | paginate: pagination.paginate()" class="col-xl-6 col-md-12 feed-wrapper">
+    <app-feed [feed]="feed"></app-feed>
+  </div>
+</div>
+
+<div *ngIf="pagination && pagination.data && !pagination.data.length" class="row justify-content-center mt-3">
+  <h3 class="text-muted" i18n="@@favorite_reports.no_reports">No reports added</h3>
+</div>
+
+<div class="row mt-5 mb-0" *ngIf="pagination && pagination.last_page > 1">
+  <div class="col-12 d-flex justify-content-center">
+    <pagination-controls (pageChange)="goToPage($event)" previousLabel="" nextLabel=""></pagination-controls>
+  </div>
+</div>
