@@ -5,11 +5,11 @@
       <div class="card">
         <div class="card-header d-flex justify-content-between">
           <h1 class="card-title" *ngIf="userBook">
-            {{userBook.book.title}}&nbsp;&nbsp;<span class="text-muted" i18n="report">Report</span>
+            {{userBook.book.title}}&nbsp;&nbsp;<span class="text-muted" i18n="@@report">Report</span>
           </h1>
           <div class="example-config">
             <button class="btn btn-outline-success" kendo-button (click)="pdf.saveAs(userBook.book.title + ' Report.pdf')">
-              <i class="fa fa-download"></i>&nbsp;&nbsp;<ng-container i18n="actions.download_pdf">Download PDF</ng-container>
+              <i class="fa fa-download"></i>&nbsp;&nbsp;<ng-container i18n="@@actions.download_pdf">Download PDF</ng-container>
             </button>
           </div>
         </div>

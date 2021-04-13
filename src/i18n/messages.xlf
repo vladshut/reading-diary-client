@@ -210,27 +210,24 @@
           <context context-type="sourcefile">app/shared/components/footer/footer.component.html</context>
           <context context-type="linenumber">6</context>
         </context-group>
-      </trans-unit><trans-unit id="994363f08f9fbfa3b3994ff7b35c6904fdff18d8" datatype="html">
+      </trans-unit><trans-unit id="profile" datatype="html">
         <source>Profile</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">30</context>
         </context-group>
-        <note priority="1" from="description">user_profile</note>
-      </trans-unit><trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
+      </trans-unit><trans-unit id="settings" datatype="html">
         <source>Settings</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">34</context>
         </context-group>
-        <note priority="1" from="description">user_settings</note>
-      </trans-unit><trans-unit id="bb694b49d408265c91c62799c2b3a7e3151c824d" datatype="html">
+      </trans-unit><trans-unit id="logout" datatype="html">
         <source>Logout</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/navbar/navbar.component.html</context>
           <context context-type="linenumber">38</context>
         </context-group>
-        <note priority="1" from="description">logout</note>
       </trans-unit><trans-unit id="ConfirmAction" datatype="html">
         <source>Confirm action</source>
         <context-group purpose="location">
@@ -459,7 +456,7 @@
         <source>Search</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/shared/components/search-bar/search-bar.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">27</context>
         </context-group>
       </trans-unit><trans-unit id="85f5ab5596db2d9a01353a24d3dacd36e476d49e" datatype="html">
         <source>Image uploader</source>
@@ -739,19 +736,36 @@
         <source>My Library</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/books/pages/books-list/books-list.component.html</context>
-          <context context-type="linenumber">4</context>
+          <context context-type="linenumber">6</context>
         </context-group>
       </trans-unit><trans-unit id="actions.add_book" datatype="html">
         <source>Add book</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/books/pages/books-list/books-list.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">12</context>
         </context-group>
+      </trans-unit><trans-unit id="search.placeholder" datatype="html">
+        <source>Enter book title</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/books/pages/books-list/books-list.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/follows/pages/find-user-page/find-user-page.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit><trans-unit id="400c30183b9b6cf5b3decf8491a929e10fa21a3b" datatype="html">
+        <source>Order by</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/books/pages/books-list/books-list.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">order_by</note>
       </trans-unit><trans-unit id="books.no_books_added" datatype="html">
         <source>There are no books in your library</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/books/pages/books-list/books-list.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit><trans-unit id="actions.add_existing_book" datatype="html">
         <source>Add existing book</source>
@@ -938,13 +952,12 @@
           <context context-type="sourcefile">app/user/components/user-reports/user-reports.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
-      </trans-unit><trans-unit id="e2bd0d43d71227f0fceb49711864d5adac424be1" datatype="html">
+      </trans-unit><trans-unit id="no_shared_reports_yet" datatype="html">
         <source>No shared reports yet</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/components/user-reports/user-reports.component.html</context>
           <context context-type="linenumber">26</context>
         </context-group>
-        <note priority="1" from="description">no_shared_reports_yet</note>
       </trans-unit><trans-unit id="top_languages" datatype="html">
         <source>TOP Languages</source>
         <context-group purpose="location">
@@ -1038,13 +1051,12 @@
           <context context-type="sourcefile">app/user/pages/user-settings-page/user-settings-page.component.html</context>
           <context context-type="linenumber">71</context>
         </context-group>
-      </trans-unit><trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
+      </trans-unit><trans-unit id="actions.edit" datatype="html">
         <source>Edit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/user/pages/user-settings-page/tabs/user-settings-general-tab/user-settings-general-tab.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
-        <note priority="1" from="description">actions.edit</note>
       </trans-unit><trans-unit id="profile.avatar.restrictions" datatype="html">
         <source>Allowed JPG, PNG. Max size of 1MB</source>
         <context-group purpose="location">
@@ -1194,19 +1206,13 @@
           <context context-type="sourcefile">app/follows/pages/find-user-page/find-user-page.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
-      </trans-unit><trans-unit id="search.placeholder" datatype="html">
-        <source>Enter user name or email</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/follows/pages/find-user-page/find-user-page.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
       </trans-unit><trans-unit id="following" datatype="html">
         <source>Following</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/follows/pages/followees-page/followees-page.component.html</context>
           <context context-type="linenumber">3</context>
         </context-group>
-      </trans-unit><trans-unit id="f72992030f134408b675152c397f9d0ec00f3b2a" datatype="html">
+      </trans-unit><trans-unit id="report" datatype="html">
         <source>Report</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/public-report/pages/public-report-page/public-report-page.component.html</context>
@@ -1214,58 +1220,36 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">46</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/published-report/published-report.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
-        <note priority="1" from="description">report</note>
-      </trans-unit><trans-unit id="a173b6d508cd0b2d45875e58ebec30ba3b15ce7c" datatype="html">
+      </trans-unit><trans-unit id="section" datatype="html">
         <source>Section</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">12</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context>
-          <context context-type="linenumber">10</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-        <note priority="1" from="description">section</note>
       </trans-unit><trans-unit id="40d113e19c15757db7fd94c341a2655622c0fbd2" datatype="html">
         <source>
             Add
           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">17</context>
         </context-group>
         <note priority="1" from="description">actions.add</note>
       </trans-unit><trans-unit id="saved" datatype="html">
         <source>Saving...</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">28</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">29</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-report/section-report.component.html</context>
@@ -1277,12 +1261,34 @@
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-section-item/completed-report-section-item.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">33</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/reading-report-page/section-report/section-report.component.html</context>
           <context context-type="linenumber">30</context>
         </context-group>
+      </trans-unit><trans-unit id="4ab4cb601522b9194922554d934c4c30bd93567d" datatype="html">
+        <source>Content</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/pages/reading-report-page/reading-report-page.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <note priority="1" from="description">content</note>
+      </trans-unit><trans-unit id="f72992030f134408b675152c397f9d0ec00f3b2a" datatype="html">
+        <source>Report</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/pages/reading-report-page/reading-report-page.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">report</note>
       </trans-unit><trans-unit id="actions.save" datatype="html">
         <source>Save</source>
         <context-group purpose="location">
@@ -1389,41 +1395,36 @@
           <context context-type="sourcefile">app/reading-report/modals/manage-public-access-modal/manage-public-access-modal.component.html</context>
           <context context-type="linenumber">1</context>
         </context-group>
-      </trans-unit><trans-unit id="39256b638c044baa2c4c4a76c5dbe61af0b3fce4" datatype="html">
+      </trans-unit><trans-unit id="actions.resume_reading" datatype="html">
         <source>Resume reading</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">53</context>
         </context-group>
-        <note priority="1" from="description">actions.resume_reading</note>
-      </trans-unit><trans-unit id="d85790cd08a18580ffc80b325003255260df3f39" datatype="html">
+      </trans-unit><trans-unit id="actions.share_via_link" datatype="html">
         <source>Share via link</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">58</context>
         </context-group>
-        <note priority="1" from="description">actions.share_via_link</note>
-      </trans-unit><trans-unit id="4296a3d43e30f97d481f3cd326175a51bda7db04" datatype="html">
+      </trans-unit><trans-unit id="actions.manage_link_access" datatype="html">
         <source>Manage link access</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">63</context>
         </context-group>
-        <note priority="1" from="description">actions.manage_link_access</note>
-      </trans-unit><trans-unit id="0bd8b27f60a1f098a53e06328426d818e3508ff9" datatype="html">
+      </trans-unit><trans-unit id="actions.share" datatype="html">
         <source>Share</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">69</context>
         </context-group>
-        <note priority="1" from="description">actions.share</note>
-      </trans-unit><trans-unit id="f80abe861447e6a0ee51c8eb66bc71a18d1facb7" datatype="html">
+      </trans-unit><trans-unit id="actions.unshare" datatype="html">
         <source>Stop sharing</source>
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/pages/completed-report-page/completed-report-page.component.html</context>
-          <context context-type="linenumber">43</context>
+          <context context-type="linenumber">74</context>
         </context-group>
-        <note priority="1" from="description">actions.unshare</note>
       </trans-unit><trans-unit id="actions.move" datatype="html">
         <source>Move</source>
         <context-group purpose="location">
@@ -1465,6 +1466,12 @@
         <context-group purpose="location">
           <context context-type="sourcefile">app/reading-report/components/report-items/report-item-figure/report-item-figure.component.html</context>
           <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit><trans-unit id="actions.download_pdf" datatype="html">
+        <source>Download PDF</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/reading-report/pages/published-report/published-report.component.html</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="auth.login.wrong_token_is_provided" datatype="html">
@@ -1534,6 +1541,34 @@
         <source>Email is not verified!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/pages/verify-email-page/verify-email-page.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sort.updated_at.asc" datatype="html">
+        <source>Modified ASC</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/books/pages/books-list/books-list.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sort.updated_at.desc" datatype="html">
+        <source>Modified DESC</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/books/pages/books-list/books-list.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sort.created_at.desc" datatype="html">
+        <source>Created DESC</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/books/pages/books-list/books-list.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="sort.created_at.asc" datatype="html">
+        <source>Created ASC</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/books/pages/books-list/books-list.component.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
@@ -1620,6 +1655,34 @@
       </trans-unit>
       <trans-unit id="confirmation.discard_report_item_changes" datatype="html">
         <source>Are you sure you want to discard the changes?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/translation.service.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dict.user_book_type.reading" datatype="html">
+        <source>Reading</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/translation.service.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dict.user_book_type.read" datatype="html">
+        <source>Read</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/translation.service.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dict.user_book_type.not_read" datatype="html">
+        <source>Not read</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/translation.service.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dict.user_book_type.canceled" datatype="html">
+        <source>Canceled</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/translation.service.ts</context>
           <context context-type="linenumber">1</context>

@@ -43,35 +43,35 @@
     <div class="card">
       <div class="card-header d-flex justify-content-between">
         <h1 class="card-title" *ngIf="userBook">
-          {{userBook.book.title}}&nbsp;&nbsp;<span class="text-muted" i18n="report">Report</span>
+          {{userBook.book.title}}&nbsp;&nbsp;<span class="text-muted" i18n="@@report">Report</span>
         </h1>
         <div>
           <ng-container *ngIf="withActions">
             <button class="btn btn-outline-warning mr-2 btn-xs" (click)="resumeReading()">
               <i class="fa fa-book"></i>
               &nbsp;&nbsp;
-              <ng-container i18n="actions.resume_reading">Resume reading</ng-container>
+              <ng-container i18n="@@actions.resume_reading">Resume reading</ng-container>
             </button>
             <button *ngIf="userBook && !userBook.isPublic()" class="btn btn-outline-primary btn-xs  mr-2" (click)="makePublic()">
               <i class="fa fa-link"></i>
               &nbsp;&nbsp;
-              <ng-container i18n="actions.share_via_link">Share via link</ng-container>
+              <ng-container i18n="@@actions.share_via_link">Share via link</ng-container>
             </button>
             <button *ngIf="userBook && userBook.isPublic()" class="btn btn-outline-primary btn-xs mr-2" (click)="openManageAccessModal()">
               <i class="fa fa-users"></i>
               &nbsp;&nbsp;
-              <ng-container i18n="actions.manage_link_access">Manage link access</ng-container>
+              <ng-container i18n="@@actions.manage_link_access">Manage link access</ng-container>
             </button>
 
             <button *ngIf="userBook && !userBook.is_report_published" class="btn btn-outline-primary btn-xs" (click)="share()">
               <i class="fa fa-share"></i>
               &nbsp;&nbsp;
-              <ng-container i18n="actions.share">Share</ng-container>
+              <ng-container i18n="@@actions.share">Share</ng-container>
             </button>
             <button *ngIf="userBook && userBook.is_report_published" class="btn btn-outline-warning btn-xs" (click)="unshare()">
               <i class="fa fa-share"></i>
               &nbsp;&nbsp;
-              <ng-container i18n="actions.unshare">Stop sharing</ng-container>
+              <ng-container i18n="@@actions.unshare">Stop sharing</ng-container>
             </button>
           </ng-container>
 

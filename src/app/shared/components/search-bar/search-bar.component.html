@@ -18,6 +18,7 @@
     <div class="page-search-input form-group position-relative">
       <input name="search" [(ngModel)]="query" type="text" id="searchbar"
              placeholder="{{placeholder}}"
+             appAutofocus (escapePressed)="onReset()"
              class="form-control rounded-right form-control-lg pl-2">
       <div class="position-absolute search-buttons-wrapper">
         <button type="button" *ngIf="showReset()" (click)="onReset()" class="btn btn-link"><i class="fa fa-times"></i></button>

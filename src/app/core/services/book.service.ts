@@ -3,21 +3,24 @@ import {BaseService} from "@app/core/services/base.service";
 import {Book} from "@app/models/book";
 import {Observable} from "rxjs";
 import {map} from "rxjs/operators";
-import {plainToClass} from "class-transformer";
+import {plainToClass, plainToClassFromExist} from "class-transformer";
 import {objectToFormData, toHttpParams} from "@app/shared/helpers/functions.helper";
 import {UserBook} from "@app/models/user-book";
 import {TopLanguage} from "@app/dashboard/models/top-language";
 import {TopAuthor} from "@app/dashboard/models/top-author";
 import {TopStatus} from "@app/dashboard/models/top-status";
+import {Pagination} from "@app/models/pagination";
+import {Feed} from "@app/models/feed";
 
 @Injectable()
 export class BookService extends BaseService {
   protected apiUrl = 'books';
 
-  myBooks(): Observable<UserBook[]> {
-    return this.http.get<UserBook[]>(this.getUrl('my')).pipe(
-      map((res: any) => plainToClass(UserBook, <[]>res.data))
-    );
+  myBooks(filter: object = {}): Observable<Pagination<UserBook>> {
+    const params = toHttpParams(filter);
+
+    return this.http.get<Pagination<UserBook>>(this.getUrl('my'), {params})
+      .pipe(map(pagination => BookService.mapPagination(pagination)));
   }
 
   addNew(data): Observable<UserBook> {
@@ -102,5 +105,12 @@ export class BookService extends BaseService {
     return this.http.post<UserBook>(this.getUrl(`my/${userBook.id}/unpublish-report`), {}).pipe(
       map(data => plainToClass(UserBook, data))
     );
+  }
+
+  private static mapPagination(pagination): Pagination<UserBook> {
+    let paginationObj = new Pagination<UserBook>(UserBook);
+    paginationObj = plainToClassFromExist(paginationObj, pagination);
+
+    return paginationObj;
   }
 }

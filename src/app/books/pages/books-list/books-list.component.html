@@ -1,19 +1,82 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
+
 <div class="row mt-2">
-  <div class="col-6">
-    <div class="content-header text-left mt-0" i18n="@@my_library">My Library</div>
+  <div class="col-12">
+    <div class="content-header text-left mt-0 d-flex align-content-center">
+      <ng-container i18n="@@my_library" style="white-space: nowrap">My Library</ng-container>
+      &nbsp;
+      &nbsp;
+      <button class="btn btn-sm btn-outline-primary" style="white-space: nowrap" routerLink="/books/add">
+        <i class="fas fa-plus-circle"></i>
+        &nbsp;
+        <span i18n="@@actions.add_book">Add book</span>
+      </button>
+    </div>
     <p class="content-sub-header"></p></div>
-  <div class="col-6 text-right">
-    <button class="btn btn-raised btn-primary" routerLink="/books/add"><span i18n="@@actions.add_book">Add book</span></button>
+</div>
+
+<app-search-bar [resettable]="true" (reset)="onResetSearch()" [minQueryLength]="minQueryLength"
+                (search)="onSearch($event)" i18n-placeholder="@@search.placeholder"
+                placeholder="Enter book title"></app-search-bar>
+
+<div class="d-flex mb-4 justify-content-end align-items-center flex-wrap">
+  <div *ngFor="let status of statusesDict" class="mr-3 d-flex align-items-center">
+    <input id="status_{{status.id}}" type="checkbox" value="{{status.id}}" (change)="onStatusChange($event)">
+    <label for="status_{{status.id}}" class="cursor-pointer m-0"
+           style="white-space: nowrap">&nbsp;{{status.name}}</label>
+  </div>
+
+  <select style="width: 200px"
+          id="sort-select"
+          (change)="onSortSelect($event)"
+          class="form-control mr-3">
+    <option value="null" disabled i18n="order_by">Order by</option>
+    <option value="{{option.alias}}" *ngFor="let option of sortOptions"
+            [selected]="(filter.order_by + ':' + filter.order_dir) === option.alias">
+      {{option.name}}
+    </option>
+  </select>
+
+  <div class="btn-group btn-group-toggle m-0" data-toggle="buttons">
+    <label class="btn btn-secondary m-0" [ngClass]="{active: viewType === 'grid'}" (click)="viewType = 'grid'">
+      <i class="fas fa-th"></i>
+    </label>
+    <label class="btn btn-secondary m-0" [ngClass]="{active: viewType === 'list'}" (click)="viewType = 'list'">
+      <i class="fa fa-list"></i>
+    </label>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-md-2" *ngFor="let book of books">
-    <app-user-book-item [userBook]="book" (startReading)="startReading($event, ref)" (continueReading)="continueReading($event)" (viewReport)="onViewReport($event)" #ref></app-user-book-item>
-  </div>
-  <div class="col-12 text-center" *ngIf="books.length === 0">
-    <h3 i18n="@@books.no_books_added">There are no books in your library</h3>
+<div class="row" *ngIf="viewType === 'grid' && pagination">
+  <div class="col-md-4 col-lg-3 col-xl-2" *ngFor="let book of pagination.data | paginate: pagination.paginate()">
+    <app-user-book-item [userBook]="book" (startReading)="startReading($event, ref)"
+                        (continueReading)="continueReading($event)" (viewReport)="onViewReport($event)"
+                        #ref></app-user-book-item>
   </div>
 </div>
 
+
+<div *ngIf="viewType === 'list' && pagination">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <app-user-book-list-item
+          *ngFor="let userBook of pagination.data | paginate: pagination.paginate()"
+          [userBook]="userBook"
+          (startReading)="startReading($event, ref)"
+          (continueReading)="continueReading($event)" (viewReport)="onViewReport($event)"
+          #ref></app-user-book-list-item>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="pagination && pagination.data && !pagination.data.length" class="row justify-content-center mt-3">
+  <h3 class="text-muted" i18n="@@books.no_books_added">There are no books in your library</h3>
+</div>
+
+<div class="row mt-5 mb-0" *ngIf="pagination && pagination.last_page > 1">
+  <div class="col-12 d-flex justify-content-center">
+    <pagination-controls (pageChange)="goToPage($event)" previousLabel="" nextLabel=""></pagination-controls>
+  </div>
+</div>

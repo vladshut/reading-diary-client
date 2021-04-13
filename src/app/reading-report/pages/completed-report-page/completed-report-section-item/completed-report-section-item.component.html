@@ -3,12 +3,13 @@
   <div class="card-block" [ngStyle]="{ 'padding-left': (50 + deep * 20) + 'px' }">
     <div class="pb-2 mb-2">
       <ng-container *ngIf="!section.isRoot()">
-        <h1 *ngIf="deep === 0">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h1>
-        <h2 *ngIf="deep === 1">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h2>
-        <h3 *ngIf="deep === 2">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h3>
-        <h4 *ngIf="deep === 3">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h4>
-        <h5 *ngIf="deep === 4">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h5>
-        <h6 *ngIf="deep === 5">{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="section">Section</span></h6>
+        <h1 *ngIf="deep === 0"><ng-container *ngTemplateOutlet="sectionHeading"></ng-container></h1>
+        <h2 *ngIf="deep === 1"><ng-container *ngTemplateOutlet="sectionHeading"></ng-container></h2>
+        <h3 *ngIf="deep === 2"><ng-container *ngTemplateOutlet="sectionHeading"></ng-container></h3>
+        <h4 *ngIf="deep === 3"><ng-container *ngTemplateOutlet="sectionHeading"></ng-container></h4>
+        <h5 *ngIf="deep === 4"><ng-container *ngTemplateOutlet="sectionHeading"></ng-container></h5>
+        <h6 *ngIf="deep === 5"><ng-container *ngTemplateOutlet="sectionHeading"></ng-container></h6>
+        <ng-template #sectionHeading>{{section.name}}&nbsp;&nbsp;<span class="text-muted" i18n="@@section">Section</span></ng-template>
       </ng-container>
 
       <div class="d-flex justify-content-between" *ngIf="withActions">
