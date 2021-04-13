@@ -27,7 +27,6 @@ export class ReportService extends BaseService {
 
   saveReportItemsForSection(bookSectionId: string | SectionReport): Observable<SectionReport> {
     let storedReport;
-    console.log(bookSectionId);
 
     if (typeof bookSectionId === 'string' || typeof bookSectionId === 'number') {
       storedReport = this.findStoredReportBySectionId(bookSectionId);

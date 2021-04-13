@@ -1,19 +1,20 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnDestroy, OnInit} from '@angular/core';
 import {BookSection} from "@app/models/book-section";
 import {WithLoading} from "@app/mixins/WithLoading";
 import {ReportItem, ReportItemType} from "@app/models/report-item";
-import {interval, Subscription} from "rxjs";
+import {interval, Observable, Subscription} from "rxjs";
 import {finalize} from "rxjs/operators";
 import {ReportService} from "@app/core/services/report.service";
 import { Moment } from 'moment';
 import * as moment from 'moment';
+import {CanComponentDeactivate} from "@app/core/guards/can-deactivate.guard";
 
 @Component({
   selector: 'app-completed-report-section-item',
   templateUrl: './completed-report-section-item.component.html',
   styleUrls: ['./completed-report-section-item.component.css']
 })
-export class CompletedReportSectionItemComponent extends WithLoading() implements OnInit, OnDestroy {
+export class CompletedReportSectionItemComponent extends WithLoading() implements OnInit, OnDestroy, CanComponentDeactivate {
   @Input() section: BookSection;
   @Input() withActions: boolean;
   @Input() deep = 0;
@@ -57,14 +58,19 @@ export class CompletedReportSectionItemComponent extends WithLoading() implement
     this.isSaving = true;
 
     this.reportService.saveReportItemsForSection(this.section.report)
-      .pipe(
-        finalize(() => this.isSaving = false)
-      )
+      .pipe(finalize(() => this.isSaving = false))
       .subscribe(
         report => {
           this.section.report = report;
           this.savedTime = moment();
         }
       );
+  }
+
+  @HostListener('window:beforeunload')
+  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+    this.saveReport();
+
+    return true;
   }
 }

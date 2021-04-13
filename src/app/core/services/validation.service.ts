@@ -17,7 +17,8 @@ export class ValidationService {
   public getValidatorErrorMessage(validatorName: string, validatorValue?: any) {
     const config = {
       'required': this.i18n({value: 'Required', id: 'validation.required'}),
-      'minlength': this.i18n('Minimum length {{length}}', {length: validatorValue.requiredLength}),
+      'minlength': this.i18n('Minimum length is {{length}} characters.', {length: validatorValue.requiredLength}),
+      'maxlength': this.i18n('Maximum length is {{length}} characters.', {length: validatorValue.requiredLength}),
       'email': this.i18n('Invalid email address'),
       'onlyOneOfFieldsRequired': this.i18n('One of {{fields}} must be provided', {fields: validatorValue.fieldsNames ? validatorValue.fieldsNames.join(', ') : ''}),
       'same': this.i18n({value: 'All fields {{fields}} must be the same.', id: 'same'}, {fields: validatorValue.fieldsNames ? validatorValue.fieldsNames.join(', ') : ''}),

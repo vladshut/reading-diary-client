@@ -908,13 +908,21 @@
         </context-group>
         <note priority="1" from="description">search_published_reports_placeholder</note>
       </trans-unit><trans-unit id="actions.go_to_report" datatype="html">
-        <source>Go
-                  to Report
-                </source><target state="final">Go
-                  to Report
-                </target>
+        <source>Go to Report</source><target state="final">Go to Report</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/feeds/components/feed/feed.component.html</context><context context-type="linenumber">45</context></context-group></trans-unit><trans-unit id="44275e363a76be68ffb723ba24db99921d85425c" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/feeds/components/feed/feed.component.html</context><context context-type="linenumber">47</context></context-group></trans-unit><trans-unit id="actions.add_to_favorites" datatype="html">
+        <source>Add to favorites</source><target state="final">Add to favorites</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/feeds/components/feed/feed.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit><trans-unit id="actions.remove_from_favorites" datatype="html">
+        <source>Remove from favorites</source><target state="final">Remove from favorites</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/feeds/components/feed/feed.component.html</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit><trans-unit id="44275e363a76be68ffb723ba24db99921d85425c" datatype="html">
         <source>Enter book name to filter</source><target state="final">Enter book name to filter</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/feeds/pages/favorite-feeds-page/favorite-feeds-page.component.html</context>
@@ -922,7 +930,7 @@
         </context-group>
         <note priority="1" from="description">filter_favorite_reports_placeholder</note>
       </trans-unit><trans-unit id="favorite_reports.no_reports" datatype="html">
-        <source>No published reports added</source><target state="final">No published reports added</target>
+        <source>No reports added</source><target state="final">No reports added</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/feeds/pages/favorite-feeds-page/favorite-feeds-page.component.html</context>
           <context context-type="linenumber">14</context>
@@ -1164,6 +1172,24 @@
           <context context-type="linenumber">1</context>
         </context-group>
         <note priority="1" from="description">alert</note>
+      </trans-unit><trans-unit id="info.copied_to_clipboard" datatype="html">
+        <source>Copied to clipboard</source><target state="final">Copied to clipboard</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/translation.service.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit><trans-unit id="confirmation.delete_report_item" datatype="html">
+        <source>Are you sure you want to delete this item?</source><target state="final">Are you sure you want to delete this item?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/translation.service.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit><trans-unit id="confirmation.discard_report_item_changes" datatype="html">
+        <source>Are you sure you want to discard the changes?</source><target state="final">Are you sure you want to discard the changes?</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/translation.service.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="validation.required" datatype="html">
         <source>Required</source><target state="final">Required</target>
@@ -1171,14 +1197,20 @@
           <context context-type="sourcefile">src/app/core/services/validation.service.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="f4bd0b757d2cf6ec07cef47c29cf827c1fa2ff84" datatype="html">
-        <source>Minimum length <x id="INTERPOLATION" equiv-text="{{length}}"/></source><target state="final">Minimum length <x id="INTERPOLATION" equiv-text="{{length}}"/></target>
+      </trans-unit><trans-unit id="6589ec53aea94aa02022f4ebe8d4da010abc68a2" datatype="html">
+        <source>Minimum length is <x id="INTERPOLATION" equiv-text="{{length}}"/> characters.</source><target state="final">Minimum length is <x id="INTERPOLATION" equiv-text="{{length}}"/> characters.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/services/validation.service.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit><trans-unit id="02d3beb8bf92352b070edcf4289d60039274571f" datatype="html">
+        <source>Maximum length is <x id="INTERPOLATION" equiv-text="{{length}}"/> characters.</source><target state="final">Maximum length is <x id="INTERPOLATION" equiv-text="{{length}}"/> characters.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/core/services/validation.service.ts</context>
           <context context-type="linenumber">1</context>
         </context-group>
       </trans-unit>
+      
       <trans-unit id="96bf0a9d7c94b4963e9c249140e8c0fabd93663f" datatype="html">
         <source>Invalid email address</source><target state="final">Invalid email address</target>
         <context-group purpose="location">
@@ -1386,7 +1418,7 @@
         </context-group>
         <note priority="1" from="description">sidebar</note>
       </trans-unit><trans-unit id="favorite" datatype="html">
-        <source>Favorite</source><target state="final">Favorite</target>
+        <source>Favorites</source><target state="final">Favorites</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/components/sidebar/sidebar.component.ts</context>
           <context context-type="linenumber">1</context>
@@ -1410,7 +1442,7 @@
       <context-group purpose="location"><context context-type="sourcefile">app/follows/pages/find-user-page/find-user-page.component.html</context><context context-type="linenumber">5</context></context-group></trans-unit><trans-unit id="action.search" datatype="html">
         <source>Search</source><target state="final">Search</target>
         
-      <context-group purpose="location"><context context-type="sourcefile">app/shared/components/search-bar/search-bar.component.html</context><context context-type="linenumber">25</context></context-group></trans-unit><trans-unit id="not_found" datatype="html">
+      <context-group purpose="location"><context context-type="sourcefile">app/shared/components/search-bar/search-bar.component.html</context><context context-type="linenumber">26</context></context-group></trans-unit><trans-unit id="not_found" datatype="html">
         <source>Not found</source><target state="final">Not found</target>
         
         

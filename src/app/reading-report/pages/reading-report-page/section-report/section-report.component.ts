@@ -1,11 +1,11 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, HostListener, Input, OnDestroy, OnInit} from '@angular/core';
 import {BookSection} from "@app/models/book-section";
 import {ReportItem, ReportItemType} from "@app/models/report-item";
 import {ReportService} from "@app/core/services/report.service";
-import {Report, SectionReport} from "@app/models/report";
-import {interval, Subscription} from "rxjs";
+import {SectionReport} from "@app/models/report";
+import {EMPTY, interval, Observable, Subscription} from "rxjs";
 import {finalize} from "rxjs/operators";
-import { Moment } from 'moment';
+import {Moment} from 'moment';
 import * as moment from 'moment';
 import {WithLoading} from "@app/mixins/WithLoading";
 import {UserBook} from "@app/models/user-book";
@@ -15,13 +15,14 @@ import {ActionConfirmDialogComponent} from "@app/shared/components/action-confir
 import {NgbActiveModal, NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {I18n} from "@ngx-translate/i18n-polyfill";
 import {Hotkey, HotkeysService} from "angular2-hotkeys";
+import {CanComponentDeactivate} from "@app/core/guards/can-deactivate.guard";
 
 @Component({
   selector: 'app-section-report',
   templateUrl: './section-report.component.html',
   styleUrls: ['./section-report.component.css']
 })
-export class SectionReportComponent extends WithLoading() implements OnInit, OnDestroy {
+export class SectionReportComponent extends WithLoading() implements OnInit, OnDestroy, CanComponentDeactivate {
   @Input() userBook: UserBook;
   _section: BookSection;
   report: SectionReport;
@@ -32,7 +33,7 @@ export class SectionReportComponent extends WithLoading() implements OnInit, OnD
   isSaving = false;
   savedTime: Moment;
 
-  createReportItemsHotkeys: {combo: string, type: ReportItemType}[] = [];
+  createReportItemsHotkeys: { combo: string, type: ReportItemType }[] = [];
 
   constructor(
     private reportService: ReportService,
@@ -75,9 +76,10 @@ export class SectionReportComponent extends WithLoading() implements OnInit, OnD
       return;
     }
 
-    this._section = section;
-    const report$ = this.reportService.getReportForSection(this._section.id);
-    this.withLoading(report$).subscribe(report => this.report = report);
+    const $saveReport = this.$saveReport();
+    this.withLoading($saveReport)
+      .pipe(finalize(() => this.setSection(section)))
+      .subscribe();
   }
 
   createReportItem(type: ReportItemType) {
@@ -87,25 +89,6 @@ export class SectionReportComponent extends WithLoading() implements OnInit, OnD
   ngOnDestroy(): void {
     this.timeToSaveSubscription.unsubscribe();
     this.saveReport();
-  }
-
-  private saveReport() {
-    if (this.isSaving || !this.report.isNeededToBeSaved()) {
-      return;
-    }
-
-    this.isSaving = true;
-
-    this.reportService.saveReportItemsForSection(this._section.id)
-      .pipe(
-        finalize(() => this.isSaving = false)
-      )
-      .subscribe(
-      report => {
-        this.report = report;
-        this.savedTime = moment();
-      }
-    );
   }
 
   onCreate(type: ReportItemType) {
@@ -125,8 +108,47 @@ export class SectionReportComponent extends WithLoading() implements OnInit, OnD
     });
   }
 
+  @HostListener('window:beforeunload')
+  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+    this.saveReport();
+
+    return true;
+  }
 
   private navigateToBooksList() {
     this.router.navigate([`/books/list`]);
+  }
+
+  private $saveReport(): Observable<SectionReport> {
+    if (!this.isSavingNeeded()) {
+      return EMPTY;
+    }
+
+    this.isSaving = true;
+
+    return this.reportService.saveReportItemsForSection(this._section.id)
+      .pipe(
+        finalize(() => this.isSaving = false)
+      );
+  }
+
+  private saveReport() {
+    this.$saveReport().subscribe(
+      report => {
+        this.report = report;
+        this.savedTime = moment();
+      }
+    );
+  }
+
+  private isSavingNeeded(): boolean {
+    return !this.isSaving && this.report && this.report.isNeededToBeSaved();
+  }
+
+  private setSection(section: BookSection): void {
+    this._section = section;
+    const report$ = this.reportService.getReportForSection(this._section.id);
+    this.withLoading(report$).subscribe(report => this.report = report);
+    this.savedTime = undefined;
   }
 }

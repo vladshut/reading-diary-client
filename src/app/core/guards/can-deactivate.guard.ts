@@ -12,17 +12,17 @@ export class CanDeactivateGuard implements CanDeactivate<CanComponentDeactivate>
   constructor(
     private i18n: I18n,
   ) {}
-  
+
   canDeactivate(
     component: CanComponentDeactivate,
     currentRoute: ActivatedRouteSnapshot,
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    
+
     if (nextState.url === '/logout') {
       return confirm(this.i18n('Confirm logout'));
     }
-    
+
     return component.canDeactivate();
   }
 }

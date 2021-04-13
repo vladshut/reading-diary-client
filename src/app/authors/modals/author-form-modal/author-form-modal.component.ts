@@ -28,8 +28,8 @@ export class AuthorFormModalComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       name: [null, [Validators.required]],
-      location: [null, [Validators.required]],
-      birth_date: [null, [Validators.required]],
+      location: [null],
+      birth_date: [null],
       death_date: [null],
       bio: [null, [Validators.maxLength(500)]],
       wikipedia_url: [null, [Validators.pattern(ValidationService.PATTERN_URL)]],
@@ -55,7 +55,10 @@ export class AuthorFormModalComponent implements OnInit {
     const formData = this.form.value;
     const bd = formData.birth_date;
     const dd = formData.death_date;
-    formData.birth_date = moment(`${bd['year']}-${bd['month']}-${bd['day']}`, 'YYYY-M-D').format('YYYY-M-D');
+
+    if (bd) {
+      formData.birth_date = moment(`${bd['year']}-${bd['month']}-${bd['day']}`, 'YYYY-M-D').format('YYYY-M-D');
+    }
 
     if (dd) {
       formData.death_date = moment(`${dd['year']}-${dd['month']}-${dd['day']}`, 'YYYY-M-D').format('YYYY-M-D');

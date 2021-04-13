@@ -4,6 +4,9 @@ import {ReportItemGoal, ReportItemRating} from "@app/models/report-item";
 import {FormBuilder, Validators} from "@angular/forms";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {AuthService} from "@app/core/services/auth.service";
+import {AlertService} from "@app/core/services/alert.service";
+import {I18n} from "@ngx-translate/i18n-polyfill";
+import {TranslationService} from "@app/core/services/translation.service";
 
 @Component({
   selector: 'app-report-item-rating',
@@ -18,6 +21,8 @@ export class ReportItemRatingComponent extends WithReportItem(ReportItemRating) 
     protected formBuilder: FormBuilder,
     protected ngbModal: NgbModal,
     public auth: AuthService,
+    protected alertService: AlertService,
+    protected transl: TranslationService,
   ) {
     super();
   }

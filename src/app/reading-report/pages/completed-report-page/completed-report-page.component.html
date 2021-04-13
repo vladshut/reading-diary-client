@@ -1,13 +1,13 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 
 <div class="row d-flex justify-content-center">
-  <div class="col-md-3">
+  <div class="col-xl-3">
     <div class="sticky-top position-top-0">
       <app-content [userBookId]="userBookId" (sectionSelected)="onSectionSelected($event)"></app-content>
     </div>
   </div>
 
-  <div class="col-md-9" style="max-width: 1500px">
+  <div class="col-xl-9" style="max-width: 1500px">
     <kendo-pdf-export #pdf paperSize="A4" margin="0cm" [scale]="0.6">
       <div class="card">
         <div class="card-header d-flex justify-content-between">

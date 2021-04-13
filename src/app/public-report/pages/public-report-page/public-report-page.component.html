@@ -1,6 +1,6 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 <div class="row d-flex justify-content-center">
-  <div class="col-md-8" style="max-width: 1500px">
+  <div class="col-12" style="max-width: 1500px">
     <kendo-pdf-export #pdf paperSize="A4" margin="0cm" [scale]="0.6">
       <div class="card">
         <div class="card-header d-flex justify-content-between">
@@ -15,7 +15,7 @@
         </div>
         <div class="card-body">
           <ng-container *ngIf="section">
-            <app-completed-report-section-item [section]="section"></app-completed-report-section-item>
+            <app-completed-report-section-item [withActions]="false" [section]="section"></app-completed-report-section-item>
           </ng-container>
         </div>
       </div>

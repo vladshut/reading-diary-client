@@ -1,6 +1,6 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 <div class="row d-flex justify-content-center">
-  <div class="col-md-8" style="max-width: 1500px">
+  <div class="col-12" style="max-width: 1500px">
     <kendo-pdf-export #pdf paperSize="A4" margin="0cm" [scale]="0.6">
       <div class="card">
         <div class="card-header d-flex justify-content-between">
@@ -9,7 +9,7 @@
           </h1>
           <div class="example-config">
             <button class="btn btn-outline-success" kendo-button (click)="pdf.saveAs(userBook.book.title + ' Report.pdf')">
-              <i class="fa fa-download"></i>&nbsp;&nbsp;Download PDF
+              <i class="fa fa-download"></i>&nbsp;&nbsp;<ng-container i18n="actions.download_pdf">Download PDF</ng-container>
             </button>
           </div>
         </div>

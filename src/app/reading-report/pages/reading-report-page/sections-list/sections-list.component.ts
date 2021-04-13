@@ -31,6 +31,10 @@ export class SectionsListComponent extends WithLoading() implements OnInit, OnDe
   ) {
     super();
 
+    if (dragulaService.find(this.dragulaGroup)) {
+      this.dragulaService.destroy(this.dragulaGroup);
+    }
+
     dragulaService.createGroup(this.dragulaGroup, {
       moves: function (el, container, handle) {
         return handle.classList.contains('js-section-drag-handle');

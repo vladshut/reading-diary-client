@@ -30,6 +30,10 @@ export class SectionReportBlockComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    if (this.dragulaService.find(this.dragulaGroup())) {
+      this.dragulaService.destroy(this.dragulaGroup());
+    }
+
     this.dragulaService.createGroup(this.dragulaGroup(), {
       moves: function (el, container, handle) {
         return handle.classList.contains('js-report-item-drag-handle');
@@ -73,6 +77,7 @@ export class SectionReportBlockComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.dragulaService.destroy(this.dragulaGroup());
     this.subs.unsubscribe();
   }
 }

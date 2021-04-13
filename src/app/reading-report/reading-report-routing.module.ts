@@ -5,6 +5,7 @@ import { FullLayoutComponent } from '@app/shared/layouts/full/full-layout.compon
 import {ReadingReportPageComponent} from "@app/reading-report/pages/reading-report-page/reading-report-page.component";
 import {CompletedReportPageComponent} from "@app/reading-report/pages/completed-report-page/completed-report-page.component";
 import {PublishedReportComponent} from "@app/reading-report/pages/published-report/published-report.component";
+import {CanDeactivateGuard} from "@app/core/guards/can-deactivate.guard";
 
 const FULL_ROUTES: Routes = [
   {

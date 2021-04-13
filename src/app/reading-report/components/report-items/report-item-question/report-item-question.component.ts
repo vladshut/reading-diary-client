@@ -3,6 +3,9 @@ import {WithReportItem} from "@app/mixins/WithReportItem";
 import {ReportItemGoal, ReportItemQuestion} from "@app/models/report-item";
 import {FormBuilder, Validators} from "@angular/forms";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {I18n} from "@ngx-translate/i18n-polyfill";
+import {AlertService} from "@app/core/services/alert.service";
+import {TranslationService} from "@app/core/services/translation.service";
 
 @Component({
   selector: 'app-report-item-question',
@@ -18,6 +21,8 @@ export class ReportItemQuestionComponent extends WithReportItem(ReportItemQuesti
   constructor(
     protected formBuilder: FormBuilder,
     protected ngbModal: NgbModal,
+    protected alertService: AlertService,
+    protected transl: TranslationService,
   ) {
     super();
   }

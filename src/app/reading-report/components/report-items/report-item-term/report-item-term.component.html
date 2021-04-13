@@ -6,7 +6,7 @@
         <app-control-messages [control]="form.controls.term"></app-control-messages>
       </div>
       <div class="col-md-8 form-group">
-        <textarea autosize rows="5" placeholder="Definition" i18n="@@definition" class="form-control form-control-sm" formControlName="term_definition" (keyup.escape)="onCancelEdit()" (keyup.control.enter)="onUpdate()"></textarea>
+        <textarea appRemoveExtraLinebreaks autosize rows="5" placeholder="Definition" i18n="@@definition" class="form-control form-control-sm" formControlName="term_definition" (keyup.escape)="onCancelEdit()" (keyup.control.enter)="onUpdate()"></textarea>
         <app-control-messages [control]="form.controls.term_definition"></app-control-messages>
       </div>
     </div>
@@ -18,7 +18,7 @@
 </form>
 <div class="d-flex" *ngIf="!editMode" (mouseover)="hover = true" (mouseleave)="hover = false">
   <app-report-item-actions *ngIf="showActions()" (copy)="onCopy()" (switchFavorite)="onSwitchFavorite()" (delete)="onDelete()" (switchVisibility)="onSwitchVisibility()" [isPublic]="item.isPublic()" [isFavorite]="item.isFavorite()" [visible]="hover"></app-report-item-actions>
-  <div (click)="editMode = true">
+  <div (click)="onClickToEdit()">
     <p><span class="font-italic">{{item.term}}</span>&nbsp;&nbsp;-&nbsp;&nbsp;<span class="text-muted">{{item.term_definition}}</span></p>
   </div>
 </div>

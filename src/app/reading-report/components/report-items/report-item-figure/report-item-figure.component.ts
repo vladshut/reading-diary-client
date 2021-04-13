@@ -6,6 +6,8 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {AlertService} from "@app/core/services/alert.service";
 import { env } from '@env/env';
 import {getInputValueByName} from "@app/shared/helpers/functions.helper";
+import {I18n} from "@ngx-translate/i18n-polyfill";
+import {TranslationService} from "@app/core/services/translation.service";
 
 @Component({
   selector: 'app-report-item-figure',
@@ -28,6 +30,7 @@ export class ReportItemFigureComponent extends WithReportItem(ReportItemFigure) 
     protected formBuilder: FormBuilder,
     protected ngbModal: NgbModal,
     protected alertService: AlertService,
+    protected transl: TranslationService,
   ) {
     super();
   }

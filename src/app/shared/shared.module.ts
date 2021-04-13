@@ -78,6 +78,7 @@ import FilePondPluginImageCrop from 'filepond-plugin-image-crop';
 import { PageTitleComponent } from './components/page-title/page-title.component';
 import { ReadMoreComponent } from './components/read-more/read-more.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { RemoveExtraLinebreaksDirective } from './directives/remove-extra-linebreaks.directive';
 registerPlugin(FilePondPluginImageCrop);
 
 @NgModule({
@@ -155,6 +156,7 @@ registerPlugin(FilePondPluginImageCrop);
         PageTitleComponent,
         ReadMoreComponent,
         SearchBarComponent,
+        RemoveExtraLinebreaksDirective,
     ],
   declarations: [
     FooterComponent,
@@ -220,6 +222,8 @@ registerPlugin(FilePondPluginImageCrop);
     ReadMoreComponent,
 
     SearchBarComponent,
+
+    RemoveExtraLinebreaksDirective,
   ],
   entryComponents: [
     ImageModalComponent,

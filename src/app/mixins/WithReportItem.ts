@@ -8,8 +8,10 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {validateAllFormFields} from "@app/shared/helpers/form.helper";
 import {AlertService} from "@app/core/services/alert.service";
 import {copyToClipboard} from "@app/shared/helpers/functions.helper";
+import {TranslationService} from "@app/core/services/translation.service";
 
-export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> = Constructor<{}>>(Base: T = (class {} as any))  {
+export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> = Constructor<{}>>(Base: T = (class {
+} as any)) {
   abstract class Temporary extends Base implements OnInit {
     @Input() item: T2;
     @Input() withActions: boolean = false;
@@ -20,6 +22,7 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
     protected alertService: AlertService;
     protected formBuilder: FormBuilder;
     protected ngbModal: NgbModal;
+    protected transl: TranslationService;
 
     ngOnInit() {
       if (this.item.isNew()) {
@@ -47,6 +50,19 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
     }
 
     onCancelEdit() {
+      if (!this.form.dirty) {
+        return this.cancelEdit();
+      }
+
+      const modalRef = this.ngbModal.open(ActionConfirmDialogComponent, {size: 'lg'});
+
+      modalRef.componentInstance.text = this.transl.get('confirmation.discard_report_item_changes');
+      modalRef.componentInstance.confirmed.subscribe(() => {
+        this.cancelEdit();
+      });
+    }
+
+    protected cancelEdit() {
       this.initForm();
 
       validateAllFormFields(this.form);
@@ -64,10 +80,11 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
     onDelete() {
       const modalRef = this.ngbModal.open(ActionConfirmDialogComponent, {size: 'lg'});
 
-      modalRef.componentInstance.text = 'Are you sure you want to delete this item?';
+      modalRef.componentInstance.text = this.transl.get('confirmation.delete_report_item');
       modalRef.componentInstance.confirmed.subscribe(() => {
         this.item.delete();
-      });}
+      });
+    }
 
     protected abstract initForm(): void;
 
@@ -76,7 +93,7 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
       copyToClipboard(this.item.asFormattedString);
 
       if (this.alertService) {
-        this.alertService.info('Copied to clipboard');
+        this.alertService.info(this.transl.get('info.copied_to_clipboard'));
       }
     }
 
@@ -105,6 +122,16 @@ export function WithReportItem<T2 extends ReportItem, T extends Constructor<{}> 
 
     showActions(): boolean {
       return this.withActions;
+    }
+
+    onClickToEdit() {
+      const selection = window.getSelection();
+
+      if (selection.toString().length !== 0) {
+        return;
+      }
+
+      this.editMode = true;
     }
   }
 

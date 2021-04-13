@@ -3,6 +3,9 @@ import {WithReportItem} from "@app/mixins/WithReportItem";
 import {ReportItemGoal, ReportItemReference} from "@app/models/report-item";
 import {FormBuilder, Validators} from "@angular/forms";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {AlertService} from "@app/core/services/alert.service";
+import {I18n} from "@ngx-translate/i18n-polyfill";
+import {TranslationService} from "@app/core/services/translation.service";
 
 @Component({
   selector: 'app-report-item-reference',
@@ -18,6 +21,8 @@ export class ReportItemReferenceComponent extends WithReportItem(ReportItemRefer
   constructor(
     protected formBuilder: FormBuilder,
     protected ngbModal: NgbModal,
+    protected alertService: AlertService,
+    protected transl: TranslationService,
   ) {
     super();
   }
