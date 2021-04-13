@@ -30,21 +30,23 @@ import {ContentComponent} from "@app/reading-report/pages/completed-report-page/
 import {ReportItemFigureComponent} from './components/report-items/report-item-figure/report-item-figure.component';
 import {FilePondModule} from "ngx-filepond";
 import { PublishedReportComponent } from './pages/published-report/published-report.component';
+import {AngularSplitModule} from "angular-split";
 
 @NgModule({
   declarations: [ReadingReportPageComponent, SectionItemComponent, SectionsListComponent, SectionReportComponent, SectionReportBlockComponent, ReportItemComponent, ReportItemTermComponent, ReportItemGoalComponent, ReportItemQuoteComponent, ReportItemQuestionComponent, ReportItemResumeComponent, ReportItemReferenceComponent, ReportItemInformationEvaluationComponent, ReportItemReviewComponent, ReportItemRatingComponent, ReportItemForwardResearchComponent, CompletedReportPageComponent, CompletedReportSectionItemComponent, ManagePublicAccessModalComponent, ReportItemActionsComponent, ContentComponent, ContentItemComponent, ContentComponent, ReportItemFigureComponent, PublishedReportComponent],
   exports: [
     CompletedReportSectionItemComponent
   ],
-  imports: [
-    SharedModule,
-    ReadingReportRoutingModule,
-    NgxStarsModule,
-    PDFExportModule,
-    DragulaModule,
-    TextareaAutosizeModule,
-    FilePondModule,
-  ],
+    imports: [
+        SharedModule,
+        ReadingReportRoutingModule,
+        NgxStarsModule,
+        PDFExportModule,
+        DragulaModule,
+        TextareaAutosizeModule,
+        FilePondModule,
+        AngularSplitModule,
+    ],
   entryComponents: [
     ManagePublicAccessModalComponent,
   ],

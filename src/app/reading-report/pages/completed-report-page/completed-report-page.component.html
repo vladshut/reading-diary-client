@@ -1,63 +1,93 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
 
-<div class="row d-flex justify-content-center">
-  <div class="col-xl-3">
-    <div class="sticky-top position-top-0">
-      <app-content [userBookId]="userBookId" (sectionSelected)="onSectionSelected($event)"></app-content>
+<div class="container-fluid" *responsive="{sizes: {max: 1200}}">
+  <div class="row">
+    <div class="col-12">
+      <ngb-tabset [destroyOnHide]="false">
+
+        <ngb-tab i18n-title="content" title="Content">
+          <ng-template ngbTabContent>
+            <ng-container *ngTemplateOutlet="content"></ng-container>
+          </ng-template>
+        </ngb-tab>
+
+        <ngb-tab i18n-title="report" title="Report">
+          <ng-template ngbTabContent>
+            <ng-container *ngTemplateOutlet="report"></ng-container>
+          </ng-template>
+        </ngb-tab>
+
+      </ngb-tabset>
     </div>
   </div>
+</div>
 
-  <div class="col-xl-9" style="max-width: 1500px">
-    <kendo-pdf-export #pdf paperSize="A4" margin="0cm" [scale]="0.6">
-      <div class="card">
-        <div class="card-header d-flex justify-content-between">
-          <h1 class="card-title" *ngIf="userBook">
-            {{userBook.book.title}}&nbsp;&nbsp;<span class="text-muted" i18n="report">Report</span>
-          </h1>
-          <div>
-            <ng-container *ngIf="withActions">
-              <button class="btn btn-outline-warning mr-2 btn-xs" (click)="resumeReading()">
-                <i class="fa fa-book"></i>
-                &nbsp;&nbsp;
-                <ng-container i18n="actions.resume_reading">Resume reading</ng-container>
-              </button>
-              <button *ngIf="userBook && !userBook.isPublic()" class="btn btn-outline-primary btn-xs  mr-2" (click)="makePublic()">
-                <i class="fa fa-link"></i>
-                &nbsp;&nbsp;
-                <ng-container i18n="actions.share_via_link">Share via link</ng-container>
-              </button>
-              <button *ngIf="userBook && userBook.isPublic()" class="btn btn-outline-primary btn-xs mr-2" (click)="openManageAccessModal()">
-                <i class="fa fa-users"></i>
-                &nbsp;&nbsp;
-                <ng-container i18n="actions.manage_link_access">Manage link access</ng-container>
-              </button>
+<as-split direction="horizontal"  *responsive="{sizes: {min: 1200}}">
 
-              <button *ngIf="userBook && !userBook.is_report_published" class="btn btn-outline-primary btn-xs" (click)="share()">
-                <i class="fa fa-share"></i>
-                &nbsp;&nbsp;
-                <ng-container i18n="actions.share">Share</ng-container>
-              </button>
-              <button *ngIf="userBook && userBook.is_report_published" class="btn btn-outline-warning btn-xs" (click)="unshare()">
-                <i class="fa fa-share"></i>
-                &nbsp;&nbsp;
-                <ng-container i18n="actions.unshare">Stop sharing</ng-container>
-              </button>
-            </ng-container>
+  <as-split-area [size]="30" class="sticky-top position-top-0">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </as-split-area>
 
+  <as-split-area [size]="70">
+    <ng-container *ngTemplateOutlet="report"></ng-container>
+  </as-split-area>
 
-            <button class="btn btn-outline-success ml-2 btn-xs" kendo-button
-                    (click)="pdf.saveAs(userBook.book.title + ' Report.pdf')">
-              <i class="fa fa-download"></i>&nbsp;&nbsp;Download PDF
+</as-split>
+
+<ng-template #content>
+  <app-content [userBookId]="userBookId" (sectionSelected)="onSectionSelected($event)"></app-content>
+</ng-template>
+
+<ng-template #report>
+  <kendo-pdf-export #pdf paperSize="A4" margin="0cm" [scale]="0.6">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between">
+        <h1 class="card-title" *ngIf="userBook">
+          {{userBook.book.title}}&nbsp;&nbsp;<span class="text-muted" i18n="report">Report</span>
+        </h1>
+        <div>
+          <ng-container *ngIf="withActions">
+            <button class="btn btn-outline-warning mr-2 btn-xs" (click)="resumeReading()">
+              <i class="fa fa-book"></i>
+              &nbsp;&nbsp;
+              <ng-container i18n="actions.resume_reading">Resume reading</ng-container>
             </button>
-          </div>
-        </div>
+            <button *ngIf="userBook && !userBook.isPublic()" class="btn btn-outline-primary btn-xs  mr-2" (click)="makePublic()">
+              <i class="fa fa-link"></i>
+              &nbsp;&nbsp;
+              <ng-container i18n="actions.share_via_link">Share via link</ng-container>
+            </button>
+            <button *ngIf="userBook && userBook.isPublic()" class="btn btn-outline-primary btn-xs mr-2" (click)="openManageAccessModal()">
+              <i class="fa fa-users"></i>
+              &nbsp;&nbsp;
+              <ng-container i18n="actions.manage_link_access">Manage link access</ng-container>
+            </button>
 
-        <div class="card-body">
-          <ng-container *ngIf="section">
-            <app-completed-report-section-item [withActions]="withActions" [section]="section"></app-completed-report-section-item>
+            <button *ngIf="userBook && !userBook.is_report_published" class="btn btn-outline-primary btn-xs" (click)="share()">
+              <i class="fa fa-share"></i>
+              &nbsp;&nbsp;
+              <ng-container i18n="actions.share">Share</ng-container>
+            </button>
+            <button *ngIf="userBook && userBook.is_report_published" class="btn btn-outline-warning btn-xs" (click)="unshare()">
+              <i class="fa fa-share"></i>
+              &nbsp;&nbsp;
+              <ng-container i18n="actions.unshare">Stop sharing</ng-container>
+            </button>
           </ng-container>
+
+
+          <button class="btn btn-outline-success ml-2 btn-xs" kendo-button
+                  (click)="pdf.saveAs(userBook.book.title + ' Report.pdf')">
+            <i class="fa fa-download"></i>&nbsp;&nbsp;Download PDF
+          </button>
         </div>
       </div>
-    </kendo-pdf-export>
-  </div>
-</div>
+
+      <div class="card-body">
+        <ng-container *ngIf="section">
+          <app-completed-report-section-item [withActions]="withActions" [section]="section"></app-completed-report-section-item>
+        </ng-container>
+      </div>
+    </div>
+  </kendo-pdf-export>
+</ng-template>

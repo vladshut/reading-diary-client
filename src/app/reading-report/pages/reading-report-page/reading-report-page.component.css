@@ -1,0 +1,22 @@
+::ng-deep .as-split-gutter {
+  height: auto !important;
+}
+
+.card, ::ng-deep .card {
+  box-shadow: none !important;
+  margin: 0 !important;
+}
+
+::ng-deep .as-horizontal, ::ng-deep .as-split-area {
+  overflow: unset !important;
+  overflow-x: unset !important;
+  overflow-y: unset !important;
+}
+
+::ng-deep .tab-content {
+  padding: 0 !important;
+}
+
+::ng-deep .nav-tabs .nav-link.active {
+  background-color: white;
+}

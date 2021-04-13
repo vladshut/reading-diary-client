@@ -1,17 +1,49 @@
 <ngx-loading [show]="isLoading()"></ngx-loading>
-<div class="row">
-  <div class="col-xl-3">
-    <div class="sticky-top position-top-0">
-      <app-sections-list [userBookId]="userBookId" (sectionSelected)="onSectionSelected($event)"></app-sections-list>
-    </div>
-  </div>
-  <div class="col-xl-9" style="max-width: 1500px">
-    <div class="card">
-      <div class="card-body">
-        <div class="card-block">
-          <app-section-report [userBook]="userBook" [section]="selectedSection"></app-section-report>
-        </div>
-      </div>
+
+<div class="container-fluid" *responsive="{sizes: {max: 1200}}">
+  <div class="row">
+    <div class="col-12">
+      <ngb-tabset [destroyOnHide]="false">
+
+        <ngb-tab i18n-title="content" title="Content">
+          <ng-template ngbTabContent>
+            <ng-container *ngTemplateOutlet="content"></ng-container>
+          </ng-template>
+        </ngb-tab>
+
+        <ngb-tab i18n-title="report" title="Report">
+          <ng-template ngbTabContent>
+            <ng-container *ngTemplateOutlet="report"></ng-container>
+          </ng-template>
+        </ngb-tab>
+
+      </ngb-tabset>
     </div>
   </div>
 </div>
+
+<as-split direction="horizontal"  *responsive="{sizes: {min: 1200}}">
+
+  <as-split-area [size]="30" class="sticky-top position-top-0">
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </as-split-area>
+
+  <as-split-area [size]="70">
+    <ng-container *ngTemplateOutlet="report"></ng-container>
+  </as-split-area>
+
+</as-split>
+
+<ng-template #content>
+  <app-sections-list [userBookId]="userBookId" (sectionSelected)="onSectionSelected($event)"></app-sections-list>
+</ng-template>
+
+<ng-template #report>
+  <div class="card">
+    <div class="card-body">
+      <div class="card-block">
+        <app-section-report [userBook]="userBook" [section]="selectedSection"></app-section-report>
+      </div>
+    </div>
+  </div>
+</ng-template>
